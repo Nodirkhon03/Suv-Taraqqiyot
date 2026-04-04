@@ -1,0 +1,319 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "equipment": "Equipment",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Engineering Water Infrastructure for Central Asia",
+    "subtitle": "One of Uzbekistan's leaders in hydrogeological well drilling and water supply system construction since 2001",
+    "cta": "View Our Projects",
+    "ctaSecondary": "Our Services",
+    "credibility": "15 projects · $54M+ delivered · Trusted by World Bank & EBRD"
+  },
+  "capacity": {
+    "label": "Our Capacity",
+    "title": "Delivered Every Year",
+    "pipelines": {
+      "value": "200 km",
+      "label": "Water Pipelines",
+      "desc": "Diameter 32–1200 mm"
+    },
+    "wells": {
+      "value": "120",
+      "label": "Wells Drilled Per Year",
+      "desc": "Depth 30–1200 m"
+    },
+    "units": {
+      "value": "50",
+      "label": "Water Distribution Units",
+      "desc": "300–30,000 m³/day capacity"
+    },
+    "intake": {
+      "value": "5,000+",
+      "label": "m³ Intake Station Capacity",
+      "desc": "Water intake stations volume"
+    }
+  },
+  "about": {
+    "label": "About Us",
+    "title": "Built on 24 Years of Engineering Excellence",
+    "description": "Founded in 2001 on the basis of NPO Wolfram, SUV-TARAQQIYOT LLC has grown into one of the leading contractors for hydrogeological drilling and water supply infrastructure in the Republic of Uzbekistan. We work with government agencies, international development banks, and industrial clients across Central Asia.",
+    "stats": {
+      "established": "Est. 2001",
+      "establishedLabel": "Year Founded",
+      "projects": "15+",
+      "projectsLabel": "Major Projects",
+      "value": "$54M+",
+      "valueLabel": "Total Project Value"
+    }
+  },
+  "servicesOverview": {
+    "label": "What We Do",
+    "title": "Core Services",
+    "items": {
+      "drilling": {
+        "title": "Hydrogeological Well Drilling",
+        "desc": "Professional drilling of water wells at depths from 30 to 1200 meters. Our team completes approximately 120 wells annually, serving municipal and industrial water demands across the country."
+      },
+      "pipelines": {
+        "title": "Water Pipeline Construction",
+        "desc": "Design and installation of water transmission and distribution pipelines up to 200 km per year, with diameters ranging from 32 mm to 1200 mm for systems of any scale."
+      },
+      "distribution": {
+        "title": "Water Distribution Units",
+        "desc": "Construction of water distribution facilities with capacity from 300 to 30,000 cubic meters per day. We build up to 50 units annually to serve growing regional water demands."
+      },
+      "towers": {
+        "title": "Water Towers & Intake Stations",
+        "desc": "Engineering and construction of water towers (10–75 m³ capacity, up to 50 per year) and water intake stations with over 5,000 m³ total volume capacity."
+      }
+    },
+    "learnMore": "Learn More →"
+  },
+  "clients": {
+    "label": "Trusted By",
+    "title": "Government Agencies & International Organizations",
+    "domesticLabel": "Domestic Clients",
+    "internationalLabel": "International Funders",
+    "domestic": {
+      "ozsuvtaminot": "O'ZSUVTA'MINOT",
+      "uzauto": "UzAuto",
+      "uzgazoil": "UzGazOil",
+      "security": "State Security Service of Uzbekistan",
+      "sirdaryo": "Sirdaryo Viloyati",
+      "namangan": "Namangan Viloyati",
+      "samarqand": "Samarqand Viloyati",
+      "yangiyul": "Yangiyo'l Hokimligi"
+    },
+    "international": {
+      "worldbank": "World Bank (IBRD/IDA)",
+      "adb": "Asian Development Bank",
+      "ebrd": "European Bank for Reconstruction and Development",
+      "opec": "OPEC Fund",
+      "saudi": "Saudi Fund for Development",
+      "orient": "Orient Group of Companies"
+    }
+  },
+  "certifications": {
+    "label": "Certifications",
+    "iso9001": {
+      "title": "ISO 9001:2015",
+      "desc": "Quality Management"
+    },
+    "iso14001": {
+      "title": "ISO 14001:2019",
+      "desc": "Environmental Management"
+    },
+    "iso45001": {
+      "title": "ISO 45001:2020",
+      "desc": "Health & Safety"
+    },
+    "issuer": "AVVISO CERT LLC"
+  },
+  "featuredProjects": {
+    "label": "Featured Work",
+    "title": "Selected Projects",
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "funder": "Funder",
+    "items": {
+      "koshrabad": {
+        "title": "Koshrabad Drinking Water Improvement",
+        "location": "Samarkand Region",
+        "period": "2019–2021",
+        "amount": "$6.72M",
+        "funder": "OPEC Fund + Saudi Fund for Development"
+      },
+      "zhiydakapa": {
+        "title": "Zhiydakapa Water Intake Reconstruction",
+        "location": "Namangan",
+        "period": "2022–present",
+        "amount": "$5.21M",
+        "funder": "European Bank for Reconstruction and Development"
+      },
+      "yangiyul": {
+        "title": "Yangiyul Water Supply System",
+        "location": "Yangiyul City",
+        "period": "2023–2024",
+        "amount": "$6.1M",
+        "funder": "Ministry of Investment and Foreign Trade"
+      }
+    }
+  },
+  "homeMap": {
+    "label": "PROJECT LOCATIONS",
+    "title": "Across Every Region of Uzbekistan",
+    "subtitle": "15 projects delivered across Uzbekistan since 2004.",
+    "openFullMap": "Open Full Interactive Map →",
+    "stats": {
+      "projects": "15 Projects",
+      "regions": "12 Regions",
+      "years": "2004–Present",
+      "value": "$54M+"
+    }
+  },
+  "cta": {
+    "title": "Ready to Discuss Your Project?",
+    "subtitle": "We respond within 24 hours to all inquiries.",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "tagline": "Water Development & Infrastructure — professional engineering solutions for sustainable water resources.",
+    "quickLinks": "Quick Links",
+    "servicesTitle": "Services",
+    "services": {
+      "drilling": "Groundwater Drilling",
+      "waterSupply": "Water Supply Systems",
+      "irrigation": "Irrigation Networks",
+      "geological": "Geological Surveys",
+      "civilEngineering": "Civil Engineering"
+    },
+    "contactTitle": "Contact",
+    "address": "18 Khusan Shams St., Mirzo-Ulugbek, Tashkent",
+    "rights": "All rights reserved."
+  },
+  "equipmentPage": {
+    "title": "Construction Equipment & Tools",
+    "subtitle": "Modern machinery enabling 200km of pipelines and 120 wells annually",
+    "stats": {
+      "machinery": "30+",
+      "machineLabel": "Heavy Machinery Units",
+      "depth": "1200m",
+      "depthLabel": "Max Drilling Depth",
+      "diameter": "1200mm",
+      "diameterLabel": "Max Pipeline Diameter",
+      "capacity": "200km",
+      "capacityLabel": "Annual Pipeline Capacity"
+    },
+    "categories": {
+      "drilling": "Drilling Equipment",
+      "cranes": "Cranes & Lifting",
+      "excavators": "Excavators & Loaders",
+      "tools": "Tools & Specialized Equipment"
+    }
+  },
+  "projectsPage": {
+    "title": "Our Projects",
+    "subtitle": "15 projects delivering $54M+ in water infrastructure across Uzbekistan since 2004.",
+    "statsProjects": "15 Projects",
+    "statsValue": "$54M+ Total Value",
+    "statsYears": "2004–Present",
+    "filterAll": "All",
+    "filterDrilling": "Drilling",
+    "filterInfrastructure": "Infrastructure",
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "fundedBy": "Funded by",
+    "generalContractor": "General Contractor",
+    "subcontractor": "Subcontractor",
+    "international": "International",
+    "mapTitle": "Project Locations",
+    "geographicFootprint": "Our Geographic Footprint",
+    "openFullMap": "Open full interactive map",
+    "viewDetails": "View Details"
+  },
+  "contactPage": {
+    "address": "Tashkent city, Mirzo Ulugbek district, Alisher Navoi MSG, Khusan Shams street, 18 building",
+    "sti": "STI (Tax ID): 203 681 239",
+    "workingHours": "Working Hours",
+    "workingHoursValue": "Mon–Fri: 9:00–18:00",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our engineering team.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "company": "Company / Organization",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again."
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Built on Engineering Excellence Since 2001",
+      "subtitle": "From a single drilling operation to one of Uzbekistan's leading water infrastructure contractors — 24 years of uninterrupted delivery."
+    },
+    "story": {
+      "label": "OUR HISTORY",
+      "title": "Founded on Engineering. Grown Through Delivery.",
+      "p1": "SUV-TARAQQIYOT LLC was established on 21 August 2001, built on the foundation of NPO Wolfram — a Soviet-era scientific production organisation with deep roots in geological survey and drilling engineering. From its first year of operation, the company focused on hydrogeological well drilling and water supply construction across Uzbekistan.",
+      "p2": "Over two decades, SUV-TARAQQIYOT has grown into a full-cycle contractor capable of delivering projects from initial survey through to final commissioning. The company annually drills approximately 120 wells to depths of up to 1,200 metres, constructs up to 200 kilometres of water pipelines with diameters from 32 to 1,200mm, and installs up to 50 water distribution units with daily capacities of 300 to 30,000 cubic metres.",
+      "p3": "Today, SUV-TARAQQIYOT holds contracts financed by the World Bank, the European Bank for Reconstruction and Development, the Asian Development Bank, the OPEC Fund for International Development, and the Saudi Fund for Development. The company operates under ISO 9001:2015, ISO 14001:2019, and ISO 45001:2020 certification, issued by AVVISO CERT LLC, Tashkent."
+    },
+    "figures": {
+      "years": { "value": "24", "label": "Years in Operation" },
+      "depth": { "value": "1,200 m", "label": "Max Drilling Depth" },
+      "value": { "value": "$54M+", "label": "Projects Delivered" },
+      "iso": { "value": "3 ISO", "label": "Quality Certifications" }
+    },
+    "team": {
+      "label": "OUR TEAM",
+      "title": "The Team Behind Every Project",
+      "subtitle": "Experienced engineers and project managers with FIDIC, World Bank, and KfW project credentials.",
+      "members": {
+        "projectManager": { "role": "Contractor's Representative / Project Manager", "credentials": "FIDIC Red Book contract experience" },
+        "siteManager": { "role": "General Site Manager", "credentials": "20+ years field management" },
+        "hseManager": { "role": "Health and Safety Manager", "credentials": "ISO 45001 certified" },
+        "envManager": { "role": "Environmental Manager", "credentials": "ISO 14001 certified" },
+        "civilEng": { "role": "Civil Engineer", "credentials": "Pipeline and structural design" },
+        "electricalEng": { "role": "Electrical Engineer", "credentials": "Pumping station systems" },
+        "instrumentEng": { "role": "Instrument Engineer", "credentials": "SCADA and telemetry" },
+        "mechanicalEng": { "role": "Mechanical Engineer", "credentials": "Drilling rig maintenance" },
+        "waterSpecialist": { "role": "Water Supply Specialist", "credentials": "Hydraulic modelling" },
+        "surveyor": { "role": "Surveyor", "credentials": "GPS/GNSS and topographic surveys" }
+      }
+    },
+    "certifications": {
+      "label": "Quality Standards",
+      "title": "ISO Certified. Government Registered.",
+      "iso9001Title": "O'z DSt ISO 9001:2015",
+      "iso9001Desc": "Quality Management System — Construction of water supply engineering facilities",
+      "iso14001Title": "O'z DSt ISO 14001:2019",
+      "iso14001Desc": "Environmental Management System",
+      "iso45001Title": "O'z DSt ISO 45001:2020",
+      "iso45001Desc": "Occupational Health & Safety Management System",
+      "issuer": "Issued by",
+      "validUntil": "Valid until"
+    },
+    "legal": {
+      "label": "LEGAL INFORMATION",
+      "title": "Company Registration",
+      "rows": {
+        "fullName": { "label": "Full Name", "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat" },
+        "sti": { "label": "STI (Tax ID)", "value": "203 681 239" },
+        "regNumber": { "label": "Reg. Number", "value": "09-000344" },
+        "regDate": { "label": "Reg. Date", "value": "21 August 2001" },
+        "registrar": { "label": "Registrar", "value": "Mirzo-Ulugbek District State Services Centre, Tashkent" },
+        "address": { "label": "Address", "value": "18 Khusan Shams Street, Mirzo-Ulugbek district, Tashkent, Uzbekistan" },
+        "phone": { "label": "Phone", "value": "+998 99 847 40 00" },
+        "contactManager": { "label": "Contact Manager", "value": "Usmonov Bekzod" }
+      }
+    },
+    "recognition": {
+      "label": "Recognition",
+      "title": "Acknowledged by Government Agencies",
+      "tahakkurnoma": "TAHAKKURNOMA",
+      "suvTaraqqiyot": "\"SUV-TARAQQIYOT\" MChJ",
+      "rmm": {
+        "authority": "RMM (Respublika Mulk Markazi)",
+        "desc": "For protecting citizens' interests, on the occasion of Uzbekistan's 30th independence anniversary"
+      },
+      "education": {
+        "authority": "Ministry of Education of Uzbekistan",
+        "desc": "For contribution to school construction preparation for 2018–2019 academic year, Mirzo Ulugbek district"
+      },
+      "yunusobod": {
+        "authority": "Yunusobod District Administration",
+        "desc": "For improving living standards and welfare of residents"
+      }
+    }
+  }
+}
