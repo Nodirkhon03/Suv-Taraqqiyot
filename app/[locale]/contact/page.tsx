@@ -162,6 +162,17 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-gray-100 shadow-sm bg-white p-8 space-y-6">
                 <div>
                   <h3 className="text-xs uppercase tracking-widest text-engineering font-medium mb-2">
+                    {tp("phoneLabel")}
+                  </h3>
+                  <a
+                    href="tel:+998550553737"
+                    className="text-lg font-medium text-navy hover:text-engineering transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering rounded"
+                  >
+                    {tp("phoneValue")}
+                  </a>
+                </div>
+                <div>
+                  <h3 className="text-xs uppercase tracking-widest text-engineering font-medium mb-2">
                     {tp("emailLabel")}
                   </h3>
                   <a

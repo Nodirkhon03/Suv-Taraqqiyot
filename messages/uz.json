@@ -12,7 +12,7 @@
     "subtitle": "2001 yildan buyon gidrogeologik quduq burg'ulash va suv ta'minoti tizimlarini qurish bo'yicha O'zbekiston yetakchilaridan biri",
     "cta": "Loyihalarimiz",
     "ctaSecondary": "Xizmatlarimiz",
-    "credibility": "15 loyiha · $54M+ amalga oshirilgan · Jahon banki va YEBTB ishonchi"
+    "credibility": "20 loyiha · $57M+ amalga oshirilgan · Jahon banki va YEBTB ishonchi"
   },
   "capacity": {
     "label": "Bizning quvvatimiz",
@@ -40,14 +40,14 @@
   },
   "about": {
     "label": "Biz haqimizda",
-    "title": "24 yillik muhandislik tajribasi asosida qurilgan",
+    "title": "25 yillik muhandislik tajribasi asosida qurilgan",
     "description": "2001 yilda NPO Wolfram bazasida tashkil etilgan \"SUV-TARAQQIYOT\" MChJ O'zbekiston Respublikasida gidrogeologik burg'ulash va suv ta'minoti infratuzilmasini qurish bo'yicha yetakchi pudratchilardan biriga aylandi. Biz davlat organlari, xalqaro taraqqiyot banklari va Markaziy Osiyo bo'ylab sanoat mijozlari bilan ishlaymiz.",
     "stats": {
       "established": "2001 y.",
       "establishedLabel": "Tashkil etilgan",
-      "projects": "15+",
+      "projects": "20+",
       "projectsLabel": "Yirik loyihalar",
-      "value": "$54M+",
+      "value": "$57M+",
       "valueLabel": "Loyihalar umumiy qiymati"
     }
   },
@@ -147,13 +147,13 @@
   "homeMap": {
     "label": "LOYIHALAR JOYLASHUVI",
     "title": "O'zbekistonning barcha hududlarida",
-    "subtitle": "2004 yildan beri O'zbekiston bo'ylab 15 ta amalga oshirilgan loyiha.",
+    "subtitle": "2001 yildan beri O'zbekiston bo'ylab 20 ta amalga oshirilgan loyiha.",
     "openFullMap": "To'liq interaktiv xaritani ochish →",
     "stats": {
-      "projects": "15 loyiha",
+      "projects": "20 loyiha",
       "regions": "12 hudud",
-      "years": "2004–hozir",
-      "value": "$54M+"
+      "years": "2001–hozir",
+      "value": "$57M+"
     }
   },
   "cta": {
@@ -198,10 +198,10 @@
   },
   "projectsPage": {
     "title": "Bizning loyihalar",
-    "subtitle": "2004 yildan buyon O'zbekiston bo'ylab $54M+ suv infratuzilmasi loyihalari.",
-    "statsProjects": "15 loyiha",
-    "statsValue": "$54M+ umumiy qiymat",
-    "statsYears": "2004–hozir",
+    "subtitle": "2001 yildan buyon O'zbekiston bo'ylab $57M+ suv infratuzilmasi loyihalari.",
+    "statsProjects": "20 loyiha",
+    "statsValue": "$57M+ umumiy qiymat",
+    "statsYears": "2001–hozir",
     "filterAll": "Barchasi",
     "filterDrilling": "Burg'ulash",
     "filterInfrastructure": "Infratuzilma",
@@ -216,12 +216,37 @@
     "openFullMap": "To'liq interaktiv xaritani ochish",
     "viewDetails": "Batafsil"
   },
+  "projectDetailPage": {
+    "backToProjects": "Loyihalarga qaytish",
+    "overview": "Umumiy ma'lumot",
+    "scope": "Ish hajmi",
+    "completed": "Yakunlangan",
+    "ongoing": "Davom etmoqda",
+    "international": "Xalqaro",
+    "client": "Buyurtmachi",
+    "funder": "Moliyalashtiruvchi",
+    "amount": "Shartnoma qiymati",
+    "amountUzs": "Shartnoma qiymati (UZS)",
+    "period": "Muddat",
+    "location": "Joylashuv",
+    "role": "Rol",
+    "contractNumber": "Shartnoma №",
+    "category": "Toifa",
+    "drilling": "Burg'ulash",
+    "infrastructure": "Infratuzilma",
+    "generalContractor": "Bosh pudratchi",
+    "subcontractor": "Subpudratchi",
+    "gallery": "Loyiha galereyasi",
+    "galleryEmpty": "Ushbu loyiha rasmlari tez orada qo'shiladi.",
+    "contactCta": "Shunga o'xshash loyihani muhokama qilish"
+  },
   "contactPage": {
     "address": "Toshkent shahri, Mirzo Ulug'bek tumani, Alisher Navoiy MFY, Xuson Shams ko'chasi, 18-bino",
     "sti": "STIR: 203 681 239",
     "workingHours": "Ish vaqti",
     "workingHoursValue": "Du–Ju: 9:00–18:00",
     "phoneLabel": "Telefon",
+    "phoneValue": "+998 55 055 37 37",
     "emailLabel": "Elektron pochta"
   },
   "contact": {
@@ -239,7 +264,7 @@
   "aboutPage": {
     "hero": {
       "title": "2001 yildan muhandislik mukammalligi asosida",
-      "subtitle": "Bitta burg'ulash loyihasidan O'zbekistonning yetakchi suv infratuzilmasi pudratchilaridan biriga — 24 yillik uzluksiz faoliyat."
+      "subtitle": "Bitta burg'ulash loyihasidan O'zbekistonning yetakchi suv infratuzilmasi pudratchilaridan biriga — 25 yillik uzluksiz faoliyat."
     },
     "story": {
       "label": "TARIXIMIZ",
@@ -249,9 +274,9 @@
       "p3": "Bugungi kunda SUV-TARAQQIYOT Jahon banki, Yevropa tiklanish va taraqqiyot banki, Osiyo taraqqiyot banki, Xalqaro taraqqiyot uchun OPEK fondi va Saudiya taraqqiyot fondi tomonidan moliyalashtirilgan shartnomalarni amalga oshirmoqda. Kompaniya AVVISO CERT LLC, Toshkent tomonidan berilgan ISO 9001:2015, ISO 14001:2019 va ISO 45001:2020 sertifikatlari asosida faoliyat yuritadi."
     },
     "figures": {
-      "years": { "value": "24", "label": "Yillik faoliyat" },
+      "years": { "value": "25", "label": "Yillik faoliyat" },
       "depth": { "value": "1 200 m", "label": "Maks. burg'ulash chuqurligi" },
-      "value": { "value": "$54M+", "label": "Amalga oshirilgan loyihalar" },
+      "value": { "value": "$57M+", "label": "Amalga oshirilgan loyihalar" },
       "iso": { "value": "3 ISO", "label": "Sifat sertifikatlari" }
     },
     "team": {
@@ -293,14 +318,14 @@
         "regDate": { "label": "Ro'yxat sanasi", "value": "2001 yil 21 avgust" },
         "registrar": { "label": "Ro'yxatga oluvchi", "value": "Mirzo Ulug'bek tumani Davlat xizmatlari markazi, Toshkent" },
         "address": { "label": "Manzil", "value": "Xuson Shams ko'chasi 18, Mirzo Ulug'bek tumani, Toshkent, O'zbekiston" },
-        "phone": { "label": "Telefon", "value": "+998 99 847 40 00" },
+        "phone": { "label": "Telefon", "value": "+998 55 055 37 37" },
         "contactManager": { "label": "Aloqa menejeri", "value": "Usmonov Bekzod" }
       }
     },
     "recognition": {
       "label": "Tan olish",
       "title": "Davlat organlari tomonidan tan olingan",
-      "tahakkurnoma": "TAHAKKURNOMA",
+      "tahakkurnoma": "TASHAKKURNOMA",
       "suvTaraqqiyot": "\"SUV-TARAQQIYOT\" MChJ",
       "rmm": {
         "authority": "RMM (Respublika Mulk Markazi)",

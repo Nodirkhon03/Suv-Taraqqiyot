@@ -27,10 +27,10 @@ const pageTitles: Record<string, string> = {
 };
 
 const pageDescriptions: Record<string, string> = {
-  en: "Hydrogeological well drilling and water supply construction in Uzbekistan since 2001. 15 projects, $54M+ delivered. ISO 9001, 14001, 45001 certified.",
-  ru: "Гидрогеологическое бурение скважин и строительство систем водоснабжения в Узбекистане с 2001 года. 15 проектов, $54M+ реализовано. Сертификация ISO.",
-  uz: "2001 yildan buyon O'zbekistonda gidrogeologik quduq burg'ulash va suv ta'minoti qurilishi. 15 loyiha, $54M+ amalga oshirilgan. ISO sertifikatlangan.",
-  tr: "2001'den bu yana Özbekistan'da hidrojeolojik kuyu sondajı ve su temini inşaatı. 15 proje, 54M$+ teslim edildi. ISO 9001, 14001, 45001 sertifikalı.",
+  en: "Hydrogeological well drilling and water supply construction in Uzbekistan since 2001. 20 projects, $57M+ delivered. ISO 9001, 14001, 45001 certified.",
+  ru: "Гидрогеологическое бурение скважин и строительство систем водоснабжения в Узбекистане с 2001 года. 20 проектов, $57M+ реализовано. Сертификация ISO.",
+  uz: "2001 yildan buyon O'zbekistonda gidrogeologik quduq burg'ulash va suv ta'minoti qurilishi. 20 loyiha, $57M+ amalga oshirilgan. ISO sertifikatlangan.",
+  tr: "2001'den bu yana Özbekistan'da hidrojeolojik kuyu sondajı ve su temini inşaatı. 20 proje, 57M$+ teslim edildi. ISO 9001, 14001, 45001 sertifikalı.",
 };
 
 export async function generateMetadata({

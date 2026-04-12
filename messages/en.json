@@ -12,7 +12,7 @@
     "subtitle": "One of Uzbekistan's leaders in hydrogeological well drilling and water supply system construction since 2001",
     "cta": "View Our Projects",
     "ctaSecondary": "Our Services",
-    "credibility": "15 projects · $54M+ delivered · Trusted by World Bank & EBRD"
+    "credibility": "20 projects · $57M+ delivered · Trusted by World Bank & EBRD"
   },
   "capacity": {
     "label": "Our Capacity",
@@ -40,14 +40,14 @@
   },
   "about": {
     "label": "About Us",
-    "title": "Built on 24 Years of Engineering Excellence",
+    "title": "Built on 25 Years of Engineering Excellence",
     "description": "Founded in 2001 on the basis of NPO Wolfram, SUV-TARAQQIYOT LLC has grown into one of the leading contractors for hydrogeological drilling and water supply infrastructure in the Republic of Uzbekistan. We work with government agencies, international development banks, and industrial clients across Central Asia.",
     "stats": {
       "established": "Est. 2001",
       "establishedLabel": "Year Founded",
-      "projects": "15+",
+      "projects": "20+",
       "projectsLabel": "Major Projects",
-      "value": "$54M+",
+      "value": "$57M+",
       "valueLabel": "Total Project Value"
     }
   },
@@ -147,13 +147,13 @@
   "homeMap": {
     "label": "PROJECT LOCATIONS",
     "title": "Across Every Region of Uzbekistan",
-    "subtitle": "15 projects delivered across Uzbekistan since 2004.",
+    "subtitle": "20 projects delivered across Uzbekistan since 2001.",
     "openFullMap": "Open Full Interactive Map →",
     "stats": {
-      "projects": "15 Projects",
+      "projects": "20 Projects",
       "regions": "12 Regions",
-      "years": "2004–Present",
-      "value": "$54M+"
+      "years": "2001–Present",
+      "value": "$57M+"
     }
   },
   "cta": {
@@ -198,10 +198,10 @@
   },
   "projectsPage": {
     "title": "Our Projects",
-    "subtitle": "15 projects delivering $54M+ in water infrastructure across Uzbekistan since 2004.",
-    "statsProjects": "15 Projects",
-    "statsValue": "$54M+ Total Value",
-    "statsYears": "2004–Present",
+    "subtitle": "20 projects delivering $57M+ in water infrastructure across Uzbekistan since 2001.",
+    "statsProjects": "20 Projects",
+    "statsValue": "$57M+ Total Value",
+    "statsYears": "2001–Present",
     "filterAll": "All",
     "filterDrilling": "Drilling",
     "filterInfrastructure": "Infrastructure",
@@ -216,12 +216,37 @@
     "openFullMap": "Open full interactive map",
     "viewDetails": "View Details"
   },
+  "projectDetailPage": {
+    "backToProjects": "Back to projects",
+    "overview": "Overview",
+    "scope": "Scope of works",
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "international": "International",
+    "client": "Client",
+    "funder": "Funder",
+    "amount": "Contract value",
+    "amountUzs": "Contract value (UZS)",
+    "period": "Period",
+    "location": "Location",
+    "role": "Role",
+    "contractNumber": "Contract No.",
+    "category": "Category",
+    "drilling": "Drilling",
+    "infrastructure": "Infrastructure",
+    "generalContractor": "General Contractor",
+    "subcontractor": "Subcontractor",
+    "gallery": "Project gallery",
+    "galleryEmpty": "Photos from this project will be added soon.",
+    "contactCta": "Discuss a similar project"
+  },
   "contactPage": {
     "address": "Tashkent city, Mirzo Ulugbek district, Alisher Navoi MSG, Khusan Shams street, 18 building",
     "sti": "STI (Tax ID): 203 681 239",
     "workingHours": "Working Hours",
     "workingHoursValue": "Mon–Fri: 9:00–18:00",
     "phoneLabel": "Phone",
+    "phoneValue": "+998 55 055 37 37",
     "emailLabel": "Email"
   },
   "contact": {
@@ -239,7 +264,7 @@
   "aboutPage": {
     "hero": {
       "title": "Built on Engineering Excellence Since 2001",
-      "subtitle": "From a single drilling operation to one of Uzbekistan's leading water infrastructure contractors — 24 years of uninterrupted delivery."
+      "subtitle": "From a single drilling operation to one of Uzbekistan's leading water infrastructure contractors — 25 years of uninterrupted delivery."
     },
     "story": {
       "label": "OUR HISTORY",
@@ -249,9 +274,9 @@
       "p3": "Today, SUV-TARAQQIYOT holds contracts financed by the World Bank, the European Bank for Reconstruction and Development, the Asian Development Bank, the OPEC Fund for International Development, and the Saudi Fund for Development. The company operates under ISO 9001:2015, ISO 14001:2019, and ISO 45001:2020 certification, issued by AVVISO CERT LLC, Tashkent."
     },
     "figures": {
-      "years": { "value": "24", "label": "Years in Operation" },
+      "years": { "value": "25", "label": "Years in Operation" },
       "depth": { "value": "1,200 m", "label": "Max Drilling Depth" },
-      "value": { "value": "$54M+", "label": "Projects Delivered" },
+      "value": { "value": "$57M+", "label": "Projects Delivered" },
       "iso": { "value": "3 ISO", "label": "Quality Certifications" }
     },
     "team": {
@@ -293,14 +318,14 @@
         "regDate": { "label": "Reg. Date", "value": "21 August 2001" },
         "registrar": { "label": "Registrar", "value": "Mirzo-Ulugbek District State Services Centre, Tashkent" },
         "address": { "label": "Address", "value": "18 Khusan Shams Street, Mirzo-Ulugbek district, Tashkent, Uzbekistan" },
-        "phone": { "label": "Phone", "value": "+998 99 847 40 00" },
+        "phone": { "label": "Phone", "value": "+998 55 055 37 37" },
         "contactManager": { "label": "Contact Manager", "value": "Usmonov Bekzod" }
       }
     },
     "recognition": {
       "label": "Recognition",
       "title": "Acknowledged by Government Agencies",
-      "tahakkurnoma": "TAHAKKURNOMA",
+      "tahakkurnoma": "TASHAKKURNOMA",
       "suvTaraqqiyot": "\"SUV-TARAQQIYOT\" MChJ",
       "rmm": {
         "authority": "RMM (Respublika Mulk Markazi)",

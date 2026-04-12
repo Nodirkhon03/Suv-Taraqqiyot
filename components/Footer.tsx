@@ -18,11 +18,11 @@ export default function Footer() {
   ];
 
   const services = [
-    "drilling",
     "waterSupply",
     "irrigation",
     "geological",
     "civilEngineering",
+    "drilling",
   ];
 
   return (
@@ -87,6 +87,14 @@ export default function Footer() {
             </h4>
             <address className="not-italic space-y-2.5 text-sm text-gray-300">
               <p>{t("address")}</p>
+              <p>
+                <a
+                  href="tel:+998550553737"
+                  className="hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan rounded"
+                >
+                  +998 55 055 37 37
+                </a>
+              </p>
               <p>
                 <a
                   href="mailto:info@suv-taraqqiyot.com"

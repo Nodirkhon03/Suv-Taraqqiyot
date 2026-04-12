@@ -28,7 +28,7 @@ export default function ProjectMapPage() {
             Project Locations Across Uzbekistan
           </h1>
           <p className="mt-3 text-base sm:text-lg text-white/70">
-            15 projects &middot; $54M+ total value &middot; 2004&ndash;present
+            20 projects &middot; $57M+ total value &middot; 2001&ndash;present
           </p>
         </div>
       </section>
@@ -125,10 +125,10 @@ export default function ProjectMapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: "13", label: "Completed" },
+              { value: "18", label: "Completed" },
               { value: "2", label: "Ongoing" },
-              { value: "$54M+", label: "Total Value" },
-              { value: "10+", label: "Regions Covered" },
+              { value: "$57M+", label: "Total Value" },
+              { value: "12+", label: "Regions Covered" },
             ].map((stat) => (
               <div
                 key={stat.label}

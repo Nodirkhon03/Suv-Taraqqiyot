@@ -12,7 +12,7 @@
     "subtitle": "2001 yılından bu yana Özbekistan'ın hidrojeolojik kuyu sondajı ve su temini sistemi inşaatında liderlerinden biri",
     "cta": "Projelerimiz",
     "ctaSecondary": "Hizmetlerimiz",
-    "credibility": "15 proje · 54M$+ teslim edildi · Dünya Bankası ve EBRD güvencesiyle"
+    "credibility": "20 proje · 57M$+ teslim edildi · Dünya Bankası ve EBRD güvencesiyle"
   },
   "capacity": {
     "label": "Kapasitemiz",
@@ -40,14 +40,14 @@
   },
   "about": {
     "label": "Hakkımızda",
-    "title": "24 Yıllık Mühendislik Mükemmelliği Üzerine İnşa Edildi",
+    "title": "25 Yıllık Mühendislik Mükemmelliği Üzerine İnşa Edildi",
     "description": "2001 yılında NPO Wolfram bünyesinde kurulan SUV-TARAQQIYOT LLC, Özbekistan Cumhuriyeti'nde hidrojeolojik sondaj ve su temini altyapısı inşaatında lider müteahhitlerden biri haline gelmiştir. Devlet kurumları, uluslararası kalkınma bankaları ve Orta Asya genelindeki endüstriyel müşterilerle çalışıyoruz.",
     "stats": {
       "established": "2001",
       "establishedLabel": "Kuruluş Yılı",
-      "projects": "15+",
+      "projects": "20+",
       "projectsLabel": "Büyük Proje",
-      "value": "$54M+",
+      "value": "$57M+",
       "valueLabel": "Toplam Proje Değeri"
     }
   },
@@ -147,13 +147,13 @@
   "homeMap": {
     "label": "PROJE KONUMLARI",
     "title": "Özbekistan'ın Her Bölgesinde",
-    "subtitle": "2004'ten bu yana Özbekistan genelinde 15 tamamlanan proje.",
+    "subtitle": "2001'den bu yana Özbekistan genelinde 20 tamamlanan proje.",
     "openFullMap": "Tam İnteraktif Haritayı Aç →",
     "stats": {
-      "projects": "15 Proje",
+      "projects": "20 Proje",
       "regions": "12 Bölge",
-      "years": "2004–Günümüz",
-      "value": "$54M+"
+      "years": "2001–Günümüz",
+      "value": "$57M+"
     }
   },
   "cta": {
@@ -198,10 +198,10 @@
   },
   "projectsPage": {
     "title": "Projelerimiz",
-    "subtitle": "2004'ten bu yana Özbekistan genelinde 54M$+ su altyapısı projeleri.",
-    "statsProjects": "15 Proje",
-    "statsValue": "54M$+ Toplam Değer",
-    "statsYears": "2004–Günümüz",
+    "subtitle": "2001'den bu yana Özbekistan genelinde 57M$+ su altyapısı projeleri.",
+    "statsProjects": "20 Proje",
+    "statsValue": "57M$+ Toplam Değer",
+    "statsYears": "2001–Günümüz",
     "filterAll": "Tümü",
     "filterDrilling": "Sondaj",
     "filterInfrastructure": "Altyapı",
@@ -216,12 +216,37 @@
     "openFullMap": "Tam interaktif haritayı aç",
     "viewDetails": "Detaylar"
   },
+  "projectDetailPage": {
+    "backToProjects": "Projelere dön",
+    "overview": "Genel Bakış",
+    "scope": "İş kapsamı",
+    "completed": "Tamamlandı",
+    "ongoing": "Devam Ediyor",
+    "international": "Uluslararası",
+    "client": "Müşteri",
+    "funder": "Finansör",
+    "amount": "Sözleşme bedeli",
+    "amountUzs": "Sözleşme bedeli (UZS)",
+    "period": "Dönem",
+    "location": "Konum",
+    "role": "Rol",
+    "contractNumber": "Sözleşme No.",
+    "category": "Kategori",
+    "drilling": "Sondaj",
+    "infrastructure": "Altyapı",
+    "generalContractor": "Ana Müteahhit",
+    "subcontractor": "Alt Müteahhit",
+    "gallery": "Proje galerisi",
+    "galleryEmpty": "Bu projeye ait fotoğraflar yakında eklenecektir.",
+    "contactCta": "Benzer bir projeyi görüşün"
+  },
   "contactPage": {
     "address": "Taşkent, Mirzo Ulugbek ilçesi, Alişer Navoi MSG, Husan Şams caddesi, 18 numara",
     "sti": "Vergi No: 203 681 239",
     "workingHours": "Çalışma Saatleri",
     "workingHoursValue": "Pzt–Cum: 9:00–18:00",
     "phoneLabel": "Telefon",
+    "phoneValue": "+998 55 055 37 37",
     "emailLabel": "E-posta"
   },
   "contact": {
@@ -239,7 +264,7 @@
   "aboutPage": {
     "hero": {
       "title": "2001'den Bu Yana Mühendislik Mükemmelliği",
-      "subtitle": "Tek bir sondaj operasyonundan Özbekistan'ın önde gelen su altyapısı müteahhitlerinden birine — 24 yıllık kesintisiz teslimat."
+      "subtitle": "Tek bir sondaj operasyonundan Özbekistan'ın önde gelen su altyapısı müteahhitlerinden birine — 25 yıllık kesintisiz teslimat."
     },
     "story": {
       "label": "TARİHÇEMİZ",
@@ -249,9 +274,9 @@
       "p3": "Bugün SUV-TARAQQIYOT, Dünya Bankası, Avrupa İmar ve Kalkınma Bankası, Asya Kalkınma Bankası, Uluslararası Kalkınma için OPEC Fonu ve Suudi Kalkınma Fonu tarafından finanse edilen sözleşmeleri yürütmektedir. Şirket, AVVISO CERT LLC, Taşkent tarafından verilen ISO 9001:2015, ISO 14001:2019 ve ISO 45001:2020 sertifikaları altında faaliyet göstermektedir."
     },
     "figures": {
-      "years": { "value": "24", "label": "Yıllık Faaliyet" },
+      "years": { "value": "25", "label": "Yıllık Faaliyet" },
       "depth": { "value": "1.200 m", "label": "Maks. Sondaj Derinliği" },
-      "value": { "value": "$54M+", "label": "Teslim Edilen Projeler" },
+      "value": { "value": "$57M+", "label": "Teslim Edilen Projeler" },
       "iso": { "value": "3 ISO", "label": "Kalite Sertifikaları" }
     },
     "team": {
@@ -293,14 +318,14 @@
         "regDate": { "label": "Tescil Tarihi", "value": "21 Ağustos 2001" },
         "registrar": { "label": "Tescil Kurumu", "value": "Mirzo-Ulugbek İlçesi Devlet Hizmetleri Merkezi, Taşkent" },
         "address": { "label": "Adres", "value": "18 Husan Şams Caddesi, Mirzo-Ulugbek ilçesi, Taşkent, Özbekistan" },
-        "phone": { "label": "Telefon", "value": "+998 99 847 40 00" },
+        "phone": { "label": "Telefon", "value": "+998 55 055 37 37" },
         "contactManager": { "label": "İletişim Yetkilisi", "value": "Usmonov Bekzod" }
       }
     },
     "recognition": {
       "label": "Tanınma",
       "title": "Devlet Kurumları Tarafından Onaylandı",
-      "tahakkurnoma": "TAHAKKURNOMA",
+      "tahakkurnoma": "TASHAKKURNOMA",
       "suvTaraqqiyot": "\"SUV-TARAQQIYOT\" MChJ",
       "rmm": {
         "authority": "RMM (Cumhuriyet Mülkiyet Merkezi)",

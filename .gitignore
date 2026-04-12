@@ -31,6 +31,9 @@ yarn-error.log*
 # source equipment images (copies in public/images/)
 /equipment-imgs/
 
+# source info documents
+/info/
+
 # claude config
 .claude/
 

@@ -106,14 +106,19 @@ export default function ProjectsPage() {
       {/* Project Cards Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <motion.div
+          key={activeFilter}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
           className="grid grid-cols-1 lg:grid-cols-3 gap-6"
         >
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} t={t} />
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              t={t}
+              locale={locale}
+            />
           ))}
         </motion.div>
       </section>
@@ -154,15 +159,18 @@ export default function ProjectsPage() {
 function ProjectCard({
   project,
   t,
+  locale,
 }: {
   project: Project;
   t: ReturnType<typeof useTranslations>;
+  locale: string;
 }) {
   return (
-    <motion.div
-      variants={cardVariant}
-      className="rounded-2xl border border-gray-100 shadow-sm bg-white p-6 flex flex-col"
-    >
+    <motion.div variants={cardVariant} className="h-full">
+      <Link
+        href={`/${locale}/projects/${project.slug}`}
+        className="group h-full rounded-2xl border border-gray-100 shadow-sm bg-white p-6 flex flex-col transition hover:shadow-md hover:border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2"
+      >
       {/* Badges row */}
       <div className="flex items-center gap-2 flex-wrap">
         {/* Status badge */}
@@ -188,7 +196,7 @@ function ProjectCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-lg font-bold text-[#0B2B43] mt-3 leading-tight">
+      <h3 className="text-lg font-bold text-[#0B2B43] mt-3 leading-tight group-hover:text-[#2C86C7] transition-colors">
         {project.title}
       </h3>
 
@@ -233,8 +241,8 @@ function ProjectCard({
         {project.amount}
       </p>
 
-      {/* Role badge */}
-      <div className="mt-auto pt-4">
+      {/* Role badge + view details arrow */}
+      <div className="mt-auto pt-4 flex items-center justify-between">
         <span
           className={`text-xs font-medium px-3 py-1 rounded-full ${
             project.role === "General Contractor"
@@ -246,7 +254,11 @@ function ProjectCard({
             ? t("generalContractor")
             : t("subcontractor")}
         </span>
+        <span className="text-xs font-medium text-[#2C86C7] group-hover:translate-x-0.5 transition-transform">
+          {t("viewDetails")} &rarr;
+        </span>
       </div>
+      </Link>
     </motion.div>
   );
 }

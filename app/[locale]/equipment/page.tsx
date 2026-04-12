@@ -86,7 +86,7 @@ export default function EquipmentPage() {
         const items = equipment.filter((e) => e.category === cat.key);
 
         return (
-          <section key={cat.key} className="py-16 lg:py-24 border-t border-gray-100">
+          <section key={cat.key} className="py-16 lg:py-24 border-t border-gray-100 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.span
                 className="text-xs uppercase tracking-widest text-cyan font-medium"
@@ -110,7 +110,7 @@ export default function EquipmentPage() {
               </motion.h2>
 
               <motion.div
-                className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
                 variants={stagger}
                 initial="hidden"
                 whileInView="visible"
@@ -119,34 +119,40 @@ export default function EquipmentPage() {
                 {items.map((item) => (
                   <motion.div
                     key={item.name}
-                    className="group cursor-default relative rounded-2xl border border-gray-100 shadow-sm bg-white overflow-hidden"
+                    className="group relative flex flex-col rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300"
                     variants={cardFade}
                   >
-                    {/* Equipment image */}
-                    <div className="relative aspect-video rounded-t-xl overflow-hidden bg-gray-100">
+                    {/* Equipment image — white background, centered, object-contain */}
+                    <div className="relative aspect-[4/3] w-full bg-white rounded-t-2xl overflow-hidden flex items-center justify-center p-6">
                       <Image
                         src={item.imagePath}
                         alt={item.name}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+                      {/* Quantity badge */}
+                      {item.quantity > 1 && (
+                        <span className="absolute top-3 right-3 bg-white text-navy text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-200 shadow-sm">
+                          &times;{item.quantity}
+                        </span>
+                      )}
                     </div>
 
-                    {/* Quantity badge */}
-                    {item.quantity > 1 && (
-                      <span className="absolute top-2 right-2 bg-engineering text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md z-10">
-                        &times;{item.quantity}
-                      </span>
-                    )}
+                    {/* Divider */}
+                    <div className="h-px bg-gray-100" />
 
                     {/* Content */}
-                    <div className="p-5">
-                      <p className="font-bold text-navy">{item.name}</p>
+                    <div className="flex flex-col items-center text-center px-5 py-5">
+                      <p className="font-bold text-navy leading-tight">
+                        {item.name}
+                      </p>
                       {item.spec && (
-                        <p className="mt-1 text-sm text-gray-500">{item.spec}</p>
+                        <p className="mt-1.5 text-sm text-gray-500 leading-snug">
+                          {item.spec}
+                        </p>
                       )}
                     </div>
                   </motion.div>
