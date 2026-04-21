@@ -261,6 +261,24 @@
     "success": "Xabar muvaffaqiyatli yuborildi!",
     "error": "Xabar yuborib bo'lmadi. Qayta urinib ko'ring."
   },
+  "seoFaq": {
+    "label": "Ko'p beriladigan savollar",
+    "title": "Qudruq burg'ulash va suv ta'minoti — asosiy savollar",
+    "items": {
+      "q1": {
+        "q": "Toshkent va O'zbekistonning boshqa viloyatlarida artezian qudruq burg'ulaysizmi?",
+        "a": "Ha. SUV-TARAQQIYOT MChJ O'zbekistonning barcha viloyatlarida — Toshkent, Namangan, Samarqand, Qashqadaryo, Sirdaryo va Farg'ona vodiysida — artezian va gidrogeologik qudruqlar burg'ulaydi. Burg'ulash chuqurligi 30 dan 1200 metrgacha, yillik hajm — taxminan 120 qudruq."
+      },
+      "q2": {
+        "q": "Qanday diametr va materialdagi suv quvurlarini o'rnatasiz?",
+        "a": "32 mm dan 1200 mm gacha bo'lgan diametrli polietilen (HDPE) va po'lat quvurlardan magistral va taqsimlovchi suv quvurlarini quramiz. Yillik hajm — yiliga 200 km gacha quvur, kommunal suv ta'minoti va sanoat infratuzilmasi uchun."
+      },
+      "q3": {
+        "q": "Jahon banki, EBRD, ADB va OPEC fondi loyihalarida ishlaysizmi?",
+        "a": "Ha. SUV-TARAQQIYOT Jahon banki (IBRD/IDA), Yevropa tiklanish va taraqqiyot banki (EBRD), Osiyo taraqqiyot banki (ADB), OPEC fondi va Saudiya taraqqiyot fondi tomonidan moliyalashtirilgan suv infratuzilmasi loyihalarini FIDIC shartnoma shartlari asosida amalga oshirgan."
+      }
+    }
+  },
   "aboutPage": {
     "hero": {
       "title": "2001 yildan muhandislik mukammalligi asosida",

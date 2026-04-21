@@ -261,6 +261,24 @@
     "success": "Message sent successfully!",
     "error": "Failed to send message. Please try again."
   },
+  "seoFaq": {
+    "label": "Frequently Asked Questions",
+    "title": "Water Well Drilling & Water Supply — Common Questions",
+    "items": {
+      "q1": {
+        "q": "Do you drill artesian wells in Tashkent and other regions of Uzbekistan?",
+        "a": "Yes. SUV-TARAQQIYOT LLC drills artesian and hydrogeological water wells across every region of Uzbekistan, including Tashkent, Namangan, Samarkand, Kashkadarya, Syrdarya, and the Fergana Valley. Drilling depth ranges from 30 to 1,200 metres, with around 120 wells delivered per year."
+      },
+      "q2": {
+        "q": "What water pipeline diameters and materials do you install?",
+        "a": "We construct water transmission and distribution pipelines with diameters from 32 mm to 1,200 mm, using polyethylene (HDPE) and steel pipes. Annual installed capacity reaches up to 200 kilometres of pipeline, serving municipal water supply and industrial infrastructure projects."
+      },
+      "q3": {
+        "q": "Do you deliver projects financed by the World Bank, EBRD, ADB and OPEC Fund?",
+        "a": "Yes. SUV-TARAQQIYOT has executed water infrastructure projects funded by the World Bank (IBRD/IDA), the European Bank for Reconstruction and Development (EBRD), the Asian Development Bank (ADB), the OPEC Fund for International Development and the Saudi Fund for Development — all delivered under FIDIC contract conditions."
+      }
+    }
+  },
   "aboutPage": {
     "hero": {
       "title": "Built on Engineering Excellence Since 2001",

@@ -137,6 +137,7 @@ function KeyFigures() {
               key={s.key}
               className="rounded-2xl border border-gray-100 shadow-sm bg-white p-6 text-center"
               variants={cardFade}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
             >
               <p className="text-3xl sm:text-4xl font-bold text-navy">
                 {t(`${s.key}.value`)}
@@ -211,8 +212,9 @@ function TeamGrid() {
           {members.map((key) => (
             <motion.div
               key={key}
-              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-5"
+              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-5 card-accent hover:border-engineering"
               variants={cardFade}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
             >
               <p className="font-bold text-navy">{t(`members.${key}.role`)}</p>
               <p className="mt-1 text-xs text-gray-400 italic">

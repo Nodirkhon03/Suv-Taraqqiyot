@@ -117,7 +117,7 @@ export default function Navigation({ locale }: { locale: string }) {
             {/* Logo */}
             <Link
               href={`/${locale}`}
-              className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2 rounded-lg"
+              className="flex items-center logo-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2 rounded-lg"
             >
               <Image
                 src="/images/logo-full.png"
@@ -140,7 +140,8 @@ export default function Navigation({ locale }: { locale: string }) {
                   <Link
                     key={link.key}
                     href={href}
-                    className={`text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2 rounded px-1 ${
+                    data-active={isActive}
+                    className={`nav-underline text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2 rounded px-1 pb-1 ${
                       isActive
                         ? "text-engineering"
                         : "text-gray-600 hover:text-navy"

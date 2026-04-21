@@ -4,6 +4,25 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import {
+  cardFade,
+  cardHover,
+  fadeUp,
+  stagger,
+  viewportOnce,
+} from "@/lib/animations";
+import AnimatedStat from "@/components/AnimatedStat";
+import HeroBackground from "@/components/illustrations/HeroBackground";
+import WaterDrop from "@/components/illustrations/WaterDrop";
+import IsoBadge from "@/components/illustrations/IsoBadge";
+import UzbekistanOutline from "@/components/illustrations/UzbekistanOutline";
+import SeoKeywords from "@/components/SeoKeywords";
+import {
+  WellDrillingIcon,
+  PipelineIcon,
+  WaterDistributionIcon,
+  WaterTowerIcon,
+} from "@/components/icons/ServiceIcons";
 
 const ProjectMap = dynamic(() => import("@/components/ProjectMap"), {
   ssr: false,
@@ -12,24 +31,12 @@ const ProjectMap = dynamic(() => import("@/components/ProjectMap"), {
   ),
 });
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] as const },
-  }),
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardFade = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+const PRIMARY_BUTTON =
+  "bg-navy text-white px-6 py-3 rounded-xl border border-white/20 hover:bg-engineering transition font-medium";
+const SECONDARY_BUTTON =
+  "border border-white/40 text-white px-6 py-3 rounded-xl hover:border-white hover:bg-white/5 transition font-medium";
+const SECTION_LABEL = "text-xs uppercase tracking-widest text-engineering font-medium";
+const SECTION_TITLE = "mt-3 text-3xl sm:text-4xl font-bold text-navy tracking-tighter";
 
 /* ─── HERO ─── */
 function Hero() {
@@ -37,101 +44,62 @@ function Hero() {
   const locale = useLocale();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-navy to-[#071924]">
-      {/* Geological lines */}
-      <svg
-        className="absolute inset-0 w-full h-full"
-        preserveAspectRatio="none"
+    <section className="relative min-h-[calc(100vh-4rem)] lg:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-gradient-to-b from-navy to-[#071924]">
+      <HeroBackground />
+
+      {/* Scan lines */}
+      <span className="scan-line" />
+      <span className="scan-line scan-line-delayed" />
+
+      {/* Sonar rings */}
+      <div className="pointer-events-none absolute right-[-80px] top-1/2 -translate-y-1/2 w-[240px] h-[240px]">
+        <span className="sonar-ring inset-0" style={{ animationDelay: "0s" }} />
+        <span className="sonar-ring inset-0" style={{ animationDelay: "1.5s" }} />
+        <span className="sonar-ring inset-0" style={{ animationDelay: "3s" }} />
+      </div>
+
+      <motion.div
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 w-full"
+        variants={stagger}
+        initial="hidden"
+        animate="show"
       >
-        {Array.from({ length: 18 }).map((_, i) => (
-          <line
-            key={i}
-            x1="0"
-            y1={`${(i + 1) * 5.2}%`}
-            x2="100%"
-            y2={`${(i + 1) * 5.2}%`}
-            stroke="white"
-            strokeOpacity="0.04"
-            strokeWidth="1"
-          />
-        ))}
-      </svg>
+        <div className="flex items-start gap-6">
+          <div className="hidden sm:block shrink-0">
+            <WaterDrop size={72} animated />
+          </div>
+          <div>
+            <motion.p variants={fadeUp} className="text-xs uppercase tracking-widest text-cyan font-medium">
+              Water Infrastructure · Hydrogeological Drilling · Civil Engineering
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter leading-tight max-w-4xl"
+            >
+              {t("title")}
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed"
+            >
+              {t("subtitle")}
+            </motion.p>
 
-      {/* Concentric rings */}
-      <div className="absolute right-[-10%] top-1/2 -translate-y-1/2">
-        {[0.06, 0.04, 0.03].map((opacity, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full border"
-            style={{
-              borderColor: `rgba(44, 134, 199, ${opacity})`,
-              width: `${(i + 1) * 320}px`,
-              height: `${(i + 1) * 320}px`,
-              top: `${-(i + 1) * 160}px`,
-              left: `${-(i + 1) * 160}px`,
-            }}
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{
-              duration: 6 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
+              <Link href={`/${locale}/projects`} className={PRIMARY_BUTTON}>
+                {t("cta")}
+              </Link>
+              <Link href={`/${locale}/services`} className={SECONDARY_BUTTON}>
+                {t("ctaSecondary")}
+              </Link>
+            </motion.div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <motion.h1
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tighter leading-tight max-w-4xl"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0}
-        >
-          {t("title")}
-        </motion.h1>
-
-        <motion.p
-          className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.15}
-        >
-          {t("subtitle")}
-        </motion.p>
-
-        <motion.div
-          className="mt-10 flex flex-wrap gap-4"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.3}
-        >
-          <Link
-            href={`/${locale}/projects`}
-            className="bg-navy text-white px-6 py-3 rounded-xl border border-white/20 hover:bg-engineering transition font-medium"
-          >
-            {t("cta")}
-          </Link>
-          <Link
-            href={`/${locale}/services`}
-            className="border border-white/40 text-white px-6 py-3 rounded-xl hover:border-white hover:bg-white/5 transition font-medium"
-          >
-            {t("ctaSecondary")}
-          </Link>
-        </motion.div>
-
-        <motion.p
-          className="mt-6 text-xs text-blue-200/80"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.45}
-        >
-          {t("credibility")}
-        </motion.p>
-      </div>
+            <motion.p variants={fadeUp} className="mt-6 text-xs text-blue-200/80">
+              {t("credibility")}
+            </motion.p>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
@@ -150,23 +118,21 @@ function Capacity() {
   return (
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.span
-          className="text-xs uppercase tracking-widest text-engineering font-medium"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
+        <motion.p
+          className={SECTION_LABEL}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6 }}
         >
           {t("label")}
-        </motion.span>
+        </motion.p>
         <motion.h2
-          className="mt-3 text-3xl sm:text-4xl font-bold text-navy tracking-tighter"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.1}
+          className={SECTION_TITLE}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.08 }}
         >
           {t("title")}
         </motion.h2>
@@ -175,8 +141,8 @@ function Capacity() {
           className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={stagger}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          whileInView="show"
+          viewport={viewportOnce}
         >
           {metrics.map((m) => (
             <motion.div
@@ -184,15 +150,11 @@ function Capacity() {
               className="border-l-4 border-engineering pl-6 py-4"
               variants={cardFade}
             >
-              <p className="text-3xl sm:text-4xl font-bold text-navy">
-                {t(`${m.key}.value`)}
-              </p>
-              <p className="mt-1 text-sm font-medium text-gray-900">
-                {t(`${m.key}.label`)}
-              </p>
-              <p className="mt-0.5 text-sm text-gray-500">
-                {t(`${m.key}.desc`)}
-              </p>
+              <AnimatedStat
+                value={t(`${m.key}.value`)}
+                label={t(`${m.key}.label`)}
+                desc={t(`${m.key}.desc`)}
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -216,33 +178,30 @@ function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div>
-            <motion.span
-              className="text-xs uppercase tracking-widest text-engineering font-medium"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={0}
+            <motion.p
+              className={SECTION_LABEL}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewportOnce}
+              transition={{ duration: 0.6 }}
             >
               {t("label")}
-            </motion.span>
+            </motion.p>
             <motion.h2
-              className="mt-3 text-3xl sm:text-4xl font-bold text-navy tracking-tighter"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={0.1}
+              className={SECTION_TITLE}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewportOnce}
+              transition={{ duration: 0.6, delay: 0.08 }}
             >
               {t("title")}
             </motion.h2>
             <motion.p
               className="mt-6 text-gray-600 leading-relaxed"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={0.2}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewportOnce}
+              transition={{ duration: 0.6, delay: 0.15 }}
             >
               {t("description")}
             </motion.p>
@@ -252,14 +211,15 @@ function About() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6"
             variants={stagger}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            whileInView="show"
+            viewport={viewportOnce}
           >
             {stats.map((s) => (
               <motion.div
                 key={s.key}
-                className="rounded-2xl border border-gray-100 shadow-sm bg-white p-6 text-center"
+                className="rounded-2xl border border-gray-100 shadow-sm bg-white p-6 text-center card-accent hover:border-engineering"
                 variants={cardFade}
+                whileHover={cardHover}
               >
                 <p className="text-2xl sm:text-3xl font-bold text-navy">
                   {t(`stats.${s.key}`)}
@@ -276,92 +236,36 @@ function About() {
   );
 }
 
-/* ─── SERVICE ICONS ─── */
-function DrillIcon() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <path
-        d="M20 4v24M14 12l6-8 6 8M16 28h8v4a4 4 0 01-8 0v-4z"
-        stroke="#24B5C6"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-function PipeIcon() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <path
-        d="M4 16h12v8H4zM24 16h12v8H24zM16 18h8M16 22h8"
-        stroke="#24B5C6"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-function DistributionIcon() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <path
-        d="M20 6v8M12 14h16v6H12zM12 20l-4 14M28 20l4 14M20 20v14"
-        stroke="#24B5C6"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-function TowerIcon() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <path
-        d="M14 8h12v8H14zM16 16v18M24 16v18M12 34h16M20 8V4"
-        stroke="#24B5C6"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 /* ─── SERVICES OVERVIEW ─── */
 function ServicesOverview() {
   const t = useTranslations("servicesOverview");
   const locale = useLocale();
 
   const services = [
-    { key: "drilling", Icon: DrillIcon },
-    { key: "pipelines", Icon: PipeIcon },
-    { key: "distribution", Icon: DistributionIcon },
-    { key: "towers", Icon: TowerIcon },
+    { key: "drilling", Icon: WellDrillingIcon },
+    { key: "pipelines", Icon: PipelineIcon },
+    { key: "distribution", Icon: WaterDistributionIcon },
+    { key: "towers", Icon: WaterTowerIcon },
   ] as const;
 
   return (
     <section className="py-16 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.span
-          className="text-xs uppercase tracking-widest text-engineering font-medium"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
+        <motion.p
+          className={SECTION_LABEL}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6 }}
         >
           {t("label")}
-        </motion.span>
+        </motion.p>
         <motion.h2
-          className="mt-3 text-3xl sm:text-4xl font-bold text-navy tracking-tighter"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.1}
+          className={SECTION_TITLE}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.08 }}
         >
           {t("title")}
         </motion.h2>
@@ -370,16 +274,17 @@ function ServicesOverview() {
           className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6"
           variants={stagger}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          whileInView="show"
+          viewport={viewportOnce}
         >
           {services.map((s) => (
             <motion.div
               key={s.key}
-              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-8"
+              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-8 card-accent hover:border-engineering"
               variants={cardFade}
+              whileHover={cardHover}
             >
-              <s.Icon />
+              <s.Icon size={40} color="#0B2B43" />
               <h3 className="mt-4 text-lg font-bold text-navy">
                 {t(`items.${s.key}.title`)}
               </h3>
@@ -427,35 +332,31 @@ function Clients() {
   return (
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.span
-          className="text-xs uppercase tracking-widest text-engineering font-medium"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
+        <motion.p
+          className={SECTION_LABEL}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6 }}
         >
           {t("label")}
-        </motion.span>
+        </motion.p>
         <motion.h2
-          className="mt-3 text-3xl sm:text-4xl font-bold text-navy tracking-tighter"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.1}
+          className={SECTION_TITLE}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.08 }}
         >
           {t("title")}
         </motion.h2>
 
-        {/* Domestic */}
         <motion.div
           className="mt-12"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.2}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.15 }}
         >
           <p className="text-xs uppercase tracking-widest text-gray-400 font-medium mb-4">
             {t("domesticLabel")}
@@ -472,14 +373,12 @@ function Clients() {
           </div>
         </motion.div>
 
-        {/* International */}
         <motion.div
           className="mt-8"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.3}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="text-xs uppercase tracking-widest text-gray-400 font-medium mb-4">
             {t("internationalLabel")}
@@ -504,7 +403,11 @@ function Clients() {
 function Certifications() {
   const t = useTranslations("certifications");
 
-  const certs = ["iso9001", "iso14001", "iso45001"] as const;
+  const certs = [
+    { key: "iso9001", standard: "9001" as const, year: "2015" },
+    { key: "iso14001", standard: "14001" as const, year: "2019" },
+    { key: "iso45001", standard: "45001" as const, year: "2020" },
+  ];
 
   return (
     <section className="py-12 bg-gray-50">
@@ -513,37 +416,21 @@ function Certifications() {
           className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12"
           variants={stagger}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          whileInView="show"
+          viewport={viewportOnce}
         >
           {certs.map((cert) => (
             <motion.div
-              key={cert}
+              key={cert.key}
               className="flex flex-col items-center text-center"
               variants={cardFade}
+              whileHover={cardHover}
             >
-              <div className="w-20 h-20 rounded-full border-2 border-navy flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path
-                    d="M12 16l3 3 5-6M16 4l2.5 1.5L21 4l1 2.5L24.5 8l-1 2.5L25 13l-2.5 1L21 16.5l-2.5-1L16 17l-2.5-1.5L11 16.5l-1-2.5L7.5 13l1-2.5L7 8l2.5-1.5L11 4l2.5 1.5z"
-                    stroke="#0B2B43"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M10 22l-2 6 4-2 4 2-2-6M22 22l2 6-4-2-4 2 2-6"
-                    stroke="#0B2B43"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              <IsoBadge standard={cert.standard} year={cert.year} className="w-24 h-24" />
               <p className="mt-3 text-sm font-bold text-navy">
-                {t(`${cert}.title`)}
+                {t(`${cert.key}.title`)}
               </p>
-              <p className="text-xs text-gray-500">{t(`${cert}.desc`)}</p>
+              <p className="text-xs text-gray-500">{t(`${cert.key}.desc`)}</p>
               <p className="mt-1 text-[10px] text-gray-400">{t("issuer")}</p>
             </motion.div>
           ))}
@@ -566,23 +453,21 @@ function FeaturedProjects() {
   return (
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.span
-          className="text-xs uppercase tracking-widest text-engineering font-medium"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
+        <motion.p
+          className={SECTION_LABEL}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6 }}
         >
           {t("label")}
-        </motion.span>
+        </motion.p>
         <motion.h2
-          className="mt-3 text-3xl sm:text-4xl font-bold text-navy tracking-tighter"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.1}
+          className={SECTION_TITLE}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.08 }}
         >
           {t("title")}
         </motion.h2>
@@ -591,14 +476,15 @@ function FeaturedProjects() {
           className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={stagger}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          whileInView="show"
+          viewport={viewportOnce}
         >
           {projects.map((p) => (
             <motion.div
               key={p.key}
-              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-6"
+              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-6 card-accent hover:border-engineering"
               variants={cardFade}
+              whileHover={cardHover}
             >
               <span
                 className={`inline-block text-xs font-medium px-3 py-1 rounded-full ${
@@ -645,45 +531,40 @@ function HomeMap() {
   return (
     <section className="py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.span
-          className="text-xs uppercase tracking-widest text-engineering font-medium"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
+        <motion.p
+          className={SECTION_LABEL}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6 }}
         >
           {t("label")}
-        </motion.span>
+        </motion.p>
         <motion.h2
-          className="mt-3 text-3xl sm:text-4xl font-bold text-navy tracking-tighter"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.1}
+          className={SECTION_TITLE}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.08 }}
         >
           {t("title")}
         </motion.h2>
         <motion.p
           className="mt-2 text-gray-600"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.15}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.12 }}
         >
           {t("subtitle")}
         </motion.p>
 
-        {/* Stat pills */}
         <motion.div
           className="mt-6 flex flex-wrap gap-2"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.2}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.18 }}
         >
           {stats.map((key) => (
             <span
@@ -695,26 +576,32 @@ function HomeMap() {
           ))}
         </motion.div>
 
-        {/* Map */}
+        <motion.div
+          className="mt-8 rounded-2xl border border-gray-100 shadow-sm bg-white p-6"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.22 }}
+        >
+          <UzbekistanOutline className="w-full h-auto" />
+        </motion.div>
+
         <motion.div
           className="mt-8 overflow-hidden rounded-2xl border border-gray-100 shadow-sm min-h-[300px] bg-gray-50"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.25}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.28 }}
         >
           <ProjectMap mode="embed" />
         </motion.div>
 
-        {/* Full map link */}
         <motion.div
           className="mt-5 text-center"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.3}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.32 }}
         >
           <Link
             href={`/${locale}/projects/map`}
@@ -734,34 +621,31 @@ function CtaSection() {
   const locale = useLocale();
 
   return (
-    <section className="bg-navy py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="bg-navy py-16 lg:py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <motion.h2
           className="text-3xl sm:text-4xl font-bold text-white tracking-tighter"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6 }}
         >
           {t("title")}
         </motion.h2>
         <motion.p
           className="mt-4 text-gray-300 text-lg"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.1}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.08 }}
         >
           {t("subtitle")}
         </motion.p>
         <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0.2}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6, delay: 0.16 }}
         >
           <Link
             href={`/${locale}/contact`}
@@ -787,6 +671,7 @@ export default function HomePage() {
       <Certifications />
       <FeaturedProjects />
       <HomeMap />
+      <SeoKeywords />
       <CtaSection />
     </>
   );

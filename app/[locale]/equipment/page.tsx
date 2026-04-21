@@ -119,8 +119,9 @@ export default function EquipmentPage() {
                 {items.map((item) => (
                   <motion.div
                     key={item.name}
-                    className="group relative flex flex-col rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300"
+                    className="group relative flex flex-col card-accent rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-engineering"
                     variants={cardFade}
+                    whileHover={{ y: -6, transition: { duration: 0.2 } }}
                   >
                     {/* Equipment image — white background, centered, object-contain */}
                     <div className="relative aspect-[4/3] w-full bg-white rounded-t-2xl overflow-hidden flex items-center justify-center p-6">

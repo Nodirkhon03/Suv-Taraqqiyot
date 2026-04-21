@@ -166,10 +166,14 @@ function ProjectCard({
   locale: string;
 }) {
   return (
-    <motion.div variants={cardVariant} className="h-full">
+    <motion.div
+      variants={cardVariant}
+      className="h-full"
+      whileHover={{ y: -6, transition: { duration: 0.2 } }}
+    >
       <Link
         href={`/${locale}/projects/${project.slug}`}
-        className="group h-full rounded-2xl border border-gray-100 shadow-sm bg-white p-6 flex flex-col transition hover:shadow-md hover:border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2"
+        className="group h-full card-accent rounded-2xl border border-gray-100 shadow-sm bg-white p-6 flex flex-col hover:shadow-md hover:border-engineering focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2"
       >
       {/* Badges row */}
       <div className="flex items-center gap-2 flex-wrap">

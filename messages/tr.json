@@ -261,6 +261,24 @@
     "success": "Mesaj başarıyla gönderildi!",
     "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
   },
+  "seoFaq": {
+    "label": "Sıkça Sorulan Sorular",
+    "title": "Su Kuyusu Sondajı ve Su Temini — Sık Sorulan Sorular",
+    "items": {
+      "q1": {
+        "q": "Taşkent ve Özbekistan'ın diğer bölgelerinde artezyen kuyu sondajı yapıyor musunuz?",
+        "a": "Evet. SUV-TARAQQIYOT LLC, Taşkent, Namangan, Semerkant, Kaşkaderya, Sırderya ve Fergana Vadisi dahil Özbekistan'ın tüm bölgelerinde artezyen ve hidrojeolojik kuyu sondajı yapmaktadır. Sondaj derinliği 30 ile 1.200 metre arasındadır ve yılda yaklaşık 120 kuyu teslim edilmektedir."
+      },
+      "q2": {
+        "q": "Hangi çaplarda ve malzemelerde su boru hatları kuruyorsunuz?",
+        "a": "32 mm'den 1.200 mm'ye kadar çaplarda polietilen (HDPE) ve çelik boru kullanarak iletim ve dağıtım su boru hatları inşa ediyoruz. Yıllık kurulum kapasitesi 200 kilometreye kadar çıkmaktadır."
+      },
+      "q3": {
+        "q": "Dünya Bankası, EBRD, ADB ve OPEC Fonu tarafından finanse edilen projeleri yürütüyor musunuz?",
+        "a": "Evet. SUV-TARAQQIYOT, Dünya Bankası (IBRD/IDA), Avrupa İmar ve Kalkınma Bankası (EBRD), Asya Kalkınma Bankası (ADB), OPEC Uluslararası Kalkınma Fonu ve Suudi Kalkınma Fonu tarafından finanse edilen su altyapı projelerini FIDIC sözleşme şartları kapsamında tamamlamıştır."
+      }
+    }
+  },
   "aboutPage": {
     "hero": {
       "title": "2001'den Bu Yana Mühendislik Mükemmelliği",

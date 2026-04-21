@@ -3,65 +3,55 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import {
+  cardFade,
+  cardHover,
+  stagger,
+  viewportOnce,
+} from "@/lib/animations";
+import DrillingRig from "@/components/illustrations/DrillingRig";
+import PipelineSection from "@/components/illustrations/PipelineSection";
+import WaterTower from "@/components/illustrations/WaterTower";
+import {
+  WellDrillingIcon,
+  PipelineIcon,
+  WaterDistributionIcon,
+  WaterTowerIcon,
+  CivilEngineeringIcon,
+  SitePreparationIcon,
+} from "@/components/icons/ServiceIcons";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] as const },
-  }),
-};
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardFade = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-// Stats are technical specifications displayed as-is in all languages
 const services = [
   {
     key: "drilling",
     stats: ["30–1200m depth", "~120 wells/year", "6 drilling rigs"],
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M20 4v24M14 12l6-8 6 8M16 28h8v4a4 4 0 01-8 0v-4z" stroke="#24B5C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    Icon: WellDrillingIcon,
+    Illustration: DrillingRig,
   },
   {
     key: "pipelines",
     stats: ["Up to 200 km/year", "Dia 32–1200mm", "HDPE & steel"],
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M4 16h12v8H4zM24 16h12v8H24zM16 18h8M16 22h8" stroke="#24B5C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    Icon: PipelineIcon,
+    Illustration: PipelineSection,
   },
   {
     key: "distribution",
     stats: ["300–30,000 m³/day", "Up to 50 units/year"],
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M20 6v8M12 14h16v6H12zM12 20l-4 14M28 20l4 14M20 20v14" stroke="#24B5C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    Icon: WaterDistributionIcon,
+    Illustration: null,
   },
   {
     key: "towers",
     stats: ["10–75 m³ capacity", "Up to 50 towers/year", "5,000+ m³ intake"],
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M14 8h12v8H14zM16 16v18M24 16v18M12 34h16M20 8V4" stroke="#24B5C6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    Icon: WaterTowerIcon,
+    Illustration: WaterTower,
   },
-];
+] as const;
+
+const extraCapabilities = [
+  { key: "civil", Icon: CivilEngineeringIcon },
+  { key: "site", Icon: SitePreparationIcon },
+] as const;
 
 export default function ServicesPage() {
   const t = useTranslations("servicesOverview");
@@ -70,21 +60,19 @@ export default function ServicesPage() {
   return (
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.span
+        <motion.p
           className="text-xs uppercase tracking-widest text-engineering font-medium"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
           {t("label")}
-        </motion.span>
+        </motion.p>
         <motion.h1
           className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy tracking-tighter"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.1}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.08 }}
         >
           {t("title")}
         </motion.h1>
@@ -93,31 +81,72 @@ export default function ServicesPage() {
           className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8"
           variants={stagger}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          whileInView="show"
+          viewport={viewportOnce}
         >
           {services.map((s) => (
             <motion.div
               key={s.key}
-              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-8"
+              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-8 card-accent hover:border-engineering overflow-hidden"
               variants={cardFade}
+              whileHover={cardHover}
             >
-              {s.icon}
-              <h2 className="mt-4 text-xl font-bold text-navy">
-                {t(`items.${s.key}.title`)}
-              </h2>
-              <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                {t(`items.${s.key}.desc`)}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {s.stats.map((stat) => (
-                  <span
-                    key={stat}
-                    className="text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-700"
-                  >
-                    {stat}
-                  </span>
-                ))}
+              <div className="flex items-start justify-between gap-6">
+                <div className="flex-1 min-w-0">
+                  <s.Icon size={40} color="#0B2B43" />
+                  <h2 className="mt-4 text-xl font-bold text-navy">
+                    {t(`items.${s.key}.title`)}
+                  </h2>
+                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                    {t(`items.${s.key}.desc`)}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {s.stats.map((stat) => (
+                      <span
+                        key={stat}
+                        className="text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-700"
+                      >
+                        {stat}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {s.Illustration && (
+                  <div className="hidden md:block w-32 shrink-0 opacity-90">
+                    <s.Illustration className="w-full h-auto" />
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Extra capabilities strip */}
+        <motion.div
+          className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+        >
+          {extraCapabilities.map((c) => (
+            <motion.div
+              key={c.key}
+              variants={cardFade}
+              className="rounded-2xl border border-gray-100 bg-gray-50 p-6 flex items-center gap-4"
+            >
+              <c.Icon size={36} color="#2C86C7" />
+              <div>
+                <p className="font-bold text-navy">
+                  {c.key === "civil"
+                    ? "Civil engineering & structural works"
+                    : "Site preparation & earthworks"}
+                </p>
+                <p className="text-sm text-gray-600">
+                  {c.key === "civil"
+                    ? "Concrete structures, pump houses, intake chambers."
+                    : "Excavation, access roads, drilling pads."}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -125,11 +154,10 @@ export default function ServicesPage() {
 
         <motion.div
           className="mt-16 text-center"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 0.6 }}
         >
           <Link
             href={`/${locale}/contact`}
