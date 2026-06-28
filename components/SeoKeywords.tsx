@@ -72,8 +72,25 @@ export default function SeoKeywords() {
   const toggle = (idx: number) =>
     setOpenIndex((current) => (current === idx ? null : idx));
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: ITEMS.map((key) => ({
+      "@type": "Question",
+      name: t(`items.${key}.q`),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: t(`items.${key}.a`),
+      },
+    })),
+  };
+
   return (
     <section className="py-16 lg:py-24 bg-white border-t border-gray-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: 24 }}

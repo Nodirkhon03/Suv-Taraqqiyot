@@ -8,6 +8,7 @@
     "contact": "Contact"
   },
   "hero": {
+    "eyebrow": "Water Infrastructure · Hydrogeological Drilling · Civil Engineering",
     "title": "Engineering Water Infrastructure for Central Asia",
     "subtitle": "One of Uzbekistan's leaders in hydrogeological well drilling and water supply system construction since 2001",
     "cta": "View Our Projects",
@@ -72,7 +73,18 @@
         "desc": "Engineering and construction of water towers (10–75 m³ capacity, up to 50 per year) and water intake stations with over 5,000 m³ total volume capacity."
       }
     },
-    "learnMore": "Learn More →"
+    "learnMore": "Learn More →",
+    "extra": {
+      "civil": {
+        "title": "Civil engineering & structural works",
+        "desc": "Concrete structures, pump houses, intake chambers."
+      },
+      "site": {
+        "title": "Site preparation & earthworks",
+        "desc": "Excavation, access roads, drilling pads."
+      }
+    },
+    "ctaButton": "Discuss Your Project"
   },
   "clients": {
     "label": "Trusted By",
@@ -214,7 +226,8 @@
     "mapTitle": "Project Locations",
     "geographicFootprint": "Our Geographic Footprint",
     "openFullMap": "Open full interactive map",
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "mapSubtitle": "Explore all 20 projects on the map. Filter by type or status and click a marker for full details."
   },
   "projectDetailPage": {
     "backToProjects": "Back to projects",
@@ -292,26 +305,68 @@
       "p3": "Today, SUV-TARAQQIYOT holds contracts financed by the World Bank, the European Bank for Reconstruction and Development, the Asian Development Bank, the OPEC Fund for International Development, and the Saudi Fund for Development. The company operates under ISO 9001:2015, ISO 14001:2019, and ISO 45001:2020 certification, issued by AVVISO CERT LLC, Tashkent."
     },
     "figures": {
-      "years": { "value": "25", "label": "Years in Operation" },
-      "depth": { "value": "1,200 m", "label": "Max Drilling Depth" },
-      "value": { "value": "$57M+", "label": "Projects Delivered" },
-      "iso": { "value": "3 ISO", "label": "Quality Certifications" }
+      "years": {
+        "value": "25",
+        "label": "Years in Operation"
+      },
+      "depth": {
+        "value": "1,200 m",
+        "label": "Max Drilling Depth"
+      },
+      "value": {
+        "value": "$57M+",
+        "label": "Projects Delivered"
+      },
+      "iso": {
+        "value": "3 ISO",
+        "label": "Quality Certifications"
+      }
     },
     "team": {
       "label": "OUR TEAM",
       "title": "The Team Behind Every Project",
       "subtitle": "Experienced engineers and project managers with FIDIC, World Bank, and KfW project credentials.",
       "members": {
-        "projectManager": { "role": "Contractor's Representative / Project Manager", "credentials": "FIDIC Red Book contract experience" },
-        "siteManager": { "role": "General Site Manager", "credentials": "20+ years field management" },
-        "hseManager": { "role": "Health and Safety Manager", "credentials": "ISO 45001 certified" },
-        "envManager": { "role": "Environmental Manager", "credentials": "ISO 14001 certified" },
-        "civilEng": { "role": "Civil Engineer", "credentials": "Pipeline and structural design" },
-        "electricalEng": { "role": "Electrical Engineer", "credentials": "Pumping station systems" },
-        "instrumentEng": { "role": "Instrument Engineer", "credentials": "SCADA and telemetry" },
-        "mechanicalEng": { "role": "Mechanical Engineer", "credentials": "Drilling rig maintenance" },
-        "waterSpecialist": { "role": "Water Supply Specialist", "credentials": "Hydraulic modelling" },
-        "surveyor": { "role": "Surveyor", "credentials": "GPS/GNSS and topographic surveys" }
+        "projectManager": {
+          "role": "Contractor's Representative / Project Manager",
+          "credentials": "FIDIC Red Book contract experience"
+        },
+        "siteManager": {
+          "role": "General Site Manager",
+          "credentials": "20+ years field management"
+        },
+        "hseManager": {
+          "role": "Health and Safety Manager",
+          "credentials": "ISO 45001 certified"
+        },
+        "envManager": {
+          "role": "Environmental Manager",
+          "credentials": "ISO 14001 certified"
+        },
+        "civilEng": {
+          "role": "Civil Engineer",
+          "credentials": "Pipeline and structural design"
+        },
+        "electricalEng": {
+          "role": "Electrical Engineer",
+          "credentials": "Pumping station systems"
+        },
+        "instrumentEng": {
+          "role": "Instrument Engineer",
+          "credentials": "SCADA and telemetry"
+        },
+        "mechanicalEng": {
+          "role": "Mechanical Engineer",
+          "credentials": "Drilling rig maintenance"
+        },
+        "waterSpecialist": {
+          "role": "Water Supply Specialist",
+          "credentials": "Hydraulic modelling"
+        },
+        "surveyor": {
+          "role": "Surveyor",
+          "credentials": "GPS/GNSS and topographic surveys"
+        }
       }
     },
     "certifications": {
@@ -330,14 +385,38 @@
       "label": "LEGAL INFORMATION",
       "title": "Company Registration",
       "rows": {
-        "fullName": { "label": "Full Name", "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat" },
-        "sti": { "label": "STI (Tax ID)", "value": "203 681 239" },
-        "regNumber": { "label": "Reg. Number", "value": "09-000344" },
-        "regDate": { "label": "Reg. Date", "value": "21 August 2001" },
-        "registrar": { "label": "Registrar", "value": "Mirzo-Ulugbek District State Services Centre, Tashkent" },
-        "address": { "label": "Address", "value": "18 Khusan Shams Street, Mirzo-Ulugbek district, Tashkent, Uzbekistan" },
-        "phone": { "label": "Phone", "value": "+998 55 055 37 37" },
-        "contactManager": { "label": "Contact Manager", "value": "Usmonov Bekzod" }
+        "fullName": {
+          "label": "Full Name",
+          "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat"
+        },
+        "sti": {
+          "label": "STI (Tax ID)",
+          "value": "203 681 239"
+        },
+        "regNumber": {
+          "label": "Reg. Number",
+          "value": "09-000344"
+        },
+        "regDate": {
+          "label": "Reg. Date",
+          "value": "21 August 2001"
+        },
+        "registrar": {
+          "label": "Registrar",
+          "value": "Mirzo-Ulugbek District State Services Centre, Tashkent"
+        },
+        "address": {
+          "label": "Address",
+          "value": "18 Khusan Shams Street, Mirzo-Ulugbek district, Tashkent, Uzbekistan"
+        },
+        "phone": {
+          "label": "Phone",
+          "value": "+998 55 055 37 37"
+        },
+        "contactManager": {
+          "label": "Contact Manager",
+          "value": "Usmonov Bekzod"
+        }
       }
     },
     "recognition": {
@@ -357,6 +436,25 @@
         "authority": "Yunusobod District Administration",
         "desc": "For improving living standards and welfare of residents"
       }
+    }
+  },
+  "projectMap": {
+    "showing": "Showing {count} of {total} projects",
+    "totalValue": "Total value",
+    "filterLabel": "Project Filter",
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "fundedBy": "Funded by",
+    "viewDetails": "View details",
+    "category": {
+      "all": "All",
+      "drilling": "Drilling",
+      "infrastructure": "Infrastructure"
+    },
+    "statusFilter": {
+      "all": "All",
+      "completed": "Completed",
+      "ongoing": "Ongoing"
     }
   }
 }

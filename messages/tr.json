@@ -8,6 +8,7 @@
     "contact": "İletişim"
   },
   "hero": {
+    "eyebrow": "Su Altyapısı · Hidrojeolojik Sondaj · İnşaat Mühendisliği",
     "title": "Orta Asya İçin Su Altyapısı Mühendisliği",
     "subtitle": "2001 yılından bu yana Özbekistan'ın hidrojeolojik kuyu sondajı ve su temini sistemi inşaatında liderlerinden biri",
     "cta": "Projelerimiz",
@@ -72,7 +73,18 @@
         "desc": "Su kulelerinin (10–75 m³, yılda 50'ye kadar) ve toplam 5.000 m³'ün üzerinde hacimli su alma istasyonlarının tasarımı ve inşaatı."
       }
     },
-    "learnMore": "Daha Fazla →"
+    "learnMore": "Daha Fazla →",
+    "extra": {
+      "civil": {
+        "title": "İnşaat ve yapısal işler",
+        "desc": "Beton yapılar, pompa istasyonları, su alma odaları."
+      },
+      "site": {
+        "title": "Saha hazırlığı ve kazı işleri",
+        "desc": "Kazı, erişim yolları, sondaj platformları."
+      }
+    },
+    "ctaButton": "Projenizi Görüşelim"
   },
   "clients": {
     "label": "Bize Güvenenler",
@@ -214,7 +226,8 @@
     "mapTitle": "Proje Konumları",
     "geographicFootprint": "Coğrafi Kapsamımız",
     "openFullMap": "Tam interaktif haritayı aç",
-    "viewDetails": "Detaylar"
+    "viewDetails": "Detaylar",
+    "mapSubtitle": "20 projenin tamamını haritada keşfedin. Türe veya duruma göre filtreleyin ve ayrıntılar için bir işaretçiye tıklayın."
   },
   "projectDetailPage": {
     "backToProjects": "Projelere dön",
@@ -292,26 +305,68 @@
       "p3": "Bugün SUV-TARAQQIYOT, Dünya Bankası, Avrupa İmar ve Kalkınma Bankası, Asya Kalkınma Bankası, Uluslararası Kalkınma için OPEC Fonu ve Suudi Kalkınma Fonu tarafından finanse edilen sözleşmeleri yürütmektedir. Şirket, AVVISO CERT LLC, Taşkent tarafından verilen ISO 9001:2015, ISO 14001:2019 ve ISO 45001:2020 sertifikaları altında faaliyet göstermektedir."
     },
     "figures": {
-      "years": { "value": "25", "label": "Yıllık Faaliyet" },
-      "depth": { "value": "1.200 m", "label": "Maks. Sondaj Derinliği" },
-      "value": { "value": "$57M+", "label": "Teslim Edilen Projeler" },
-      "iso": { "value": "3 ISO", "label": "Kalite Sertifikaları" }
+      "years": {
+        "value": "25",
+        "label": "Yıllık Faaliyet"
+      },
+      "depth": {
+        "value": "1.200 m",
+        "label": "Maks. Sondaj Derinliği"
+      },
+      "value": {
+        "value": "$57M+",
+        "label": "Teslim Edilen Projeler"
+      },
+      "iso": {
+        "value": "3 ISO",
+        "label": "Kalite Sertifikaları"
+      }
     },
     "team": {
       "label": "EKİBİMİZ",
       "title": "Her Projenin Arkasındaki Ekip",
       "subtitle": "FIDIC, Dünya Bankası ve KfW proje deneyimine sahip mühendisler ve proje yöneticileri.",
       "members": {
-        "projectManager": { "role": "Müteahhit Temsilcisi / Proje Müdürü", "credentials": "FIDIC Red Book sözleşme deneyimi" },
-        "siteManager": { "role": "Genel Saha Müdürü", "credentials": "20+ yıl saha yönetimi" },
-        "hseManager": { "role": "İş Sağlığı ve Güvenliği Müdürü", "credentials": "ISO 45001 sertifikalı" },
-        "envManager": { "role": "Çevre Müdürü", "credentials": "ISO 14001 sertifikalı" },
-        "civilEng": { "role": "İnşaat Mühendisi", "credentials": "Boru hattı ve yapısal tasarım" },
-        "electricalEng": { "role": "Elektrik Mühendisi", "credentials": "Pompa istasyonu sistemleri" },
-        "instrumentEng": { "role": "Enstrümantasyon Mühendisi", "credentials": "SCADA ve telemetri" },
-        "mechanicalEng": { "role": "Makine Mühendisi", "credentials": "Sondaj kulesi bakımı" },
-        "waterSpecialist": { "role": "Su Temini Uzmanı", "credentials": "Hidrolik modelleme" },
-        "surveyor": { "role": "Harita Mühendisi", "credentials": "GPS/GNSS ve topografik ölçüm" }
+        "projectManager": {
+          "role": "Müteahhit Temsilcisi / Proje Müdürü",
+          "credentials": "FIDIC Red Book sözleşme deneyimi"
+        },
+        "siteManager": {
+          "role": "Genel Saha Müdürü",
+          "credentials": "20+ yıl saha yönetimi"
+        },
+        "hseManager": {
+          "role": "İş Sağlığı ve Güvenliği Müdürü",
+          "credentials": "ISO 45001 sertifikalı"
+        },
+        "envManager": {
+          "role": "Çevre Müdürü",
+          "credentials": "ISO 14001 sertifikalı"
+        },
+        "civilEng": {
+          "role": "İnşaat Mühendisi",
+          "credentials": "Boru hattı ve yapısal tasarım"
+        },
+        "electricalEng": {
+          "role": "Elektrik Mühendisi",
+          "credentials": "Pompa istasyonu sistemleri"
+        },
+        "instrumentEng": {
+          "role": "Enstrümantasyon Mühendisi",
+          "credentials": "SCADA ve telemetri"
+        },
+        "mechanicalEng": {
+          "role": "Makine Mühendisi",
+          "credentials": "Sondaj kulesi bakımı"
+        },
+        "waterSpecialist": {
+          "role": "Su Temini Uzmanı",
+          "credentials": "Hidrolik modelleme"
+        },
+        "surveyor": {
+          "role": "Harita Mühendisi",
+          "credentials": "GPS/GNSS ve topografik ölçüm"
+        }
       }
     },
     "certifications": {
@@ -330,14 +385,38 @@
       "label": "HUKUKİ BİLGİLER",
       "title": "Şirket Tescili",
       "rows": {
-        "fullName": { "label": "Tam Adı", "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat" },
-        "sti": { "label": "Vergi No", "value": "203 681 239" },
-        "regNumber": { "label": "Tescil No", "value": "09-000344" },
-        "regDate": { "label": "Tescil Tarihi", "value": "21 Ağustos 2001" },
-        "registrar": { "label": "Tescil Kurumu", "value": "Mirzo-Ulugbek İlçesi Devlet Hizmetleri Merkezi, Taşkent" },
-        "address": { "label": "Adres", "value": "18 Husan Şams Caddesi, Mirzo-Ulugbek ilçesi, Taşkent, Özbekistan" },
-        "phone": { "label": "Telefon", "value": "+998 55 055 37 37" },
-        "contactManager": { "label": "İletişim Yetkilisi", "value": "Usmonov Bekzod" }
+        "fullName": {
+          "label": "Tam Adı",
+          "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat"
+        },
+        "sti": {
+          "label": "Vergi No",
+          "value": "203 681 239"
+        },
+        "regNumber": {
+          "label": "Tescil No",
+          "value": "09-000344"
+        },
+        "regDate": {
+          "label": "Tescil Tarihi",
+          "value": "21 Ağustos 2001"
+        },
+        "registrar": {
+          "label": "Tescil Kurumu",
+          "value": "Mirzo-Ulugbek İlçesi Devlet Hizmetleri Merkezi, Taşkent"
+        },
+        "address": {
+          "label": "Adres",
+          "value": "18 Husan Şams Caddesi, Mirzo-Ulugbek ilçesi, Taşkent, Özbekistan"
+        },
+        "phone": {
+          "label": "Telefon",
+          "value": "+998 55 055 37 37"
+        },
+        "contactManager": {
+          "label": "İletişim Yetkilisi",
+          "value": "Usmonov Bekzod"
+        }
       }
     },
     "recognition": {
@@ -357,6 +436,25 @@
         "authority": "Yunusobod İlçe Yönetimi",
         "desc": "Sakinlerin yaşam standartlarını ve refah düzeyini yükseltmek için"
       }
+    }
+  },
+  "projectMap": {
+    "showing": "{total} projeden {count} tanesi gösteriliyor",
+    "totalValue": "Toplam değer",
+    "filterLabel": "Proje Filtresi",
+    "completed": "Tamamlandı",
+    "ongoing": "Devam ediyor",
+    "fundedBy": "Finanse eden",
+    "viewDetails": "Ayrıntılar",
+    "category": {
+      "all": "Tümü",
+      "drilling": "Sondaj",
+      "infrastructure": "Altyapı"
+    },
+    "statusFilter": {
+      "all": "Tümü",
+      "completed": "Tamamlandı",
+      "ongoing": "Devam ediyor"
     }
   }
 }

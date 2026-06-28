@@ -138,14 +138,10 @@ export default function ServicesPage() {
               <c.Icon size={36} color="#2C86C7" />
               <div>
                 <p className="font-bold text-navy">
-                  {c.key === "civil"
-                    ? "Civil engineering & structural works"
-                    : "Site preparation & earthworks"}
+                  {t(`extra.${c.key}.title`)}
                 </p>
                 <p className="text-sm text-gray-600">
-                  {c.key === "civil"
-                    ? "Concrete structures, pump houses, intake chambers."
-                    : "Excavation, access roads, drilling pads."}
+                  {t(`extra.${c.key}.desc`)}
                 </p>
               </div>
             </motion.div>
@@ -163,7 +159,7 @@ export default function ServicesPage() {
             href={`/${locale}/contact`}
             className="inline-block bg-navy text-white px-8 py-3.5 rounded-xl font-medium hover:bg-engineering transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2"
           >
-            {t("learnMore")}
+            {t("ctaButton")}
           </Link>
         </motion.div>
       </div>

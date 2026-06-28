@@ -8,7 +8,6 @@ const pages: { path: string; changeFrequency: MetadataRoute.Sitemap[number]["cha
   { path: "", changeFrequency: "weekly", priority: 1.0 },
   { path: "/services", changeFrequency: "weekly", priority: 0.9 },
   { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/projects/map", changeFrequency: "weekly", priority: 0.8 },
   { path: "/equipment", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.7 },

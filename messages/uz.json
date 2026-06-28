@@ -8,6 +8,7 @@
     "contact": "Aloqa"
   },
   "hero": {
+    "eyebrow": "Suv infratuzilmasi · Gidrogeologik burg'ulash · Fuqarolik qurilishi",
     "title": "Markaziy Osiyo uchun suv infratuzilmasini qurish va loyihalash",
     "subtitle": "2001 yildan buyon gidrogeologik quduq burg'ulash va suv ta'minoti tizimlarini qurish bo'yicha O'zbekiston yetakchilaridan biri",
     "cta": "Loyihalarimiz",
@@ -72,7 +73,18 @@
         "desc": "Suv minoralarini (10–75 m³, yiliga 50 tagacha) va umumiy hajmi 5 000 m³ dan ortiq suv olish stansiyalarini loyihalash va qurish."
       }
     },
-    "learnMore": "Batafsil →"
+    "learnMore": "Batafsil →",
+    "extra": {
+      "civil": {
+        "title": "Fuqarolik va konstruktiv ishlar",
+        "desc": "Beton inshootlar, nasos stansiyalari, suv qabul kameralari."
+      },
+      "site": {
+        "title": "Maydonni tayyorlash va yer ishlari",
+        "desc": "Qazish ishlari, kirish yo'llari, burg'ulash maydonchalari."
+      }
+    },
+    "ctaButton": "Loyihangizni muhokama qiling"
   },
   "clients": {
     "label": "Bizga ishonishadi",
@@ -214,7 +226,8 @@
     "mapTitle": "Loyihalar joylashuvi",
     "geographicFootprint": "Geografik qamrov",
     "openFullMap": "To'liq interaktiv xaritani ochish",
-    "viewDetails": "Batafsil"
+    "viewDetails": "Batafsil",
+    "mapSubtitle": "Barcha 20 ta loyihani xaritada ko'ring. Turi yoki holati bo'yicha filtrlang va tafsilotlar uchun belgini bosing."
   },
   "projectDetailPage": {
     "backToProjects": "Loyihalarga qaytish",
@@ -292,26 +305,68 @@
       "p3": "Bugungi kunda SUV-TARAQQIYOT Jahon banki, Yevropa tiklanish va taraqqiyot banki, Osiyo taraqqiyot banki, Xalqaro taraqqiyot uchun OPEK fondi va Saudiya taraqqiyot fondi tomonidan moliyalashtirilgan shartnomalarni amalga oshirmoqda. Kompaniya AVVISO CERT LLC, Toshkent tomonidan berilgan ISO 9001:2015, ISO 14001:2019 va ISO 45001:2020 sertifikatlari asosida faoliyat yuritadi."
     },
     "figures": {
-      "years": { "value": "25", "label": "Yillik faoliyat" },
-      "depth": { "value": "1 200 m", "label": "Maks. burg'ulash chuqurligi" },
-      "value": { "value": "$57M+", "label": "Amalga oshirilgan loyihalar" },
-      "iso": { "value": "3 ISO", "label": "Sifat sertifikatlari" }
+      "years": {
+        "value": "25",
+        "label": "Yillik faoliyat"
+      },
+      "depth": {
+        "value": "1 200 m",
+        "label": "Maks. burg'ulash chuqurligi"
+      },
+      "value": {
+        "value": "$57M+",
+        "label": "Amalga oshirilgan loyihalar"
+      },
+      "iso": {
+        "value": "3 ISO",
+        "label": "Sifat sertifikatlari"
+      }
     },
     "team": {
       "label": "JAMOAMIZ",
       "title": "Har bir loyiha ortidagi jamoa",
       "subtitle": "FIDIC, Jahon banki va KfW loyiha tajribasiga ega muhandislar va loyiha rahbarlari.",
       "members": {
-        "projectManager": { "role": "Pudratchi vakili / Loyiha rahbari", "credentials": "FIDIC Red Book shartnoma tajribasi" },
-        "siteManager": { "role": "Bosh obyekt menejeri", "credentials": "20+ yillik maydon boshqaruvi" },
-        "hseManager": { "role": "Mehnat xavfsizligi menejeri", "credentials": "ISO 45001 sertifikatlangan" },
-        "envManager": { "role": "Ekologiya menejeri", "credentials": "ISO 14001 sertifikatlangan" },
-        "civilEng": { "role": "Qurilish muhandisi", "credentials": "Quvur va konstruksiya loyihalash" },
-        "electricalEng": { "role": "Elektr muhandisi", "credentials": "Nasos stantsiya tizimlari" },
-        "instrumentEng": { "role": "Asbobsozlik muhandisi", "credentials": "SCADA va telemetriya" },
-        "mechanicalEng": { "role": "Mexanik muhandis", "credentials": "Burg'ulash qurilmalariga xizmat" },
-        "waterSpecialist": { "role": "Suv ta'minoti mutaxassisi", "credentials": "Gidravlik modellash" },
-        "surveyor": { "role": "Geodezist", "credentials": "GPS/GNSS va topografik o'lchov" }
+        "projectManager": {
+          "role": "Pudratchi vakili / Loyiha rahbari",
+          "credentials": "FIDIC Red Book shartnoma tajribasi"
+        },
+        "siteManager": {
+          "role": "Bosh obyekt menejeri",
+          "credentials": "20+ yillik maydon boshqaruvi"
+        },
+        "hseManager": {
+          "role": "Mehnat xavfsizligi menejeri",
+          "credentials": "ISO 45001 sertifikatlangan"
+        },
+        "envManager": {
+          "role": "Ekologiya menejeri",
+          "credentials": "ISO 14001 sertifikatlangan"
+        },
+        "civilEng": {
+          "role": "Qurilish muhandisi",
+          "credentials": "Quvur va konstruksiya loyihalash"
+        },
+        "electricalEng": {
+          "role": "Elektr muhandisi",
+          "credentials": "Nasos stantsiya tizimlari"
+        },
+        "instrumentEng": {
+          "role": "Asbobsozlik muhandisi",
+          "credentials": "SCADA va telemetriya"
+        },
+        "mechanicalEng": {
+          "role": "Mexanik muhandis",
+          "credentials": "Burg'ulash qurilmalariga xizmat"
+        },
+        "waterSpecialist": {
+          "role": "Suv ta'minoti mutaxassisi",
+          "credentials": "Gidravlik modellash"
+        },
+        "surveyor": {
+          "role": "Geodezist",
+          "credentials": "GPS/GNSS va topografik o'lchov"
+        }
       }
     },
     "certifications": {
@@ -330,14 +385,38 @@
       "label": "YURIDIK MA'LUMOTLAR",
       "title": "Kompaniya ro'yxatga olish",
       "rows": {
-        "fullName": { "label": "To'liq nomi", "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat" },
-        "sti": { "label": "STIR", "value": "203 681 239" },
-        "regNumber": { "label": "Ro'yxat raqami", "value": "09-000344" },
-        "regDate": { "label": "Ro'yxat sanasi", "value": "2001 yil 21 avgust" },
-        "registrar": { "label": "Ro'yxatga oluvchi", "value": "Mirzo Ulug'bek tumani Davlat xizmatlari markazi, Toshkent" },
-        "address": { "label": "Manzil", "value": "Xuson Shams ko'chasi 18, Mirzo Ulug'bek tumani, Toshkent, O'zbekiston" },
-        "phone": { "label": "Telefon", "value": "+998 55 055 37 37" },
-        "contactManager": { "label": "Aloqa menejeri", "value": "Usmonov Bekzod" }
+        "fullName": {
+          "label": "To'liq nomi",
+          "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat"
+        },
+        "sti": {
+          "label": "STIR",
+          "value": "203 681 239"
+        },
+        "regNumber": {
+          "label": "Ro'yxat raqami",
+          "value": "09-000344"
+        },
+        "regDate": {
+          "label": "Ro'yxat sanasi",
+          "value": "2001 yil 21 avgust"
+        },
+        "registrar": {
+          "label": "Ro'yxatga oluvchi",
+          "value": "Mirzo Ulug'bek tumani Davlat xizmatlari markazi, Toshkent"
+        },
+        "address": {
+          "label": "Manzil",
+          "value": "Xuson Shams ko'chasi 18, Mirzo Ulug'bek tumani, Toshkent, O'zbekiston"
+        },
+        "phone": {
+          "label": "Telefon",
+          "value": "+998 55 055 37 37"
+        },
+        "contactManager": {
+          "label": "Aloqa menejeri",
+          "value": "Usmonov Bekzod"
+        }
       }
     },
     "recognition": {
@@ -357,6 +436,25 @@
         "authority": "Yunusobod tuman hokimligi",
         "desc": "Aholining turmush darajasi va farovonligini oshirganligi uchun"
       }
+    }
+  },
+  "projectMap": {
+    "showing": "{total} tadan {count} ta loyiha ko'rsatilmoqda",
+    "totalValue": "Umumiy qiymat",
+    "filterLabel": "Loyiha filtri",
+    "completed": "Tugallangan",
+    "ongoing": "Davom etmoqda",
+    "fundedBy": "Moliyalashtirgan",
+    "viewDetails": "Batafsil",
+    "category": {
+      "all": "Barchasi",
+      "drilling": "Burg'ulash",
+      "infrastructure": "Infratuzilma"
+    },
+    "statusFilter": {
+      "all": "Barchasi",
+      "completed": "Tugallangan",
+      "ongoing": "Davom etmoqda"
     }
   }
 }
