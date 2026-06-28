@@ -15,7 +15,6 @@ import AnimatedStat from "@/components/AnimatedStat";
 import HeroBackground from "@/components/illustrations/HeroBackground";
 import WaterDrop from "@/components/illustrations/WaterDrop";
 import IsoBadge from "@/components/illustrations/IsoBadge";
-import UzbekistanOutline from "@/components/illustrations/UzbekistanOutline";
 import SeoKeywords from "@/components/SeoKeywords";
 import {
   WellDrillingIcon,
@@ -70,7 +69,7 @@ function Hero() {
           </div>
           <div>
             <motion.p variants={fadeUp} className="text-xs uppercase tracking-widest text-cyan font-medium">
-              Water Infrastructure · Hydrogeological Drilling · Civil Engineering
+              {t("eyebrow")}
             </motion.p>
             <motion.h1
               variants={fadeUp}
@@ -577,16 +576,6 @@ function HomeMap() {
         </motion.div>
 
         <motion.div
-          className="mt-8 rounded-2xl border border-gray-100 shadow-sm bg-white p-6"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
-          transition={{ duration: 0.6, delay: 0.22 }}
-        >
-          <UzbekistanOutline className="w-full h-auto" />
-        </motion.div>
-
-        <motion.div
           className="mt-8 overflow-hidden rounded-2xl border border-gray-100 shadow-sm min-h-[300px] bg-gray-50"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -604,7 +593,7 @@ function HomeMap() {
           transition={{ duration: 0.6, delay: 0.32 }}
         >
           <Link
-            href={`/${locale}/projects/map`}
+            href={`/${locale}/projects`}
             className="inline-flex items-center gap-1.5 text-sm font-medium px-6 py-2.5 rounded-xl border border-navy text-navy hover:bg-navy hover:text-white transition-colors"
           >
             {t("openFullMap")}

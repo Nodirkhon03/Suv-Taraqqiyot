@@ -6,6 +6,8 @@ import type { Metadata } from "next";
 import { projects, isInternationallyFunded } from "@/lib/projects";
 import { locales, type Locale } from "@/i18n";
 
+const SITE_URL = "https://suv-taraqqiyot.com";
+
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
   for (const locale of locales) {
@@ -47,6 +49,46 @@ export default async function ProjectDetailPage({
   if (!project) notFound();
 
   const t = await getTranslations("projectDetailPage");
+  const tNav = await getTranslations("nav");
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: tNav("home"),
+        item: `${SITE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: tNav("projects"),
+        item: `${SITE_URL}/${locale}/projects`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `${SITE_URL}/${locale}/projects/${slug}`,
+      },
+    ],
+  };
+
+  const projectSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description || project.title,
+    dateCreated: project.year,
+    creativeWorkStatus:
+      project.status === "ongoing" ? "Ongoing" : "Completed",
+    locationCreated: { "@type": "Place", name: project.location },
+    creator: { "@type": "Organization", name: "SUV-TARAQQIYOT LLC" },
+    ...(project.funder ? { funder: { "@type": "Organization", name: project.funder } } : {}),
+    url: `${SITE_URL}/${locale}/projects/${slug}`,
+  };
 
   const statusClasses =
     project.status === "completed"
@@ -79,6 +121,14 @@ export default async function ProjectDetailPage({
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
       {/* Header */}
       <section className="bg-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">

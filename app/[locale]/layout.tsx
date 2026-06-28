@@ -113,7 +113,8 @@ export async function generateMetadata({
     creator: "SUV-TARAQQIYOT LLC",
     publisher: "SUV-TARAQQIYOT LLC",
     icons: {
-      icon: "/images/logo-light.png",
+      icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+      shortcut: "/favicon.svg",
       apple: "/images/logo-light.png",
     },
     openGraph: {
@@ -126,20 +127,11 @@ export async function generateMetadata({
         .map((l) => ogLocales[l]),
       type: "website",
       siteName: "SUV-TARAQQIYOT LLC",
-      images: [
-        {
-          url: "/images/logo-main.png",
-          width: 800,
-          height: 600,
-          alt: "SUV-TARAQQIYOT LLC",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/images/logo-main.png"],
     },
     alternates: {
       canonical: `${SITE_URL}/${locale}`,
@@ -158,6 +150,9 @@ export async function generateMetadata({
     },
     verification: {
       yandex: "bfb5d02934a406e9",
+      ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION
+        ? { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION }
+        : {}),
     },
   };
 }
@@ -188,8 +183,8 @@ export default async function LocaleLayout({
     foundingDate: "2001-08-21",
     description:
       "Leading contractor for hydrogeological well drilling and water supply construction in Uzbekistan. Бурение артезианских скважин. Қудруқ бурғулаш.",
-    telephone: "+998998474000",
-    email: "office@suv-taraqqiyot.com",
+    telephone: "+998550553737",
+    email: "info@suv-taraqqiyot.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "18 Khusan Shams Street",
@@ -247,8 +242,8 @@ export default async function LocaleLayout({
     image: `${SITE_URL}/images/logo-main.png`,
     url: SITE_URL,
     priceRange: "$$$",
-    telephone: "+998998474000",
-    email: "office@suv-taraqqiyot.com",
+    telephone: "+998550553737",
+    email: "info@suv-taraqqiyot.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "18 Khusan Shams Street",

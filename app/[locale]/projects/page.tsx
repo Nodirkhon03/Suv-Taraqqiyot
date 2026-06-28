@@ -138,16 +138,9 @@ export default function ProjectsPage() {
             <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2B43] tracking-tight mb-6" style={{ letterSpacing: "-0.02em" }}>
               {t("geographicFootprint")}
             </h2>
+            <p className="mt-2 mb-6 text-gray-600 max-w-2xl">{t("mapSubtitle")}</p>
             <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
-              <ProjectMap mode="embed" />
-            </div>
-            <div className="mt-4 text-center">
-              <Link
-                href={`/${locale}/projects/map`}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#2C86C7] hover:text-[#0B2B43] transition-colors"
-              >
-                {t("openFullMap")} &rarr;
-              </Link>
+              <ProjectMap mode="full" />
             </div>
           </motion.div>
         </div>
