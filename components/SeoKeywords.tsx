@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 
 const ITEMS = ["q1", "q2", "q3"] as const;
@@ -66,7 +66,6 @@ function FaqItem({
 
 export default function SeoKeywords() {
   const t = useTranslations("seoFaq");
-  const locale = useLocale();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (idx: number) =>
@@ -128,52 +127,6 @@ export default function SeoKeywords() {
             />
           ))}
         </motion.div>
-
-        {/* Uzbek Cyrillic fallback — visible on UZ locale to support Cyrillic-script searches */}
-        {locale === "uz" && (
-          <div className="mt-12 max-w-4xl">
-            <p className="text-xs uppercase tracking-widest text-engineering font-medium">
-              Ўзбек кирилл
-            </p>
-            <h3 className="mt-3 text-2xl font-bold text-navy">
-              Тошкент ва бошқа вилоятларда хизматлар
-            </h3>
-            <div className="mt-6 space-y-6 text-sm leading-relaxed text-gray-600">
-              <div>
-                <p className="font-medium text-navy">
-                  Тошкент ва бошқа вилоятларда артезиан қудруқ бурғулайсизми?
-                </p>
-                <p className="mt-2">
-                  Ҳа. СУВ-ТАРАККИЁТ МЧЖ Ўзбекистоннинг барча вилоятларида —
-                  Тошкент, Наманган, Самарқанд, Қашқадарё, Сирдарё ва Фарғона
-                  водийсида — артезиан ҳамда гидрогеологик қудруқларни бурғулайди.
-                  Чуқурлик 1200 м гача.
-                </p>
-              </div>
-              <div>
-                <p className="font-medium text-navy">
-                  Қандай диаметрли сув қувурларини ўрнатасиз?
-                </p>
-                <p className="mt-2">
-                  32 мм дан 1200 мм гача бўлган диаметрли ПЕ ва пўлат қувурлардан
-                  сув қувурлари қурилишини амалга оширамиз. Йиллик ҳажм — 200 км
-                  гача қувур.
-                </p>
-              </div>
-              <div>
-                <p className="font-medium text-navy">
-                  Жаҳон банки ва ЕБРР лойиҳаларида ишлайсизми?
-                </p>
-                <p className="mt-2">
-                  Ҳа. СУВ-ТАРАККИЁТ Жаҳон банки, Европа тикланиш ва тараққиёт
-                  банки, Осиё тараққиёт банки, ОПЕК жамғармаси ва Саудия
-                  тараққиёт жамғармаси томонидан молиялаштирилган лойиҳаларни
-                  амалга оширган.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

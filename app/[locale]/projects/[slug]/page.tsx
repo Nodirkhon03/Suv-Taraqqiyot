@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { projects, isInternationallyFunded } from "@/lib/projects";
 import { locales, type Locale } from "@/i18n";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://suv-taraqqiyot.com";
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
@@ -31,10 +31,11 @@ export async function generateMetadata({
       project.description ||
       `${project.title} — ${project.location} — ${project.year} — ${project.amount}`,
     alternates: {
-      canonical: `/${locale}/projects/${slug}`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/projects/${slug}`])
-      ),
+      canonical: `${SITE_URL}/${locale}/projects/${slug}`,
+      languages: Object.fromEntries([
+        ...locales.map((l) => [l, `${SITE_URL}/${l}/projects/${slug}`]),
+        ["x-default", `${SITE_URL}/en/projects/${slug}`],
+      ]),
     },
   };
 }
@@ -47,6 +48,7 @@ export default async function ProjectDetailPage({
   if (!locales.includes(locale as Locale)) notFound();
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
+  setRequestLocale(locale);
 
   const t = await getTranslations("projectDetailPage");
   const tNav = await getTranslations("nav");

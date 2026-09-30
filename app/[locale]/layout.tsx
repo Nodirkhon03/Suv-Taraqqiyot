@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { locales, type Locale } from "@/i18n";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import "../globals.css";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://suv-taraqqiyot.com";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext", "cyrillic"],
@@ -26,14 +26,14 @@ const ogLocales: Record<string, string> = {
 const pageTitles: Record<string, string> = {
   en: "SUV-TARAQQIYOT LLC | Water Well Drilling & Infrastructure Construction, Uzbekistan",
   ru: "СУВ-ТАРАККИЁТ ООО | Бурение скважин и строительство водоснабжения, Узбекистан",
-  uz: "SUV-TARAQQIYOT MChJ | Qudruq burg'ulash va suv ta'minoti qurilishi, O'zbekiston",
+  uz: "SUV-TARAQQIYOT MChJ | Quduq burg'ulash va suv ta'minoti qurilishi, O'zbekiston",
   tr: "SUV-TARAQQIYOT LLC | Su Kuyusu Sondajı ve Altyapı İnşaatı, Özbekistan",
 };
 
 const pageDescriptions: Record<string, string> = {
   en: "Leading contractor for artesian well drilling (up to 1200m), water pipeline construction (200km/year), and water supply systems in Uzbekistan since 2001. World Bank & EBRD certified projects.",
   ru: "Ведущий подрядчик по бурению гидрогеологических и артезианских скважин (до 1200м), строительству водопровода (200 км/год) и систем водоснабжения в Узбекистане с 2001 года. Проекты Всемирного банка и ЕБРР.",
-  uz: "O'zbekistonda artezian qudruq burg'ulash (1200 m gacha), suv quvurlari qurilishi (yiliga 200 km) va suv ta'minoti tizimlarini yaratishda yetakchi pudratchi. 2001 yildan beri Jahon banki va EBRD loyihalari.",
+  uz: "O'zbekistonda artezian quduq burg'ulash (1200 m gacha), suv quvurlari qurilishi (yiliga 200 km) va suv ta'minoti tizimlarini yaratishda yetakchi pudratchi. 2001 yildan beri Jahon banki va EBRD loyihalari.",
   tr: "Özbekistan'da 2001'den bu yana artezyen kuyu sondajı (1200m'ye kadar), su boru hattı inşaatı ve su dağıtım sistemleri alanında lider müteahhit. Dünya Bankası ve EBRD projeleri.",
 };
 
@@ -64,16 +64,13 @@ const keywordsByLocale: Record<string, string[]> = {
     "водонапорная башня строительство",
   ],
   uz: [
-    "qudruq burg'ulash Toshkent",
+    "quduq burg'ulash Toshkent",
     "suv ta'minoti qurilishi O'zbekiston",
-    "artezian qudruq O'zbekiston",
+    "artezian quduq O'zbekiston",
     "gidrogeologik burg'ulash",
     "suv quvuri qurilishi",
     "suv infratuzilmasi O'zbekiston",
     "suv minorasi qurilishi",
-    "бурғулаш компанияси Тошкент",
-    "сув таъминоти қурилиши",
-    "артезиан қудруқ Ўзбекистон",
   ],
   tr: [
     "su kuyusu sondajı Özbekistan",
@@ -92,6 +89,10 @@ function buildLanguages(path: string) {
     tr: `${SITE_URL}/tr${path}`,
     "x-default": `${SITE_URL}/en${path}`,
   };
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -165,6 +166,7 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   if (!locales.includes(locale as Locale)) notFound();
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 
@@ -173,16 +175,14 @@ export default async function LocaleLayout({
     "@type": "Organization",
     name: "SUV-TARAQQIYOT LLC",
     alternateName: [
-      "СУВ-ТАРАККИЁТ МЧЖ",
       "Suv-Taraqqiyot MChJ",
       "СУВ-ТАРАККИЁТ ООО",
-      "СУВ-ТАРАКҚИЁТ",
     ],
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo-main.png`,
     foundingDate: "2001-08-21",
     description:
-      "Leading contractor for hydrogeological well drilling and water supply construction in Uzbekistan. Бурение артезианских скважин. Қудруқ бурғулаш.",
+      pageDescriptions[locale] || pageDescriptions.en,
     telephone: "+998550553737",
     email: "info@suv-taraqqiyot.com",
     address: {
@@ -191,11 +191,6 @@ export default async function LocaleLayout({
       addressLocality: "Tashkent",
       addressRegion: "Mirzo-Ulugbek District",
       addressCountry: "UZ",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 41.3111,
-      longitude: 69.2797,
     },
     areaServed: {
       "@type": "Country",
@@ -210,13 +205,10 @@ export default async function LocaleLayout({
       "Бурение артезианских скважин",
       "Строительство водоснабжения",
       "Гидрогеологическое бурение",
-      "Qudruq burg'ulash",
+      "Quduq burg'ulash",
       "Suv ta'minoti qurilishi",
-      "Artezian qudruq",
-      "Қудруқ бурғулаш",
-      "Сув таъминоти қурилиши",
+      "Artezian quduq",
     ],
-    numberOfEmployees: { "@type": "QuantitativeValue", minValue: 50 },
     hasCredential: [
       {
         "@type": "EducationalOccupationalCredential",
@@ -241,7 +233,6 @@ export default async function LocaleLayout({
     name: "SUV-TARAQQIYOT LLC",
     image: `${SITE_URL}/images/logo-main.png`,
     url: SITE_URL,
-    priceRange: "$$$",
     telephone: "+998550553737",
     email: "info@suv-taraqqiyot.com",
     address: {
@@ -250,11 +241,6 @@ export default async function LocaleLayout({
       addressLocality: "Tashkent",
       addressRegion: "Mirzo-Ulugbek District",
       addressCountry: "UZ",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 41.3111,
-      longitude: 69.2797,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

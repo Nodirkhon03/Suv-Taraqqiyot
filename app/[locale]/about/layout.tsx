@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locales } from "@/i18n";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://suv-taraqqiyot.com";
 
 const titles: Record<string, string> = {
   en: "About Us | 25 Years of Engineering Excellence | SUV-TARAQQIYOT LLC",

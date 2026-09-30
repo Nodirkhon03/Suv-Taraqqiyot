@@ -13,7 +13,7 @@
     "subtitle": "2001 yildan buyon gidrogeologik quduq burg'ulash va suv ta'minoti tizimlarini qurish bo'yicha O'zbekiston yetakchilaridan biri",
     "cta": "Loyihalarimiz",
     "ctaSecondary": "Xizmatlarimiz",
-    "credibility": "20 loyiha · $57M+ amalga oshirilgan · Jahon banki va YEBTB ishonchi"
+    "credibility": "20 loyiha · $55M+ amalga oshirilgan · Jahon banki va YeTTB ishonchi"
   },
   "capacity": {
     "label": "Bizning quvvatimiz",
@@ -48,7 +48,7 @@
       "establishedLabel": "Tashkil etilgan",
       "projects": "20+",
       "projectsLabel": "Yirik loyihalar",
-      "value": "$57M+",
+      "value": "$55M+",
       "valueLabel": "Loyihalar umumiy qiymati"
     }
   },
@@ -137,7 +137,7 @@
         "title": "Koshrobod ichimlik suvi yaxshilash loyihasi",
         "location": "Samarqand viloyati",
         "period": "2019–2021",
-        "amount": "$6,72M",
+        "amount": "$5,54M",
         "funder": "OPEK fondi + Saudiya taraqqiyot fondi"
       },
       "zhiydakapa": {
@@ -150,8 +150,8 @@
       "yangiyul": {
         "title": "Yangiyo'l suv ta'minoti tizimi",
         "location": "Yangiyo'l shahri",
-        "period": "2023–2024",
-        "amount": "$6,1M",
+        "period": "2022–2024",
+        "amount": "$5,59M",
         "funder": "Investitsiyalar va tashqi savdo vazirligi"
       }
     }
@@ -165,7 +165,7 @@
       "projects": "20 loyiha",
       "regions": "12 hudud",
       "years": "2001–hozir",
-      "value": "$57M+"
+      "value": "$55M+"
     }
   },
   "cta": {
@@ -210,9 +210,9 @@
   },
   "projectsPage": {
     "title": "Bizning loyihalar",
-    "subtitle": "2001 yildan buyon O'zbekiston bo'ylab $57M+ suv infratuzilmasi loyihalari.",
+    "subtitle": "2001 yildan buyon O'zbekiston bo'ylab $55M+ suv infratuzilmasi loyihalari.",
     "statsProjects": "20 loyiha",
-    "statsValue": "$57M+ umumiy qiymat",
+    "statsValue": "$55M+ umumiy qiymat",
     "statsYears": "2001–hozir",
     "filterAll": "Barchasi",
     "filterDrilling": "Burg'ulash",
@@ -276,11 +276,11 @@
   },
   "seoFaq": {
     "label": "Ko'p beriladigan savollar",
-    "title": "Qudruq burg'ulash va suv ta'minoti — asosiy savollar",
+    "title": "Quduq burg'ulash va suv ta'minoti — asosiy savollar",
     "items": {
       "q1": {
-        "q": "Toshkent va O'zbekistonning boshqa viloyatlarida artezian qudruq burg'ulaysizmi?",
-        "a": "Ha. SUV-TARAQQIYOT MChJ O'zbekistonning barcha viloyatlarida — Toshkent, Namangan, Samarqand, Qashqadaryo, Sirdaryo va Farg'ona vodiysida — artezian va gidrogeologik qudruqlar burg'ulaydi. Burg'ulash chuqurligi 30 dan 1200 metrgacha, yillik hajm — taxminan 120 qudruq."
+        "q": "Toshkent va O'zbekistonning boshqa viloyatlarida artezian quduq burg'ulaysizmi?",
+        "a": "Ha. SUV-TARAQQIYOT MChJ O'zbekistonning barcha viloyatlarida — Toshkent, Namangan, Samarqand, Qashqadaryo, Sirdaryo va Farg'ona vodiysida — artezian va gidrogeologik quduqlar burg'ulaydi. Burg'ulash chuqurligi 30 dan 1200 metrgacha, yillik hajm — taxminan 120 quduq."
       },
       "q2": {
         "q": "Qanday diametr va materialdagi suv quvurlarini o'rnatasiz?",
@@ -314,7 +314,7 @@
         "label": "Maks. burg'ulash chuqurligi"
       },
       "value": {
-        "value": "$57M+",
+        "value": "$55M+",
         "label": "Amalga oshirilgan loyihalar"
       },
       "iso": {

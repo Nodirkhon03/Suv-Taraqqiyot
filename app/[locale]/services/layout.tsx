@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locales } from "@/i18n";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://suv-taraqqiyot.com";
 
 const titles: Record<string, string> = {
   en: "Drilling & Water Infrastructure Services | SUV-TARAQQIYOT LLC, Uzbekistan",
@@ -13,7 +13,7 @@ const titles: Record<string, string> = {
 const descriptions: Record<string, string> = {
   en: "Hydrogeological well drilling to 1200m depth. Water pipelines 32-1200mm diameter. Water distribution 300-30,000 m³/day. Civil engineering and site preparation across Uzbekistan.",
   ru: "Бурение гидрогеологических скважин до 1200м. Водопроводы диаметром 32-1200мм. Водораспределение 300-30 000 м³/сут. Гражданское строительство по всему Узбекистану.",
-  uz: "1200 m chuqurlikkacha gidrogeologik qudruq burg'ulash. 32-1200 mm diametrli suv quvurlari. Kuniga 300-30 000 m³ suv taqsimlash. Muhandislik qurilishi.",
+  uz: "1200 m chuqurlikkacha gidrogeologik quduq burg'ulash. 32-1200 mm diametrli suv quvurlari. Kuniga 300-30 000 m³ suv taqsimlash. Muhandislik qurilishi.",
   tr: "1200 m derinliğe kadar hidrojeolojik kuyu sondajı. 32-1200 mm çaplı su boru hatları. Günlük 300-30.000 m³ su dağıtımı. İnşaat mühendisliği.",
 };
 

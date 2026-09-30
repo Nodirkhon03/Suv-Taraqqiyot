@@ -13,7 +13,7 @@
     "subtitle": "One of Uzbekistan's leaders in hydrogeological well drilling and water supply system construction since 2001",
     "cta": "View Our Projects",
     "ctaSecondary": "Our Services",
-    "credibility": "20 projects · $57M+ delivered · Trusted by World Bank & EBRD"
+    "credibility": "20 projects · $55M+ delivered · Trusted by World Bank & EBRD"
   },
   "capacity": {
     "label": "Our Capacity",
@@ -48,7 +48,7 @@
       "establishedLabel": "Year Founded",
       "projects": "20+",
       "projectsLabel": "Major Projects",
-      "value": "$57M+",
+      "value": "$55M+",
       "valueLabel": "Total Project Value"
     }
   },
@@ -137,7 +137,7 @@
         "title": "Koshrabad Drinking Water Improvement",
         "location": "Samarkand Region",
         "period": "2019–2021",
-        "amount": "$6.72M",
+        "amount": "$5.54M",
         "funder": "OPEC Fund + Saudi Fund for Development"
       },
       "zhiydakapa": {
@@ -150,8 +150,8 @@
       "yangiyul": {
         "title": "Yangiyul Water Supply System",
         "location": "Yangiyul City",
-        "period": "2023–2024",
-        "amount": "$6.1M",
+        "period": "2022–2024",
+        "amount": "$5.59M",
         "funder": "Ministry of Investment and Foreign Trade"
       }
     }
@@ -165,7 +165,7 @@
       "projects": "20 Projects",
       "regions": "12 Regions",
       "years": "2001–Present",
-      "value": "$57M+"
+      "value": "$55M+"
     }
   },
   "cta": {
@@ -210,9 +210,9 @@
   },
   "projectsPage": {
     "title": "Our Projects",
-    "subtitle": "20 projects delivering $57M+ in water infrastructure across Uzbekistan since 2001.",
+    "subtitle": "20 projects delivering $55M+ in water infrastructure across Uzbekistan since 2001.",
     "statsProjects": "20 Projects",
-    "statsValue": "$57M+ Total Value",
+    "statsValue": "$55M+ Total Value",
     "statsYears": "2001–Present",
     "filterAll": "All",
     "filterDrilling": "Drilling",
@@ -314,7 +314,7 @@
         "label": "Max Drilling Depth"
       },
       "value": {
-        "value": "$57M+",
+        "value": "$55M+",
         "label": "Projects Delivered"
       },
       "iso": {

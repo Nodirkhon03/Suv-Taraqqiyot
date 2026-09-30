@@ -236,7 +236,7 @@ export const projects: Project[] = [
     client: "Agency UZKOMMUNHIZMAT",
     funder:
       "OPEC Fund for International Development + Saudi Fund for Development",
-    amount: "$2.88M",
+    amount: "$2.36M",
     contractNumber: "KWSP/ICB/W/3.1",
     role: "General Contractor",
     status: "completed",
@@ -258,7 +258,7 @@ export const projects: Project[] = [
     client: "Agency UZKOMMUNHIZMAT",
     funder:
       "OPEC Fund for International Development + Saudi Fund for Development",
-    amount: "$3.84M",
+    amount: "$3.18M",
     contractNumber: "KWSP/ICB/W/4.1",
     role: "General Contractor",
     status: "completed",

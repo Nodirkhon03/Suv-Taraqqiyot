@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/lib/projects";
+import { SITE_URL as baseUrl } from "@/lib/site";
 
-const baseUrl = "https://suv-taraqqiyot.com";
 const locales = ["en", "ru", "uz", "tr"] as const;
 
 const pages: { path: string; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }[] = [

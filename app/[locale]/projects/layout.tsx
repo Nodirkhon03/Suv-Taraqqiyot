@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locales } from "@/i18n";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://suv-taraqqiyot.com";
 
 const titles: Record<string, string> = {
   en: "Project Portfolio | 20 Water Infrastructure Projects | SUV-TARAQQIYOT LLC",
@@ -11,9 +11,9 @@ const titles: Record<string, string> = {
 };
 
 const descriptions: Record<string, string> = {
-  en: "20 completed and ongoing water infrastructure projects in Uzbekistan. Funded by World Bank, EBRD, ADB, OPEC Fund. Total value $57M+. Drilling, pipeline, and distribution systems.",
-  ru: "20 реализованных проектов водоснабжения в Узбекистане. Финансирование: Всемирный банк, ЕБРР, АБР, Фонд ОПЕК. Объём $57M+. Бурение скважин, трубопроводы, водораспределение.",
-  uz: "O'zbekistonda 20 ta suv infratuzilmasi loyihasi. Jahon banki, EBRD, ADB, OPEC Fondi tomonidan moliyalashtirilgan. Umumiy qiymati $57M+. Qudruq, quvur va taqsimlash tizimlari.",
+  en: "20 completed and ongoing water infrastructure projects in Uzbekistan. Funded by World Bank, EBRD, ADB, OPEC Fund. Total value $55M+. Drilling, pipeline, and distribution systems.",
+  ru: "20 реализованных проектов водоснабжения в Узбекистане. Финансирование: Всемирный банк, ЕБРР, АБР, Фонд ОПЕК. Объём $55M+. Бурение скважин, трубопроводы, водораспределение.",
+  uz: "O'zbekistonda 20 ta suv infratuzilmasi loyihasi. Jahon banki, EBRD, ADB, OPEC Fondi tomonidan moliyalashtirilgan. Umumiy qiymati $55M+. Quduq, quvur va taqsimlash tizimlari.",
   tr: "Özbekistan'da 20 su altyapı projesi. Dünya Bankası, EBRD, ADB ve OPEC Fonu tarafından finanse edildi. Toplam değer 57 milyon doları aşıyor.",
 };
 

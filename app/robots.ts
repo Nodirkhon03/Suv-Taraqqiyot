@@ -1,32 +1,28 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
-// Allow all search engines including Yandex (primary search engine in Uzbekistan
-// for Russian and Uzbek Cyrillic queries) and Google (primary for Latin script).
+// Everything is public except the form endpoint. AI crawlers are named so the
+// permission is explicit rather than inherited from the wildcard.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      { userAgent: "*", allow: "/", disallow: ["/api/"] },
       {
         userAgent: [
-          "Googlebot",
-          "Googlebot-Image",
-          "Bingbot",
-          "YandexBot",
-          "Yandex",
-          "DuckDuckBot",
-          "Applebot",
-          "facebookexternalhit",
-          "Twitterbot",
-          "LinkedInBot",
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "PerplexityBot",
+          "Google-Extended",
+          "YandexAdditional",
         ],
-        allow: "/",
-      },
-      {
-        userAgent: "*",
         allow: "/",
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://suv-taraqqiyot.com/sitemap.xml",
-    host: "https://suv-taraqqiyot.com",
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

@@ -13,7 +13,7 @@
     "subtitle": "2001 yılından bu yana Özbekistan'ın hidrojeolojik kuyu sondajı ve su temini sistemi inşaatında liderlerinden biri",
     "cta": "Projelerimiz",
     "ctaSecondary": "Hizmetlerimiz",
-    "credibility": "20 proje · 57M$+ teslim edildi · Dünya Bankası ve EBRD güvencesiyle"
+    "credibility": "20 proje · 55M$+ teslim edildi · Dünya Bankası ve EBRD güvencesiyle"
   },
   "capacity": {
     "label": "Kapasitemiz",
@@ -48,7 +48,7 @@
       "establishedLabel": "Kuruluş Yılı",
       "projects": "20+",
       "projectsLabel": "Büyük Proje",
-      "value": "$57M+",
+      "value": "$55M+",
       "valueLabel": "Toplam Proje Değeri"
     }
   },
@@ -137,7 +137,7 @@
         "title": "Koşrabad İçme Suyu İyileştirme Projesi",
         "location": "Semerkant Bölgesi",
         "period": "2019–2021",
-        "amount": "$6,72M",
+        "amount": "$5,54M",
         "funder": "OPEC Fonu + Suudi Kalkınma Fonu"
       },
       "zhiydakapa": {
@@ -150,8 +150,8 @@
       "yangiyul": {
         "title": "Yangiyul Su Temini Sistemi",
         "location": "Yangiyul Şehri",
-        "period": "2023–2024",
-        "amount": "$6,1M",
+        "period": "2022–2024",
+        "amount": "$5,59M",
         "funder": "Yatırım ve Dış Ticaret Bakanlığı"
       }
     }
@@ -165,7 +165,7 @@
       "projects": "20 Proje",
       "regions": "12 Bölge",
       "years": "2001–Günümüz",
-      "value": "$57M+"
+      "value": "$55M+"
     }
   },
   "cta": {
@@ -210,9 +210,9 @@
   },
   "projectsPage": {
     "title": "Projelerimiz",
-    "subtitle": "2001'den bu yana Özbekistan genelinde 57M$+ su altyapısı projeleri.",
+    "subtitle": "2001'den bu yana Özbekistan genelinde 55M$+ su altyapısı projeleri.",
     "statsProjects": "20 Proje",
-    "statsValue": "57M$+ Toplam Değer",
+    "statsValue": "55M$+ Toplam Değer",
     "statsYears": "2001–Günümüz",
     "filterAll": "Tümü",
     "filterDrilling": "Sondaj",
@@ -314,7 +314,7 @@
         "label": "Maks. Sondaj Derinliği"
       },
       "value": {
-        "value": "$57M+",
+        "value": "$55M+",
         "label": "Teslim Edilen Projeler"
       },
       "iso": {

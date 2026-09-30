@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { locales } from "@/i18n";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://suv-taraqqiyot.com";
 
 const titles: Record<string, string> = {
   en: "Contact Us | Tashkent, Uzbekistan | SUV-TARAQQIYOT LLC",
@@ -13,7 +13,7 @@ const titles: Record<string, string> = {
 const descriptions: Record<string, string> = {
   en: "Contact SUV-TARAQQIYOT LLC for water well drilling, water supply construction, and civil engineering services in Uzbekistan. Based in Tashkent. Response within 24 hours.",
   ru: "Свяжитесь с ООО «СУВ-ТАРАККИЁТ» по вопросам бурения скважин, строительства водоснабжения и гражданского строительства в Узбекистане. Офис в Ташкенте. Ответ в течение 24 часов.",
-  uz: "Qudruq burg'ulash, suv ta'minoti qurilishi va muhandislik xizmatlari bo'yicha SUV-TARAQQIYOT MChJ bilan bog'laning. Toshkentda. 24 soat ichida javob.",
+  uz: "Quduq burg'ulash, suv ta'minoti qurilishi va muhandislik xizmatlari bo'yicha SUV-TARAQQIYOT MChJ bilan bog'laning. Toshkentda. 24 soat ichida javob.",
   tr: "Su kuyusu sondajı, su temini inşaatı ve inşaat mühendisliği hizmetleri için SUV-TARAQQIYOT LLC ile iletişime geçin. Taşkent merkezli. 24 saat içinde yanıt.",
 };
 
