@@ -21,6 +21,7 @@
   --blue: #2c86c7; /* lines, UI borders, large text only — 3.93:1 on white */
   --cyan: #24b5c6; /* water line + dimension ticks only, never text */
   --sand: #d8c7a2; /* ground line only, never text */
+  --sand-ink: #b09a6b; /* soil/sand texture dots and hatch in the light drawings, never text */
   --blue-tint: #9cc9ea; /* drawing labels on navy — 8.30:1 */
   --navy-muted: #c8d6e2; /* secondary text on navy — 9.84:1 */
   --gray-50: #f8fafc;
@@ -289,6 +290,20 @@ body {
   .ic-b { fill: none; stroke: var(--blue); stroke-width: 1; }
   .ic-w { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linecap: round; }
   .ic-g { stroke: var(--sand); stroke-width: 1.5; }
+  .ic-w1 { fill: none; stroke: var(--cyan); stroke-width: 1.5; stroke-linecap: round; }
+  .ic-fl { fill: none; stroke: #fff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 2 8; opacity: 0; }
+  .ic-fl-b { fill: #fff; stroke: var(--navy); stroke-width: 1.2; }
+  .ic-body { fill: #fff; stroke: var(--navy); stroke-width: 1.3; }
+  .ic-imp { fill: none; stroke: var(--navy); stroke-width: 1; }
+  .ic-wash { fill: var(--cyan); opacity: .22; }
+  .ic-aq { fill: var(--cyan); opacity: .1; }
+  .ic-conc { fill: var(--gray-200); }
+  .ic-fw { fill: #efe6d3; stroke: var(--navy); stroke-width: 1; }
+  .ic-r { fill: none; stroke: var(--navy); stroke-width: 1.3; stroke-linejoin: round; }
+  .ic-dot { fill: none; stroke: var(--navy); stroke-width: 2.4; stroke-linecap: round; }
+  .ic-tie { fill: none; stroke: var(--blue); stroke-width: .9; stroke-dasharray: 2 2; }
+  .ic-scr { stroke-dasharray: 3 2; }
+  .ic-pt { fill: none; stroke: var(--cyan); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 0 8; }
 
   /* 04 fleet */
   .fleet { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 3rem; align-items: start; }
@@ -409,8 +424,8 @@ body {
     .reg .prj a { margin: -.4rem 0; padding: .4rem 0; min-height: 48px; }
     .reg tbody tr:hover td { background: transparent; }
     .plates { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
-    .svc li { grid-template-columns: 72px 1fr; gap: .5rem 1rem; align-items: start; }
-    .svc svg { width: 72px; height: 48px; }
+    .svc li { grid-template-columns: 84px 1fr; gap: .5rem 1rem; align-items: start; }
+    .svc svg { width: 84px; height: 56px; }
     .svc p { grid-column: 1 / -1; }
     .two, .iso { grid-template-columns: 1fr; }
     .two { gap: 2rem; }
@@ -544,7 +559,7 @@ body {
 .tb.one { grid-template-columns: 1fr; }
 
 /* ─── services ─── */
-.svc-body { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2rem 4rem; align-items: start; }
+.svc-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: start; }
 .dwg {
   margin: 0; border: 1px solid var(--rule); background: var(--gray-100);
   background-image: linear-gradient(rgba(44, 134, 199, .09) 1px, transparent 1px), linear-gradient(90deg, rgba(44, 134, 199, .09) 1px, transparent 1px);
@@ -552,14 +567,79 @@ body {
 }
 .dwg svg { display: block; width: 100%; height: auto; }
 .svc-body > .dwg { position: sticky; top: 1.5rem; }
-.dwg text { font-family: var(--font-mono); font-size: 14px; fill: var(--gray-600); letter-spacing: .02em; }
-.dwg .lb { fill: var(--navy); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
-.d-n { fill: none; stroke: var(--navy); stroke-width: 1.6; stroke-linejoin: round; }
-.d-b { fill: none; stroke: var(--blue); stroke-width: 1.1; }
-.d-w { fill: none; stroke: var(--cyan); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.d-g { fill: none; stroke: var(--sand); stroke-width: 2; }
-.d-h { stroke: var(--sand); stroke-width: 1; }
-.d-t { stroke: var(--blue); stroke-width: 1.2; }
+
+/*
+ * Service drawings (components/pages/drawings/*): the hero's line language on the light grid.
+ * navy = structure, blue = dimensions/leaders, cyan = water only, sand = ground/fill, grey stipple = concrete.
+ * Text 14 user units (viewBox 640 wide → 12.5 px at 1440, ≥ 12.25 px on phones where the svg is ≥ 560 px).
+ * The gray-100 halo keeps labels legible where they cross hatching or water.
+ */
+.dwg text {
+  font-family: var(--font-mono); font-size: 14px; fill: var(--gray-600); letter-spacing: .02em;
+  paint-order: stroke; stroke: var(--gray-100); stroke-width: 3.5px; stroke-linejoin: round;
+}
+.dwg .tt { fill: var(--navy); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+.dwg .tn, .dwg .ts { fill: var(--navy); font-weight: 500; }
+.sd-n { fill: none; stroke: var(--navy); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+.sd-n1 { fill: none; stroke: var(--navy); stroke-width: 1; stroke-linejoin: round; }
+.sd-nf { fill: var(--navy); stroke: none; }
+.sd-wf { fill: #fff; stroke: var(--navy); stroke-width: 1.3; stroke-linejoin: round; }
+.sd-white { fill: #fff; stroke: none; }
+.sd-none { fill: none; stroke: none; }
+.sd-b { fill: none; stroke: var(--blue); stroke-width: 1; }
+.sd-bd { fill: none; stroke: var(--blue); stroke-width: .8; stroke-dasharray: 4 3; }
+.sd-sep { fill: none; stroke: var(--rule); stroke-width: 1; }
+.sd-mk { fill: none; stroke: var(--blue); stroke-width: 1.4; }
+.sd-mkw { fill: var(--cyan); stroke: none; }
+.sd-g { fill: none; stroke: var(--sand); stroke-width: 2.2; }
+.sd-gd { fill: none; stroke: var(--sand-ink); stroke-width: 1.4; stroke-dasharray: 6 4; }
+.sd-hatch { stroke: var(--sand-ink); stroke-width: .9; fill: none; }
+.sd-dot { fill: var(--sand-ink); }
+.sd-gv { fill: none; stroke: var(--sand-ink); stroke-width: .8; }
+.sd-cdot { fill: #8b9bb0; }
+.sd-ctri { fill: none; stroke: #8b9bb0; stroke-width: .7; }
+.sd-sandf { fill: var(--sand); opacity: .35; }
+.sd-soilf { fill: var(--sand); opacity: .2; }
+.sd-concf { fill: var(--gray-200); }
+.sd-wash { fill: var(--cyan); opacity: .22; }
+.sd-aq { fill: var(--cyan); opacity: .08; }
+.sd-wl { fill: none; stroke: var(--cyan); stroke-width: 1.6; }
+.sd-lvl { fill: none; stroke: var(--cyan); stroke-width: 1; stroke-dasharray: 5 4; }
+.sd-cone { fill: none; stroke: var(--cyan); stroke-width: 1.3; stroke-dasharray: 3 3; }
+.sd-tri { fill: none; stroke: var(--cyan); stroke-width: 1.2; stroke-linejoin: round; }
+.sd-pipe { fill: none; stroke: var(--navy); stroke-linejoin: round; }
+.sd-bore { fill: none; stroke: #fff; stroke-linejoin: round; }
+.sd-wc { fill: none; stroke: var(--cyan); stroke-linecap: round; stroke-linejoin: round; }
+.sd-fl { fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 3 9; opacity: 0; }
+.sd-pt { fill: none; stroke: var(--cyan); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 0 11; }
+.sd-arw { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sd-ld path { fill: none; stroke: var(--blue); stroke-width: 1; }
+.sd-ld circle { fill: var(--blue); }
+.sd-bal circle { fill: #fff; stroke: var(--navy); stroke-width: 1.1; }
+.dwg .sd-bal text { fill: var(--navy); font-weight: 500; stroke: #fff; }
+.sd-vv path, .sd-vv rect, .sd-vv circle { fill: #fff; stroke: var(--navy); stroke-width: 1.3; stroke-linejoin: round; }
+.sd-vv .sd-stem { fill: none; }
+.sd-vv .sd-disc { fill: none; stroke: var(--navy); stroke-width: 2.2; stroke-linecap: round; }
+.sd-vv .sd-nf { fill: var(--navy); stroke: none; }
+.sd-imp { fill: none; stroke: var(--navy); stroke-width: 1.1; }
+.sd-ndl { fill: none; stroke: var(--navy); stroke-width: 1.6; stroke-linecap: round; }
+.sd-bead { fill: var(--navy); stroke: none; }
+.sd-tape { fill: none; stroke: var(--blue); stroke-width: 3.5; stroke-dasharray: 6 3; }
+.sd-melt, .sd-glow { fill: var(--sand); opacity: 0; }
+.sd-rb { fill: none; stroke: var(--navy); stroke-width: 1.8; stroke-linejoin: round; }
+.sd-wp { fill: none; stroke: var(--navy); stroke-width: 3.2; stroke-dasharray: 7 2; }
+.sd-fw { fill: #efe6d3; stroke: var(--navy); stroke-width: 1.1; }
+.sd-tie { fill: none; stroke: var(--navy); stroke-width: .9; stroke-dasharray: 3 2; }
+.sd-hose { fill: none; stroke: var(--navy); stroke-width: 5; stroke-linecap: round; }
+.sd-axis { fill: none; stroke: var(--blue); stroke-width: .9; stroke-dasharray: 14 3 2 3; }
+.sd-cas { fill: none; stroke: var(--navy); stroke-width: 3; }
+.sd-scr { fill: none; stroke: var(--navy); stroke-width: 3; stroke-dasharray: 4 3; }
+.sd-bh { fill: none; stroke: var(--navy); stroke-width: .9; stroke-dasharray: 2 3; }
+.sd-cable { fill: none; stroke: var(--navy); stroke-width: .8; stroke-dasharray: 5 2; }
+.sd-gap { fill: var(--gray-100); }
+.sd-ptr { fill: var(--navy); }
+/* parts that exist only while the drawing moves: hidden in the static (complete) state */
+.dwg .cv-st, .dwg .cv-og, .dwg .cv-ram, .dwg .cv-fw, .dwg .cv-hose, .dwg .tw-ptr { opacity: 0; }
 .svc-desc { font-size: 1.125rem; line-height: 1.55; color: var(--gray-900); margin: 0 0 1.5rem; max-width: 60ch; }
 .svc-sub { font: 500 .75rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--gray-600); margin: 0 0 .5rem; }
 .scope { list-style: none; margin: 0 0 1.75rem; padding: 0; border-top: 2px solid var(--navy); counter-reset: sc; }
@@ -703,7 +783,12 @@ body {
   .eq-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pd { grid-template-columns: 1fr; }
   .pd-facts, .pd-text { grid-column: 1; grid-row: auto; }
-  .dwg { max-width: 560px; }
+}
+
+/* services: the drawing needs ≥ 560 px to keep its 14-unit labels ≥ 12 px, so one column below 1240 px */
+@media (max-width: 1240px) {
+  .svc-body { grid-template-columns: 1fr; }
+  .svc-body > .dwg { position: static; max-width: 760px; }
 }
 
 /* ─── phone ─── */
@@ -721,7 +806,10 @@ body {
   .filt > span { flex-basis: 100%; }
   .filt a { flex: 1 1 auto; justify-content: space-between; }
   .regf .reg .prj, .regf .reg .rg, .regf .reg .cl { width: auto; }
-  .svc-body > .dwg { position: static; }
+  /* phone: the drawing keeps its legible size and scrolls inside its frame (key element on the left) */
+  .dwg { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .dwg::-webkit-scrollbar { display: none; }
+  .dwg svg { min-width: 560px; }
   .pager { grid-template-columns: 1fr; gap: 0; }
   .pager .nx { grid-column: 1; text-align: left; border-top: 1px solid var(--rule); }
   .form-row { grid-template-columns: 1fr; }
@@ -730,3 +818,206 @@ body {
   .phero ~ .close .btn { white-space: normal; text-align: center; line-height: 1.3; padding-top: .75rem; padding-bottom: .75rem; }
   .refs a { grid-template-columns: 1fr; gap: .15rem; }
 }
+
+/*
+ * Service drawings + home service glyphs: motion. Only with prefers-reduced-motion: no-preference; the static state of
+ * every drawing is complete and correct. [data-paused] is set by DrawingMotion while a drawing is off-screen.
+ * Timelines: pipes 8 s (butt fusion), facilities 12 s (pump runs 0–60 %), towers 12 s (fill 0–50 %, supply 50–100 %),
+ * civil 12 s (stages at 0 / 16.67 / 33.33 / 50 / 66.67 %), wells continuous.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .dwg .sd-fl { opacity: .95; animation: sd-flow .9s linear infinite; }
+  .dwg .sd-pt { animation: sd-pt 1.3s linear infinite; }
+  .dwg[data-paused] *, .svc[data-paused] * { animation-play-state: paused; }
+
+  /* pipes: rammer, butt-fusion cycle, water after the joint */
+  .dwg .pp-ram, .dwg .cv-ram-b { animation: sd-tamp .32s ease-in-out infinite alternate; }
+  .dwg .pp-r { animation: pp-r 8s ease-in-out infinite; }
+  .dwg .pp-heat { animation: pp-heat 8s ease-in-out infinite; }
+  .dwg .pp-glow { animation: pp-glow 8s ease-in-out infinite; }
+  .dwg .pp-melt { animation: pp-melt 8s ease-in-out infinite; }
+  .dwg .pp-bead path { transform-box: fill-box; animation: pp-bead 8s ease-out infinite; }
+  .dwg .pp-b-up { transform-origin: 50% 100%; }
+  .dwg .pp-b-dn { transform-origin: 50% 0; }
+  .dwg .pp-wtr { animation: pp-wtr 8s linear infinite; }
+  .dwg .pp-hl { animation: pp-hl 8s linear infinite; }
+  .dwg .pp-fl { animation-duration: .6s; }
+
+  /* facilities: pump cycle */
+  .dwg .fa-imp { transform-box: fill-box; transform-origin: center; animation: fa-imp 12s linear infinite; }
+  .dwg .sd-fl.fa-run { animation: fa-run 12s linear infinite; }
+  .dwg .sd-fl.fa-in { animation-duration: 1.1s; }
+  .dwg .fa-lvl { transform-box: fill-box; transform-origin: 50% 100%; animation: fa-lvl 12s ease-in-out infinite; }
+  .dwg .fa-surf { animation: fa-surf 12s ease-in-out infinite; }
+  .dwg .fa-disc { transform-box: fill-box; transform-origin: 0 0; animation: fa-disc 12s ease-in-out infinite; }
+  .dwg .fa-ndl { transform-box: fill-box; transform-origin: center; animation: fa-ndl 12s linear infinite; }
+
+  /* towers: fill / supply */
+  .dwg .tw-lvl { transform-box: fill-box; transform-origin: 50% 100%; animation: tw-lvl 12s ease-in-out infinite; }
+  .dwg .tw-surf, .dwg .tw-float, .dwg .tw-hd { animation: tw-surf 12s ease-in-out infinite; }
+  .dwg .tw-hl { transform-box: fill-box; transform-origin: 50% 100%; animation: tw-hl 12s ease-in-out infinite; }
+  .dwg .sd-fl.tw-riser { animation: tw-riser 12s ease-in-out infinite; }
+  .dwg .sd-fl.tw-pump { animation: tw-pump 12s ease-in-out infinite; }
+  .dwg .sd-fl.tw-svc { animation-duration: 1.4s; }
+  .dwg .tw-up { animation: tw-up 12s linear infinite; }
+  .dwg .tw-dn { animation: tw-dn 12s linear infinite; }
+  .dwg .tw-ptr { opacity: 1; animation: tw-ptr 12s ease-in-out infinite; }
+
+  /* civil: five-stage sequence */
+  .dwg .cv-st1 { animation: cv-st1 12s linear infinite; }
+  .dwg .cv-st2 { animation: cv-st2 12s linear infinite; }
+  .dwg .cv-st3 { animation: cv-st3 12s linear infinite; }
+  .dwg .cv-st4 { animation: cv-st4 12s linear infinite; }
+  .dwg .cv-st5 { animation: cv-st5 12s linear infinite; }
+  .dwg .cv-exc { stroke-dasharray: 1; animation: cv-exc 12s linear infinite; }
+  .dwg .cv-og { animation: cv-og 12s linear infinite; }
+  .dwg .cv-s2 { animation: cv-s2 12s linear infinite; }
+  .dwg .cv-s2b { animation: cv-s2b 12s linear infinite; }
+  .dwg .cv-ram { animation: cv-ram 12s linear infinite; }
+  .dwg .cv-s3 { animation: cv-s3 12s linear infinite; }
+  .dwg .cv-fw { animation: cv-fw 12s linear infinite; }
+  .dwg .cv-slab, .dwg .cv-wall { transform-box: fill-box; transform-origin: 50% 100%; }
+  .dwg .cv-slab { animation: cv-slab 12s linear infinite; }
+  .dwg .cv-wall { animation: cv-wall 12s linear infinite; }
+  .dwg .cv-st-c1 { animation: cv-c1 12s linear infinite; }
+  .dwg .cv-st-c2, .dwg .cv-lw { animation: cv-c2 12s linear infinite; }
+  .dwg .cv-hose { animation: cv-hose 12s linear infinite; }
+  .dwg .cv-wp { animation: cv-wp 12s linear infinite; }
+  .dwg .cv-l1 { animation: cv-l1 12s linear infinite; }
+  .dwg .cv-l2 { animation: cv-l2 12s linear infinite; }
+  .dwg .cv-l3 { animation: cv-l3 12s linear infinite; }
+  .dwg .cv-l4 { animation: cv-l4 12s linear infinite; }
+  .dwg .cv-l5 { animation: cv-l5 12s linear infinite; }
+
+  /* wells: pump, breathing cone / dynamic level */
+  .dwg .wl-imp { transform-box: fill-box; transform-origin: center; animation: sd-spin .8s linear infinite reverse; }
+  .dwg .wl-cone { transform-box: fill-box; transform-origin: 50% 0; animation: wl-cone 6s ease-in-out infinite alternate; }
+  .dwg .wl-dwl, .dwg .wl-surf { animation: wl-dwl 6s ease-in-out infinite alternate; }
+  .dwg .wl-lvl { transform-box: fill-box; transform-origin: 50% 100%; animation: wl-lvl 6s ease-in-out infinite alternate; }
+
+  /* home service glyphs: slow and low-amplitude */
+  .svc .ic-fl { opacity: .95; animation: sd-flow-s 1.8s linear infinite; }
+  .svc .ic-pt { animation: ic-pt 2.4s linear infinite; }
+  .svc .gl-imp { transform-box: fill-box; transform-origin: center; animation: sd-spin 3.2s linear infinite reverse; }
+  .svc .gl-lvl { transform-box: fill-box; transform-origin: 50% 100%; animation: gl-lvl 14s ease-in-out infinite alternate; }
+  .svc .gl-surf { animation: gl-surf 14s ease-in-out infinite alternate; }
+  .svc .gl-tlvl { transform-box: fill-box; transform-origin: 50% 100%; animation: gl-tlvl 14s ease-in-out infinite; }
+  .svc .gl-tsurf { animation: gl-tsurf 14s ease-in-out infinite; }
+  .svc .ic-fl.gl-riser { animation: gl-riser 14s ease-in-out infinite; }
+  .svc .gl-conc { transform-box: fill-box; transform-origin: 50% 100%; animation: gl-conc 12s ease-in-out infinite; }
+}
+
+@keyframes sd-flow { to { stroke-dashoffset: -12; } }
+@keyframes sd-flow-s { to { stroke-dashoffset: -10; } }
+@keyframes sd-pt { to { stroke-dashoffset: -11; } }
+@keyframes ic-pt { to { stroke-dashoffset: -8; } }
+@keyframes sd-spin { to { transform: rotate(360deg); } }
+@keyframes sd-tamp { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+
+/* pipes, 8 s: right end retracted (+30) → heater in → press on plate (+10, soak) → open (+22) → heater out →
+   press together (0) → bead → cool → water; the right pipe fades out/in as the next joint is loaded */
+@keyframes pp-r {
+  0% { transform: translateX(30px); opacity: 0; }
+  4%, 12% { transform: translateX(30px); opacity: 1; }
+  16%, 44% { transform: translateX(10px); opacity: 1; }
+  47%, 53% { transform: translateX(22px); opacity: 1; }
+  57%, 96% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0; }
+}
+@keyframes pp-heat { 0%, 4% { transform: translateY(0); } 12%, 47% { transform: translateY(80px); } 53%, 100% { transform: translateY(0); } }
+@keyframes pp-glow { 0%, 13% { opacity: 0; } 18%, 44% { opacity: .85; } 50%, 100% { opacity: 0; } }
+@keyframes pp-melt { 0%, 16% { opacity: 0; } 26%, 56% { opacity: .8; } 76%, 100% { opacity: 0; } }
+@keyframes pp-bead {
+  0%, 55% { transform: scaleY(0); opacity: 0; }
+  57% { transform: scaleY(.2); opacity: 1; }
+  64%, 96% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+@keyframes pp-hl { 0%, 4% { opacity: 1; } 6%, 51% { opacity: 0; } 54%, 100% { opacity: 1; } }
+@keyframes pp-wtr { 0%, 64% { opacity: 0; } 70%, 95% { opacity: 1; } 100% { opacity: 0; } }
+
+/* facilities, 12 s: pump on 0–60 % (7 turns), off 60–100 % */
+@keyframes fa-imp {
+  0% { transform: rotate(0deg); animation-timing-function: ease-in; }
+  8% { transform: rotate(-180deg); animation-timing-function: linear; }
+  52% { transform: rotate(-2340deg); animation-timing-function: ease-out; }
+  60%, 100% { transform: rotate(-2520deg); }
+}
+@keyframes fa-run { 0%, 2% { stroke-dashoffset: 0; } 60%, 100% { stroke-dashoffset: -84; } }
+/* water body drawn at y 265 (depth 107 to the floor at 372): high 220 (×1.4206), low 300 (×.6729) — between max 210 and min 320 */
+@keyframes fa-lvl { 0%, 100% { transform: scaleY(1.4206); } 60% { transform: scaleY(.6729); } }
+@keyframes fa-surf { 0%, 100% { transform: translateY(-45px); } 60% { transform: translateY(35px); } }
+@keyframes fa-disc { 0% { transform: rotate(60deg); } 3%, 60% { transform: rotate(0deg); } 63%, 100% { transform: rotate(60deg); } }
+@keyframes fa-ndl {
+  0% { transform: rotate(-45deg); }
+  5% { transform: rotate(8deg); }
+  8% { transform: rotate(-3deg); }
+  11% { transform: rotate(1deg); }
+  14%, 20% { transform: rotate(0deg); }
+  22% { transform: rotate(2deg); }
+  24% { transform: rotate(-1deg); }
+  26%, 34% { transform: rotate(0deg); }
+  36% { transform: rotate(1.5deg); }
+  38% { transform: rotate(-1.5deg); }
+  40%, 48% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+  52% { transform: rotate(-1deg); }
+  54%, 60% { transform: rotate(0deg); }
+  66%, 100% { transform: rotate(-45deg); }
+}
+
+/* towers, 12 s: water body drawn at y 144 (depth 68 to y 212): low 164 (×.7059) at 0 %, high 124 (×1.2941) at 50 % —
+   max level 120, overflow lip 110. H line drawn ground 440 → 144 (296): ×.9324 … ×1.0676 */
+@keyframes tw-lvl { 0%, 100% { transform: scaleY(.7059); } 50% { transform: scaleY(1.2941); } }
+@keyframes tw-surf { 0%, 100% { transform: translateY(20px); } 50% { transform: translateY(-20px); } }
+@keyframes tw-hl { 0%, 100% { transform: scaleY(.9324); } 50% { transform: scaleY(1.0676); } }
+@keyframes tw-riser { 0%, 100% { stroke-dashoffset: 0; } 50% { stroke-dashoffset: -72; } }
+@keyframes tw-pump { 0% { stroke-dashoffset: 0; } 50%, 100% { stroke-dashoffset: -72; } }
+@keyframes tw-up { 0%, 47% { opacity: 1; } 50%, 97% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes tw-dn { 0%, 47% { opacity: 0; } 50%, 97% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes tw-ptr { 0%, 47% { transform: translateY(0); } 52%, 97% { transform: translateY(26px); } 100% { transform: translateY(0); } }
+
+/* civil, 12 s */
+@keyframes cv-st1 { 0%, 16.5% { opacity: 1; } 16.67%, 100% { opacity: 0; } }
+@keyframes cv-st2 { 0%, 16.5% { opacity: 0; } 16.67%, 33.2% { opacity: 1; } 33.33%, 100% { opacity: 0; } }
+@keyframes cv-st3 { 0%, 33.2% { opacity: 0; } 33.33%, 49.9% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes cv-st4 { 0%, 49.9% { opacity: 0; } 50%, 66.5% { opacity: 1; } 66.67%, 100% { opacity: 0; } }
+@keyframes cv-st5 { 0%, 66.5% { opacity: 0; } 66.67%, 100% { opacity: 1; } }
+@keyframes cv-exc { 0%, 2% { stroke-dashoffset: 1; } 13%, 100% { stroke-dashoffset: 0; } }
+@keyframes cv-og { 0%, 10% { opacity: 1; } 16%, 100% { opacity: 0; } }
+@keyframes cv-s2 { 0%, 16.67% { opacity: 0; } 19%, 100% { opacity: 1; } }
+@keyframes cv-s2b { 0%, 28% { opacity: 0; } 30.5%, 100% { opacity: 1; } }
+@keyframes cv-ram {
+  0%, 16.67% { opacity: 0; transform: translateX(0); }
+  18% { opacity: 1; transform: translateX(0); }
+  27% { opacity: 1; transform: translateX(220px); }
+  28.5%, 100% { opacity: 0; transform: translateX(220px); }
+}
+@keyframes cv-s3 { 0%, 33.33% { opacity: 0; } 35.5%, 100% { opacity: 1; } }
+@keyframes cv-fw { 0%, 37% { opacity: 0; } 40%, 66.67% { opacity: 1; } 69%, 100% { opacity: 0; } }
+@keyframes cv-slab { 0%, 51% { transform: scaleY(0); } 57%, 100% { transform: scaleY(1); } }
+@keyframes cv-wall { 0%, 57% { transform: scaleY(0); } 65%, 100% { transform: scaleY(1); } }
+@keyframes cv-c1 { 0%, 56% { opacity: 0; } 58%, 100% { opacity: 1; } }
+@keyframes cv-c2 { 0%, 64% { opacity: 0; } 66%, 100% { opacity: 1; } }
+@keyframes cv-hose { 0%, 49% { opacity: 0; } 51%, 64% { opacity: 1; } 66%, 100% { opacity: 0; } }
+@keyframes cv-wp { 0%, 69% { opacity: 0; } 71.5%, 100% { opacity: 1; } }
+@keyframes cv-l1 { 0%, 72% { opacity: 0; } 73.5%, 100% { opacity: 1; } }
+@keyframes cv-l2 { 0%, 75% { opacity: 0; } 76.5%, 100% { opacity: 1; } }
+@keyframes cv-l3 { 0%, 78% { opacity: 0; } 79.5%, 100% { opacity: 1; } }
+@keyframes cv-l4 { 0%, 81% { opacity: 0; } 82.5%, 100% { opacity: 1; } }
+@keyframes cv-l5 { 0%, 84% { opacity: 0; } 85.5%, 100% { opacity: 1; } }
+
+/* wells: cone 244→282 (38) deepens by 4; the water column (84 to y 366) shortens by 4 */
+@keyframes wl-cone { from { transform: scaleY(1); } to { transform: scaleY(1.105); } }
+@keyframes wl-dwl { from { transform: translateY(0); } to { transform: translateY(4px); } }
+@keyframes wl-lvl { from { transform: scaleY(1); } to { transform: scaleY(.9524); } }
+
+/* home glyphs */
+@keyframes gl-lvl { from { transform: scaleY(1.12); } to { transform: scaleY(.88); } }
+@keyframes gl-surf { from { transform: translateY(-3.1px); } to { transform: translateY(3.1px); } }
+/* tank glyph: water drawn at y 15 (depth 15 to y 30); fill 0–50 %, supply 50–100 % */
+@keyframes gl-tlvl { 0%, 100% { transform: scaleY(.8); } 50% { transform: scaleY(1.2); } }
+@keyframes gl-tsurf { 0%, 100% { transform: translateY(3px); } 50% { transform: translateY(-3px); } }
+@keyframes gl-riser { 0%, 100% { stroke-dashoffset: 0; } 50% { stroke-dashoffset: -30; } }
+@keyframes gl-conc { 0%, 6% { transform: scaleY(0); opacity: 1; } 70%, 92% { transform: scaleY(1); opacity: 1; } 99% { transform: scaleY(1); opacity: 0; } 100% { transform: scaleY(0); opacity: 0; } }
+

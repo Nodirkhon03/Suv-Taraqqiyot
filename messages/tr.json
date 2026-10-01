@@ -68,9 +68,21 @@
           }
         ],
         "dwg": {
-          "a": "Ana iletim hattı",
-          "b": "Ø 32–1200 mm",
-          "c": "yılda 200 km’ye kadar"
+          "trench": "Hendek kesiti",
+          "cover": "h ≥ don derinliği",
+          "surface": "sıkıştırılmış üst tabaka",
+          "backfill": "geri dolgu, kazı toprağı",
+          "tape": "uyarı bandı",
+          "initial": "kum ile ilk dolgu",
+          "pipe": "Ø 32–1200 mm",
+          "haunch": "boru yanı sıkıştırma",
+          "bedding": "kum yatak",
+          "fusion": "PE alın kaynağı",
+          "heater": "ısıtıcı plaka",
+          "facer": "planya",
+          "clamp": "kelepçeler",
+          "bead": "kaynak boncuğu",
+          "pe": "PE boru"
         }
       },
       "facilities": {
@@ -99,9 +111,21 @@
           }
         ],
         "dwg": {
-          "a": "Su alma",
-          "b": "Rezervuar · pompa",
-          "c": "300–30.000 m³/gün"
+          "reservoir": "Temiz su deposu",
+          "station": "Pompa istasyonu",
+          "inflow": "su girişi",
+          "network": "şebekeye",
+          "max": "maks. seviye",
+          "min": "min. seviye",
+          "vent": "havalandırma borusu",
+          "overflow": "taşma borusu",
+          "gate": "sürgülü vana",
+          "pump": "santrifüj pompa",
+          "motor": "elektrik motoru",
+          "check": "çek valf",
+          "meter": "debimetre",
+          "gauge": "manometre",
+          "flow": "300–30.000 m³/gün"
         }
       },
       "towers": {
@@ -125,9 +149,19 @@
           }
         ],
         "dwg": {
-          "a": "Su kulesi",
-          "b": "10–75 m³",
-          "c": "yılda 50’ye kadar"
+          "title": "Su kulesi",
+          "type": "Rojnovski tipi, çelik",
+          "vent": "havalandırma",
+          "hatch": "çatı kapağı",
+          "overflow": "taşma borusu, drenaja",
+          "tank": "tank 10–75 m³",
+          "float": "seviye şamandırası",
+          "shaft": "çelik gövde, su dolu",
+          "fill": "dolum: pompa çalışıyor",
+          "supply": "besleme: evler su çekiyor",
+          "foundation": "temel",
+          "chamber": "vana odası",
+          "pump": "pompa istasyonundan"
         }
       },
       "civil": {
@@ -144,9 +178,20 @@
         ],
         "cap": [],
         "dwg": {
-          "a": "Beton yapı",
-          "b": "Temel",
-          "c": "Toprak işleri"
+          "title": "Betonarme yapı",
+          "s1": "1/5 · kazı",
+          "s2": "2/5 · çakıl taban, sıkıştırma",
+          "s3": "3/5 · donatı ve kalıp",
+          "s4": "4/5 · beton dökümü",
+          "s5": "5/5 · kalıp sökümü, katmanlı geri dolgu",
+          "wall": "betonarme perde",
+          "rebar": "donatı",
+          "form": "kalıp",
+          "wp": "su yalıtımı",
+          "backfill": "katmanlı geri dolgu",
+          "slab": "temel plağı",
+          "blinding": "grobeton",
+          "gravel": "sıkıştırılmış çakıl taban"
         }
       },
       "wells": {
@@ -171,9 +216,26 @@
           }
         ],
         "dwg": {
-          "a": "Kuyu",
-          "b": "30–1200 m",
-          "c": "Filtre"
+          "title": "Hidrojeolojik kuyu",
+          "depth": "30–1200 m",
+          "soil": "toprak",
+          "loam": "tın",
+          "clay": "kil,\ngeçirimsiz",
+          "aquifer": "akifer:\nkum, çakıl",
+          "clay2": "kil",
+          "conductor": "kılavuz boru",
+          "grout": "çimento şerbeti\n(halka boşluğu)",
+          "casing": "üretim borusu",
+          "static": "statik seviye",
+          "riser": "yükselme borusu",
+          "dynamic": "dinamik seviye",
+          "pump": "dalgıç pompa",
+          "gravel": "çakıl zarfı",
+          "screen": "filtre",
+          "sump": "çökeltme borusu",
+          "valve": "sürgülü vana",
+          "meter": "su sayacı",
+          "out": "depoya"
         }
       }
     }

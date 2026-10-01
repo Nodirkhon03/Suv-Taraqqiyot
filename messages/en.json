@@ -68,9 +68,21 @@
           }
         ],
         "dwg": {
-          "a": "Transmission main",
-          "b": "Ø 32–1200 mm",
-          "c": "up to 200 km a year"
+          "trench": "Trench section",
+          "cover": "h ≥ frost depth",
+          "surface": "compacted surface course",
+          "backfill": "final backfill, excavated soil",
+          "tape": "warning tape",
+          "initial": "initial backfill, sand",
+          "pipe": "Ø 32–1200 mm",
+          "haunch": "haunching, compacted",
+          "bedding": "sand bedding",
+          "fusion": "PE butt fusion",
+          "heater": "heater plate",
+          "facer": "facing tool",
+          "clamp": "clamps",
+          "bead": "fusion bead",
+          "pe": "PE pipe"
         }
       },
       "facilities": {
@@ -99,9 +111,21 @@
           }
         ],
         "dwg": {
-          "a": "Intake",
-          "b": "Reservoir · pumps",
-          "c": "300–30,000 m³/day"
+          "reservoir": "Clean-water reservoir",
+          "station": "Pumping station",
+          "inflow": "inflow",
+          "network": "to network",
+          "max": "max. level",
+          "min": "min. level",
+          "vent": "vent pipe",
+          "overflow": "overflow pipe, to drain",
+          "gate": "gate valve",
+          "pump": "centrifugal pump",
+          "motor": "electric motor",
+          "check": "check valve",
+          "meter": "flow meter",
+          "gauge": "pressure gauge",
+          "flow": "300–30,000 m³/day"
         }
       },
       "towers": {
@@ -125,9 +149,19 @@
           }
         ],
         "dwg": {
-          "a": "Water tower",
-          "b": "10–75 m³",
-          "c": "up to 50 a year"
+          "title": "Water tower",
+          "type": "Rozhnovsky type, steel",
+          "vent": "roof vent",
+          "hatch": "roof hatch",
+          "overflow": "overflow, to drain",
+          "tank": "tank 10–75 m³",
+          "float": "level float",
+          "shaft": "steel shaft, water-filled",
+          "fill": "filling: pump on",
+          "supply": "supply: houses draw water",
+          "foundation": "foundation",
+          "chamber": "valve chamber",
+          "pump": "from pumping station"
         }
       },
       "civil": {
@@ -144,9 +178,20 @@
         ],
         "cap": [],
         "dwg": {
-          "a": "Concrete structure",
-          "b": "Foundation",
-          "c": "Earthworks"
+          "title": "Reinforced-concrete structure",
+          "s1": "1/5 · excavation",
+          "s2": "2/5 · gravel base, compaction",
+          "s3": "3/5 · rebar and formwork",
+          "s4": "4/5 · concrete pour",
+          "s5": "5/5 · stripping, backfill in layers",
+          "wall": "RC wall",
+          "rebar": "rebar",
+          "form": "formwork",
+          "wp": "waterproofing",
+          "backfill": "backfill in layers",
+          "slab": "base slab",
+          "blinding": "blinding, lean concrete",
+          "gravel": "compacted gravel base"
         }
       },
       "wells": {
@@ -171,9 +216,26 @@
           }
         ],
         "dwg": {
-          "a": "Well",
-          "b": "30–1200 m",
-          "c": "Screen"
+          "title": "Hydrogeological well",
+          "depth": "30–1200 m",
+          "soil": "soil",
+          "loam": "loam",
+          "clay": "clay,\naquitard",
+          "aquifer": "aquifer:\nsand, gravel",
+          "clay2": "clay",
+          "conductor": "conductor casing",
+          "grout": "cement grout seal",
+          "casing": "production casing",
+          "static": "static level",
+          "riser": "riser pipe",
+          "dynamic": "dynamic level",
+          "pump": "submersible pump",
+          "gravel": "gravel pack",
+          "screen": "filter screen",
+          "sump": "sump",
+          "valve": "gate valve",
+          "meter": "water meter",
+          "out": "to reservoir"
         }
       }
     }

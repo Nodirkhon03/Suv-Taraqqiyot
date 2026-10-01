@@ -5,6 +5,7 @@ import PageHero from "@/components/pages/PageHero";
 import SectionHead from "@/components/home/SectionHead";
 import ClosingCta from "@/components/home/ClosingCta";
 import ServiceDrawing, { type DrawingText, type ServiceKey } from "@/components/pages/ServiceDrawing";
+import DrawingMotion from "@/components/home/DrawingMotion";
 import { getProjectText } from "@/lib/content/projects-i18n";
 import { formatMillions, millions, projectBySlug } from "@/lib/format";
 
@@ -128,6 +129,7 @@ export default async function ServicesPage({ params: { locale } }: { params: { l
         );
       })}
 
+      <DrawingMotion selector=".dwg" />
       <ClosingCta locale={locale} />
     </>
   );

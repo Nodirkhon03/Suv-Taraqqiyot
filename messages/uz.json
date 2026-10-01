@@ -68,9 +68,21 @@
           }
         ],
         "dwg": {
-          "a": "Magistral quvur",
-          "b": "Ø 32–1200 mm",
-          "c": "yiliga 200 km gacha"
+          "trench": "Xandaq kesimi",
+          "cover": "h ≥ muzlash chuqurligi",
+          "surface": "zichlangan ustki qatlam",
+          "backfill": "grunt bilan qayta koʻmish",
+          "tape": "signal lentasi",
+          "initial": "qum bilan himoya qatlami",
+          "pipe": "Ø 32–1200 mm",
+          "haunch": "quvur yonlarini zichlash",
+          "bedding": "qum toʻshama",
+          "fusion": "PE kontakt payvandlash",
+          "heater": "isitgich plita",
+          "facer": "torets kesgich",
+          "clamp": "qisqichlar",
+          "bead": "payvand valigi",
+          "pe": "PE quvur"
         }
       },
       "facilities": {
@@ -99,9 +111,21 @@
           }
         ],
         "dwg": {
-          "a": "Suv olish",
-          "b": "Rezervuar · nasos",
-          "c": "300–30 000 m³/kun"
+          "reservoir": "Toza suv rezervuari",
+          "station": "Nasos stansiyasi",
+          "inflow": "suv kirishi",
+          "network": "tarmoqqa",
+          "max": "maks. sath",
+          "min": "min. sath",
+          "vent": "ventilyatsiya quvuri",
+          "overflow": "toshib chiqish quvuri",
+          "gate": "zadvijka",
+          "pump": "markazdan qochma nasos",
+          "motor": "elektr dvigatel",
+          "check": "teskari klapan",
+          "meter": "sarf oʻlchagich",
+          "gauge": "manometr",
+          "flow": "300–30 000 m³/kun"
         }
       },
       "towers": {
@@ -125,9 +149,19 @@
           }
         ],
         "dwg": {
-          "a": "Suv minorasi",
-          "b": "10–75 m³",
-          "c": "yiliga 50 tagacha"
+          "title": "Suv minorasi",
+          "type": "Rojnovskiy tipidagi, poʻlat",
+          "vent": "ventilyatsiya",
+          "hatch": "tom lyuki",
+          "overflow": "toshib chiqish quvuri",
+          "tank": "bak 10–75 m³",
+          "float": "sath qalqovichi",
+          "shaft": "suv bilan toʻla poʻlat ustun",
+          "fill": "toʻldirish: nasos ishlaydi",
+          "supply": "taʼminot: uylar suv oladi",
+          "foundation": "poydevor",
+          "chamber": "zadvijka qudugʻi",
+          "pump": "nasos stansiyasidan"
         }
       },
       "civil": {
@@ -144,9 +178,20 @@
         ],
         "cap": [],
         "dwg": {
-          "a": "Beton inshoot",
-          "b": "Poydevor",
-          "c": "Yer ishlari"
+          "title": "Temir-beton inshoot",
+          "s1": "1/5 · kotlovan qazish",
+          "s2": "2/5 · shagʻal asos, zichlash",
+          "s3": "3/5 · armatura va qolip",
+          "s4": "4/5 · beton quyish",
+          "s5": "5/5 · qolipni yechish, qatlamlab koʻmish",
+          "wall": "temir-beton devor",
+          "rebar": "armatura",
+          "form": "qolip",
+          "wp": "gidroizolyatsiya",
+          "backfill": "qatlamlab koʻmish",
+          "slab": "poydevor plitasi",
+          "blinding": "beton tayyorlov qatlami",
+          "gravel": "zichlangan shagʻal asos"
         }
       },
       "wells": {
@@ -171,9 +216,26 @@
           }
         ],
         "dwg": {
-          "a": "Quduq",
-          "b": "30–1200 m",
-          "c": "Filtr"
+          "title": "Gidrogeologik quduq",
+          "depth": "30–1200 m",
+          "soil": "tuproq",
+          "loam": "qumoq",
+          "clay": "soz, suv\noʻtkazmas",
+          "aquifer": "suvli\nqatlam:\nqum, shagʻal",
+          "clay2": "soz",
+          "conductor": "konduktor",
+          "grout": "sement qorishmasi\n(halqa boʻshligʻi)",
+          "casing": "ishlatish quvuri",
+          "static": "statik sath",
+          "riser": "suv koʻtaruvchi quvur",
+          "dynamic": "dinamik sath",
+          "pump": "chuqurlik nasosi",
+          "gravel": "shagʻal qatlami",
+          "screen": "filtr",
+          "sump": "choʻktirgich",
+          "valve": "zadvijka",
+          "meter": "suv hisoblagich",
+          "out": "rezervuarga"
         }
       }
     }
