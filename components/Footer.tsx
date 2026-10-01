@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { NAV_ITEMS } from "@/components/Header";
+import { NusratCredit } from "@/components/nusrat-credit";
+import f from "./Footer.module.css";
 
 export default async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "site" });
@@ -23,7 +25,10 @@ export default async function Footer({ locale }: { locale: string }) {
             </Link>
           ))}
         </nav>
-        <p className="copy">{t("footer.copy", { year: new Date().getFullYear() })}</p>
+        <div className={f.base}>
+          <p className="copy">{t("footer.copy", { year: new Date().getFullYear() })}</p>
+          <NusratCredit locale={locale} site="suv-taraqqiyot" tone="dark" />
+        </div>
       </div>
     </footer>
   );

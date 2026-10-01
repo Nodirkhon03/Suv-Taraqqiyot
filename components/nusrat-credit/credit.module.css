@@ -1,0 +1,590 @@
+/*
+ * «Powered by Nusrat.Tech». Canonical source: brain/nusrat-tech/credit/nusrat-credit/.
+ * Every selector is doubled up under .root so a host's `footer a { … }` rules cannot reach in.
+ * The moment plays on three triggers: [data-play] (first arrival, set by SignOnView),
+ * :focus-visible, and :hover on real pointers.
+ */
+
+.root {
+  --nt-gold: #d5a051; /* oklch(74% 0.115 75), the brand's antique gold */
+  --nt-garnet: #bd423a; /* oklch(55% 0.16 27) */
+  --nt-star: #f6ead2;
+  --nt-champagne: #f6d8ae; /* oklch(89.7% 0.064 76), the poster's own lettering */
+  --nt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nt-impact: 0.42s; /* = IMPACT in index.tsx: the falling star reaches the rosette */
+  display: inline-flex;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.dark {
+  --nt-mark: var(--nt-accent, var(--nt-gold));
+  --nt-ink-hover: var(--nt-champagne);
+  --nt-spark: var(--nt-star);
+  --nt-meteor: rgb(246 234 210 / 0.9);
+  --nt-meteor-head: #fffaf0;
+  --nt-meteor-glow: rgb(246 216 174 / 0.85);
+  --nt-twinkle-lo: 0.18;
+  --nt-twinkle-hi: 0.75;
+  --nt-hot: #fffaf0;
+  --nt-glow: #f6d8ae;
+}
+
+/* On light grounds brass never carries anything: the rosette takes the ink or the host's jewel tone. */
+.light {
+  --nt-mark: var(--nt-accent, currentColor);
+  --nt-ink-hover: var(--nt-accent, currentColor);
+  --nt-spark: var(--nt-gold);
+  --nt-meteor: rgb(213 160 81 / 0.85);
+  --nt-meteor-head: #c98f3c;
+  --nt-meteor-glow: rgb(213 160 81 / 0.55);
+  --nt-twinkle-lo: 0.12;
+  --nt-twinkle-hi: 0.5;
+  --nt-hot: #e2a24a;
+  --nt-glow: #d5a051;
+}
+
+.root .credit {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 44px;
+  padding: 4px 8px 4px 4px;
+  margin: -4px -8px -4px -4px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 160ms var(--nt-ease);
+}
+
+.root .credit:hover,
+.root .credit:focus-visible {
+  color: inherit;
+  text-decoration: none;
+}
+
+.root .credit:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.root .credit:active {
+  transform: translateY(1px);
+}
+
+/* ---------- the rosette, and the blast layer over it ---------- */
+
+.root .markWrap {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 36px;
+  height: 36px;
+}
+
+.root .burst {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.root .hot {
+  fill: var(--nt-hot);
+}
+
+.root .comet,
+.root .flash,
+.root .ring,
+.root .debris,
+.root .nova {
+  opacity: 0;
+}
+
+.root .flash,
+.root .ring,
+.root .debris,
+.root .nova {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.root .ring {
+  stroke: var(--nt-glow);
+}
+
+.root .flare {
+  stroke: var(--nt-hot);
+  opacity: 0.8;
+}
+
+.root .mark {
+  display: block;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  overflow: visible;
+  color: var(--nt-mark);
+  transition: filter 400ms var(--nt-ease);
+}
+
+.root .heart {
+  fill: var(--nt-garnet);
+  stroke: var(--nt-mark);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.root .spark {
+  fill: var(--nt-spark);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ---------- the signature ---------- */
+
+.root .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.root .label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.root .wordmark {
+  display: block;
+  width: 120px;
+  height: 30px;
+  margin-left: -3px; /* the n's lead-in stroke hangs into the margin, as handwriting does */
+  overflow: visible;
+  color: inherit;
+  transition: color 450ms var(--nt-ease);
+}
+
+.root .srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- the sky: behind the signature, as on nusrat.tech ---------- */
+
+/* Overhangs only to the left (the stars' side) and a little above and below, never to the
+   right, so it can never push a phone page into sideways scroll. Edges fade, nothing is cut. */
+.root .sky {
+  position: absolute;
+  inset: -20px 0 -20px -56px;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(closest-side, #000 52%, transparent);
+  mask-image: radial-gradient(closest-side, #000 52%, transparent);
+}
+
+.root .twinkle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--nt-spark);
+  opacity: var(--nt-twinkle-lo);
+  animation: nt-twinkle var(--dur) ease-in-out infinite alternate;
+}
+
+.root .star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--len);
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--nt-meteor));
+  opacity: 0;
+  transform: translate(var(--x0), var(--y0)) rotate(21deg);
+  transform-origin: 100% 50%;
+}
+
+/* the head: a hot point with a little glow, as the eye sees a meteor */
+.root .star::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: var(--nt-meteor-head);
+  box-shadow: 0 0 8px 2px var(--nt-meteor-glow);
+}
+
+.root .ambient {
+  animation: nt-fall-ambient var(--dur) linear var(--at) infinite both;
+}
+
+/* ---------- the moment: first arrival, keyboard focus, or hover on a real pointer ---------- */
+/* `forwards`, not `both`, where the first keyframe must not show early: the rosette's strands and
+   heart stay drawn until the blast and then redraw out of it; the flash, shockwave and sparks stay
+   unseen (opacity 0 at rest) until the impact. */
+.root[data-play] .comet,
+.root .credit:focus-visible .comet {
+  animation: nt-comet var(--nt-impact) cubic-bezier(0.55, 0, 0.9, 0.45) both;
+}
+.root[data-play] .flash,
+.root .credit:focus-visible .flash {
+  animation: nt-flash 520ms var(--nt-ease) var(--nt-impact) forwards;
+}
+.root[data-play] .ring,
+.root .credit:focus-visible .ring {
+  animation: nt-ring 760ms var(--nt-ease) var(--nt-impact) forwards;
+}
+.root[data-play] .debris,
+.root .credit:focus-visible .debris {
+  animation: nt-debris var(--dur) cubic-bezier(0.2, 0.7, 0.3, 1) var(--nt-impact) forwards;
+}
+.root[data-play] .markWrap,
+.root .credit:focus-visible .markWrap {
+  animation: nt-punch 560ms var(--nt-ease) var(--nt-impact) both;
+}
+.root[data-play] .mark,
+.root .credit:focus-visible .mark {
+  animation: nt-turn 1000ms var(--nt-ease) var(--nt-impact) both;
+}
+.root[data-play] .strand,
+.root .credit:focus-visible .strand {
+  stroke-dasharray: 1 2;
+  animation: nt-draw 600ms var(--nt-ease) var(--at) forwards;
+}
+.root[data-play] .heart,
+.root .credit:focus-visible .heart {
+  animation: nt-ignite 700ms var(--nt-ease) var(--at) forwards;
+}
+.root[data-play] .spark,
+.root .credit:focus-visible .spark {
+  animation: nt-spark 900ms var(--nt-ease) var(--at) both;
+}
+.root[data-play] .pen,
+.root .credit:focus-visible .pen {
+  stroke-dasharray: 1 2;
+  animation: nt-draw var(--for) linear var(--at) both;
+}
+.root[data-play] .dot,
+.root .credit:focus-visible .dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nt-dot var(--for) var(--nt-ease) var(--at) both;
+}
+.root[data-play] .settle,
+.root .credit:focus-visible .settle {
+  animation: nt-settle var(--for) linear var(--at) both;
+}
+.root[data-play] .nova,
+.root .credit:focus-visible .nova {
+  animation: nt-nova 1900ms var(--nt-ease) var(--at) both;
+}
+.root[data-play] .wordmark,
+.root .credit:focus-visible .wordmark {
+  color: var(--nt-ink-hover);
+}
+.dark[data-play] .mark,
+.dark .credit:focus-visible .mark {
+  filter: drop-shadow(0 0 6px rgb(213 160 81 / 0.45));
+}
+
+@media (hover: hover) {
+  .root .credit:hover .comet {
+    animation: nt-comet var(--nt-impact) cubic-bezier(0.55, 0, 0.9, 0.45) both;
+  }
+  .root .credit:hover .flash {
+    animation: nt-flash 520ms var(--nt-ease) var(--nt-impact) forwards;
+  }
+  .root .credit:hover .ring {
+    animation: nt-ring 760ms var(--nt-ease) var(--nt-impact) forwards;
+  }
+  .root .credit:hover .debris {
+    animation: nt-debris var(--dur) cubic-bezier(0.2, 0.7, 0.3, 1) var(--nt-impact) forwards;
+  }
+  .root .credit:hover .markWrap {
+    animation: nt-punch 560ms var(--nt-ease) var(--nt-impact) both;
+  }
+  .root .credit:hover .mark {
+    animation: nt-turn 1000ms var(--nt-ease) var(--nt-impact) both;
+  }
+  .root .credit:hover .strand {
+    stroke-dasharray: 1 2;
+    animation: nt-draw 600ms var(--nt-ease) var(--at) forwards;
+  }
+  .root .credit:hover .heart {
+    animation: nt-ignite 700ms var(--nt-ease) var(--at) forwards;
+  }
+  .root .credit:hover .spark {
+    animation: nt-spark 900ms var(--nt-ease) var(--at) both;
+  }
+  .root .credit:hover .pen {
+    stroke-dasharray: 1 2;
+    animation: nt-draw var(--for) linear var(--at) both;
+  }
+  .root .credit:hover .dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nt-dot var(--for) var(--nt-ease) var(--at) both;
+  }
+  .root .credit:hover .settle {
+    animation: nt-settle var(--for) linear var(--at) both;
+  }
+  .root .credit:hover .nova {
+    animation: nt-nova 1900ms var(--nt-ease) var(--at) both;
+  }
+  .root .credit:hover .wordmark {
+    color: var(--nt-ink-hover);
+  }
+  .dark .credit:hover .mark {
+    filter: drop-shadow(0 0 6px rgb(213 160 81 / 0.45));
+  }
+}
+
+@keyframes nt-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* a quarter turn of a four-fold figure: it lands exactly where it started */
+@keyframes nt-turn {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes nt-ignite {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.3);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.45);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes nt-spark {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
+
+@keyframes nt-dot {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+@keyframes nt-settle {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes nt-twinkle {
+  from {
+    opacity: var(--nt-twinkle-lo);
+  }
+  to {
+    opacity: var(--nt-twinkle-hi);
+  }
+}
+
+/* the star that strikes: accelerates in from the upper left, gone at the moment of impact */
+@keyframes nt-comet {
+  0% {
+    opacity: 0;
+    transform: translate(var(--cx), var(--cy));
+  }
+  15% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes nt-flash {
+  0% {
+    opacity: 1;
+    transform: scale(0.15);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@keyframes nt-ring {
+  0% {
+    opacity: 0.95;
+    transform: scale(0.15);
+    stroke-width: 2.6;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.3);
+    stroke-width: 0.3;
+  }
+}
+
+/* each spark is drawn on its own axis, so "up" is outward */
+@keyframes nt-debris {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.3);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, var(--d)) scale(0.35);
+  }
+}
+
+/* the hit: the rosette flinches, then springs back */
+@keyframes nt-punch {
+  0% {
+    transform: scale(1);
+  }
+  16% {
+    transform: scale(0.76);
+  }
+  52% {
+    transform: scale(1.14);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* the finale: the full stop becomes a star, flares, twinkles once and fades */
+@keyframes nt-nova {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+  }
+  16% {
+    opacity: 1;
+    transform: scale(1.9) rotate(0deg);
+  }
+  34% {
+    transform: scale(1) rotate(0deg);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.25) rotate(0deg);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6) rotate(0deg);
+  }
+}
+
+/* the same fall in the first ~14% of a long cycle, then a dark sky until the next one */
+@keyframes nt-fall-ambient {
+  0% {
+    opacity: 0;
+    transform: translate(var(--x0), var(--y0)) rotate(21deg);
+  }
+  2% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  14% {
+    opacity: 0;
+    transform: translate(var(--x1), var(--y1)) rotate(21deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x1), var(--y1)) rotate(21deg);
+  }
+}
+
+/* Reduced motion: a still sky and a signature that is simply there; hover only warms the ink. */
+@media (prefers-reduced-motion: reduce) {
+  .root .credit,
+  .root .credit * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .root .star,
+  .root .burst {
+    display: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .root .mark,
+  .root .wordmark {
+    color: LinkText;
+  }
+  .root .sky,
+  .root .burst {
+    display: none;
+  }
+}
+
+@media print {
+  .root .sky,
+  .root .markWrap {
+    display: none;
+  }
+}
