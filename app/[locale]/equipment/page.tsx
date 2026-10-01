@@ -1,168 +1,195 @@
-"use client";
-
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import { equipment, categories } from "@/lib/equipment";
+import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n";
+import PageHero from "@/components/pages/PageHero";
+import SectionHead from "@/components/home/SectionHead";
+import ClosingCta from "@/components/home/ClosingCta";
+import { equipment } from "@/lib/equipment";
+import { equipmentImage, getEquipmentText } from "@/lib/content/equipment-i18n";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] as const },
-  }),
-};
+/**
+ * The core fleet, civil machines first and drilling rigs last (owner, round 2). Names are the
+ * keys of lib/equipment.ts; quantities come from there, texts and cutouts from lib/content.
+ * Every item in lib/equipment.ts must sit in exactly one group (checked at build).
+ */
+const GROUPS = [
+  {
+    key: "earth",
+    names: [
+      "Hyundai Robex 210W-9S Excavator",
+      "Hyundai Excavator RW140",
+      "Hyundai Robex 60W-9S Excavator",
+      "Hyundai Excavator Robex 55W",
+      "Backhoe Loader JCB 4CX",
+      "Backhoe Loader Hyundai H940",
+      "LiuGong Loader 835H",
+      "Mini Loader JCB SSL 155",
+      "Mini Loader XCMG XT760",
+      "Trencher KMZ (on MTZ Belarus 80.1)",
+      "Compactor BOMAG BMP8500",
+      "Rammer Ishikawa SR80",
+    ],
+  },
+  {
+    key: "cranes",
+    names: [
+      "Truck Crane Sany STC500",
+      "Truck Crane Galichanin KS-55713-4 (Kamaz)",
+      "Truck Crane Shacman XCMG SQ8SK3Q",
+      "Truck Crane Manipulator Kamaz 65117",
+    ],
+  },
+  {
+    key: "trucks",
+    names: [
+      "Dump Truck SHAANXI CHACMAN F3000",
+      "Truck Shaanxi 60 t (pipe carrier)",
+      "Flatbed Truck Kamaz 43118",
+      "Water Tanker ZIL-130",
+      "MTZ Tractor (Minsk Tractor Plant)",
+    ],
+  },
+  {
+    key: "welding",
+    names: [
+      "Pipe Welding Machine Turan Makina AL 800",
+      "Pipe Welding Machine Turan Makina AL 500",
+      "HDPE Pipe Fusion Machine J.Saouron Pipefuse-630",
+      "HDPE Pipe Fusion Machine J.Saouron Pipefuse-250",
+      "Extrusion Welding Machine PE/PP",
+      "Welding Machine Jasic ARC400",
+      "Welding Unit Set",
+      "Pipeline Inspection Camera",
+    ],
+  },
+  {
+    key: "power",
+    names: [
+      "Mobile Concrete Mixer ADDFORCE LT3500",
+      "Generator AKSA ADP 25A",
+      "Generator Eastern Lion GFS-W24",
+      "Atlas Copco Compressor",
+      "Compressor Oryol PKS-12,25",
+      "Rod Vibrator TeXa T-96505",
+      "Drainage Pump KSB AmaDrainer N 301",
+      "Drainage Pump Wilo-Drain TC 40",
+      "Drainage Pump Wilo-Drain TM 32/8",
+      "Drainage Pump Grundfos Unilift KP 250",
+    ],
+  },
+  {
+    key: "drilling",
+    names: [
+      "URB 3-AM Drilling Unit",
+      "URB 2D3 Drilling Unit",
+      "URB 2.5 Drilling Unit",
+      "YDZ1500 Drilling Machine",
+      "UKS 22 Drilling Machine",
+      "BA-15 Drilling Unit",
+    ],
+  },
+] as const;
 
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
+function quantityOf(name: string): number {
+  const item = equipment.find((e) => e.name === name);
+  if (!item) throw new Error(`lib/equipment.ts: no "${name}"`);
+  return item.quantity;
+}
 
-const cardFade = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+export default async function EquipmentPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "equipmentPage" });
+  const tSite = await getTranslations({ locale, namespace: "site" });
 
-/* ─── PAGE ─── */
-export default function EquipmentPage() {
-  const t = useTranslations("equipmentPage");
+  const names: string[] = GROUPS.flatMap((g) => [...g.names]);
+  const listed = new Set<string>(names);
+  const missing = equipment.filter((e) => !listed.has(e.name));
+  if (missing.length) throw new Error(`equipment page: ungrouped machines ${missing.map((m) => m.name).join(", ")}`);
+  if (listed.size !== names.length) throw new Error("equipment page: a machine is listed in two groups");
+  const totalModels = equipment.length;
+  const totalUnits = equipment.reduce((s, e) => s + e.quantity, 0);
 
-  const stats = [
-    { value: "30+", labelKey: "stats.machineLabel" },
-    { value: "1200m", labelKey: "stats.depthLabel" },
-    { value: "1200mm", labelKey: "stats.diameterLabel" },
-    { value: "200km", labelKey: "stats.capacityLabel" },
-  ];
+  const groups = GROUPS.map((g) => ({
+    key: g.key,
+    units: g.names.reduce((s, n) => s + quantityOf(n), 0),
+    /* plates with a cutout first, text-only plates after them */
+    items: g.names
+      .map((name) => {
+        const text = getEquipmentText(name, locale as Locale);
+        return { name, label: text.name, type: text.type, quantity: quantityOf(name), image: equipmentImage[name] };
+      })
+      .sort((a, b) => Number(!a.image) - Number(!b.image)),
+  }));
 
   return (
     <>
-      {/* ─── HERO HEADER ─── */}
-      <section className="bg-navy py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h1
-            className="text-4xl font-bold text-white tracking-tighter"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0}
-          >
-            {t("title")}
-          </motion.h1>
-          <motion.p
-            className="mt-4 text-lg text-gray-300 max-w-2xl"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0.15}
-          >
-            {t("subtitle")}
-          </motion.p>
+      <PageHero
+        title={t("hero.title")}
+        lead={t("hero.lead", { models: totalModels, units: totalUnits })}
+        aside={
+          <nav className="tblock" aria-label={t("hero.toc")}>
+            <ol className="toc">
+              {groups.map((g, i) => (
+                <li key={g.key}>
+                  <a href={`#${g.key}`}>
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    {t(`groups.${g.key}`)}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        }
+      >
+        <div className="cta-row">
+          <Link className="btn btn-white" href={`/${locale}/contact`}>
+            {tSite("cta")}
+          </Link>
         </div>
-      </section>
+        <p className="note">{t("caption")}</p>
+      </PageHero>
 
-      {/* ─── CAPABILITY SUMMARY BAR ─── */}
-      <section className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-6"
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {stats.map((s) => (
-              <motion.div key={s.labelKey} className="text-center" variants={cardFade}>
-                <p className="text-3xl font-bold text-navy">{s.value}</p>
-                <p className="text-sm text-gray-500">{t(s.labelKey)}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      {groups.map((g, i) => (
+        <section key={g.key} id={g.key} className={i % 2 ? "sec bg-50" : "sec"} aria-labelledby={`${g.key}-title`}>
+          <div className="wrap">
+            <SectionHead
+              id={`${g.key}-title`}
+              label={`${String(i + 1).padStart(2, "0")} · ${t("summary", { models: g.items.length, units: g.units })}`}
+              title={t(`groups.${g.key}`)}
+            />
+            <ul className="eq-grid">
+              {g.items.map((m) => (
+                <li key={m.name} className={m.image ? undefined : "t"}>
+                  <figure className={m.image ? "eq" : "eq text-only"}>
+                    {m.image && (
+                      <div className="img">
+                        <Image
+                          src={m.image}
+                          alt={`${m.label} — ${m.type}`}
+                          fill
+                          loading="lazy"
+                          sizes="(max-width: 760px) 50vw, (max-width: 1100px) 33vw, 300px"
+                        />
+                      </div>
+                    )}
+                    <figcaption>
+                      <span className="nm">{m.label}</span>
+                      <span className="ty">{m.type}</span>
+                      <span className="qt">
+                        <span>{t("qtyLabel")}</span>
+                        {t("quantity", { count: m.quantity })}
+                      </span>
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ))}
 
-      {/* ─── CATEGORY SECTIONS ─── */}
-      {categories.map((cat) => {
-        const items = equipment.filter((e) => e.category === cat.key);
-
-        return (
-          <section key={cat.key} className="py-16 lg:py-24 border-t border-gray-100 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.span
-                className="text-xs uppercase tracking-widest text-cyan font-medium"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={0}
-              >
-                {t(`categories.${cat.key}`)}
-              </motion.span>
-              <motion.h2
-                className="mt-3 text-2xl font-bold text-navy tracking-tighter"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={0.1}
-              >
-                {t(`categories.${cat.key}`)}
-              </motion.h2>
-
-              <motion.div
-                className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                variants={stagger}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {items.map((item) => (
-                  <motion.div
-                    key={item.name}
-                    className="group relative flex flex-col card-accent rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md hover:border-engineering"
-                    variants={cardFade}
-                    whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  >
-                    {/* Equipment image — white background, centered, object-contain */}
-                    <div className="relative aspect-[4/3] w-full bg-white rounded-t-2xl overflow-hidden flex items-center justify-center p-6">
-                      <Image
-                        src={item.imagePath}
-                        alt={item.name}
-                        fill
-                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                        loading="lazy"
-                      />
-
-                      {/* Quantity badge */}
-                      {item.quantity > 1 && (
-                        <span className="absolute top-3 right-3 bg-white text-navy text-[11px] font-semibold px-2.5 py-1 rounded-full border border-gray-200 shadow-sm">
-                          &times;{item.quantity}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Divider */}
-                    <div className="h-px bg-gray-100" />
-
-                    {/* Content */}
-                    <div className="flex flex-col items-center text-center px-5 py-5">
-                      <p className="font-bold text-navy leading-tight">
-                        {item.name}
-                      </p>
-                      {item.spec && (
-                        <p className="mt-1.5 text-sm text-gray-500 leading-snug">
-                          {item.spec}
-                        </p>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          </section>
-        );
-      })}
+      <ClosingCta locale={locale} />
     </>
   );
 }

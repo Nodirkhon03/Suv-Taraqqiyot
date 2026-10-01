@@ -1,4 +1,28 @@
 {
+  "site": {
+    "nav": {
+      "company": "Şirket",
+      "services": "Hizmetler",
+      "equipment": "Ekipman",
+      "projects": "Projeler",
+      "contact": "İletişim"
+    },
+    "cta": "Projeyi görüşelim",
+    "menu": "Menü",
+    "language": "Dil",
+    "homeLabel": "SUV-TARAQQIYOT — ana sayfa",
+    "mainNav": "Ana menü",
+    "quickNav": "Hızlı bağlantılar",
+    "footerNav": "Alt menü",
+    "skip": "İçeriğe geç",
+    "footer": {
+      "company": "SUV-TARAQQIYOT LLC",
+      "founded": "2001 yılında kuruldu",
+      "tin": "VKN 203 681 239",
+      "address": "Xusan Shams Caddesi 18, Mirzo Uluğbek İlçesi, Taşkent",
+      "copy": "© {year} SUV-TARAQQIYOT LLC"
+    }
+  },
   "nav": {
     "home": "Ana Sayfa",
     "about": "Hakkımızda",
@@ -7,454 +31,650 @@
     "projects": "Projeler",
     "contact": "İletişim"
   },
-  "hero": {
-    "eyebrow": "Su Altyapısı · Hidrojeolojik Sondaj · İnşaat Mühendisliği",
-    "title": "Orta Asya İçin Su Altyapısı Mühendisliği",
-    "subtitle": "2001 yılından bu yana Özbekistan'ın hidrojeolojik kuyu sondajı ve su temini sistemi inşaatında liderlerinden biri",
-    "cta": "Projelerimiz",
-    "ctaSecondary": "Hizmetlerimiz",
-    "credibility": "20 proje · 55M$+ teslim edildi · Dünya Bankası ve EBRD güvencesiyle"
-  },
-  "capacity": {
-    "label": "Kapasitemiz",
-    "title": "Her Yıl Gerçekleştirilen",
-    "pipelines": {
-      "value": "200 km",
-      "label": "Su Boru Hatları",
-      "desc": "Çap 32–1200 mm"
+  "servicesPage": {
+    "hero": {
+      "title": "Boru hattından kuyuya: beş hizmet, tek yüklenici",
+      "lead": "Ana iletim hatları, su alma ve dağıtım tesisleri, su kuleleri, inşaat işleri ve hidrojeolojik kuyular. Yıllık kapasiteler şirket sunumundan alınmıştır.",
+      "toc": "İçindekiler"
     },
-    "wells": {
-      "value": "120",
-      "label": "Yıllık Kuyu Sondajı",
-      "desc": "Derinlik 30–1200 m"
-    },
-    "units": {
-      "value": "50",
-      "label": "Su Dağıtım Üniteleri",
-      "desc": "300–30.000 m³/gün"
-    },
-    "intake": {
-      "value": "5.000+",
-      "label": "m³ Su Alma İstasyonu",
-      "desc": "Su alma istasyonları hacmi"
-    }
-  },
-  "about": {
-    "label": "Hakkımızda",
-    "title": "25 Yıllık Mühendislik Mükemmelliği Üzerine İnşa Edildi",
-    "description": "2001 yılında NPO Wolfram bünyesinde kurulan SUV-TARAQQIYOT LLC, Özbekistan Cumhuriyeti'nde hidrojeolojik sondaj ve su temini altyapısı inşaatında lider müteahhitlerden biri haline gelmiştir. Devlet kurumları, uluslararası kalkınma bankaları ve Orta Asya genelindeki endüstriyel müşterilerle çalışıyoruz.",
-    "stats": {
-      "established": "2001",
-      "establishedLabel": "Kuruluş Yılı",
-      "projects": "20+",
-      "projectsLabel": "Büyük Proje",
-      "value": "$55M+",
-      "valueLabel": "Toplam Proje Değeri"
-    }
-  },
-  "servicesOverview": {
-    "label": "Neler Yapıyoruz",
-    "title": "Temel Hizmetler",
+    "scope": "İş kapsamı",
+    "capacity": "Yıllık kapasite",
+    "refs": "Sicildeki projeler",
+    "amount": "${amount} milyon",
+    "present": "günümüz",
+    "source": "Kaynak: şirket sunumu, 2025.",
+    "sourceDepth": "Kuyu derinliği (1200 m’ye kadar): şirket verisi, 2026.",
     "items": {
-      "drilling": {
-        "title": "Hidrojeolojik Kuyu Sondajı",
-        "desc": "30 ila 1200 metre derinlikte profesyonel su kuyusu sondajı. Ekibimiz yılda yaklaşık 120 kuyu tamamlayarak ülke genelindeki belediye ve endüstriyel su taleplerini karşılamaktadır."
+      "pipes": {
+        "label": "01 · Su boru hatları",
+        "short": "Su boru hatları",
+        "title": "Ana iletim ve dağıtım boru hatları",
+        "desc": "Polietilen ve çelik borularla ana iletim ve dağıtım şebekeleri: toprak işleri, döşeme, kaynak, test ve devreye alma.",
+        "scope": [
+          "Ana iletim hatları",
+          "Yerleşim yerlerinde dağıtım şebekeleri ve bağlantılar",
+          "32–1200 mm çapında polietilen ve çelik borular",
+          "Kendi makinelerimizle polietilen boru kaynağı",
+          "Mevcut boru hatlarının yenilenmesi"
+        ],
+        "cap": [
+          {
+            "k": "Boru döşeme",
+            "v": "yılda 200 km’ye kadar"
+          },
+          {
+            "k": "Çap",
+            "v": "32–1200 mm"
+          }
+        ],
+        "dwg": {
+          "a": "Ana iletim hattı",
+          "b": "Ø 32–1200 mm",
+          "c": "yılda 200 km’ye kadar"
+        }
       },
-      "pipelines": {
-        "title": "Su Boru Hattı İnşaatı",
-        "desc": "Yılda 200 km'ye kadar ana ve dağıtım su borularının tasarım ve montajı, her ölçekte sistemler için 32 mm'den 1200 mm'ye kadar çaplarda."
-      },
-      "distribution": {
-        "title": "Su Dağıtım Üniteleri",
-        "desc": "Günlük 300 ile 30.000 metreküp kapasiteli su dağıtım tesislerinin inşaatı. Yılda 50'ye kadar ünite inşa ediyoruz."
+      "facilities": {
+        "label": "02 · Tesisler",
+        "short": "Su alma ve dağıtım tesisleri",
+        "title": "Su alma ve dağıtım tesisleri",
+        "desc": "Su alma istasyonu bina ve yapılarının inşası ve yenilenmesi, pompa istasyonları, rezervuarlar ve dağıtım üniteleri.",
+        "scope": [
+          "Su alma yapıları — yeni inşaat ve yenileme",
+          "Pompa istasyonları ve binaları",
+          "Rezervuarlar",
+          "Su dağıtım üniteleri"
+        ],
+        "cap": [
+          {
+            "k": "Su dağıtım üniteleri",
+            "v": "yılda 50’ye kadar"
+          },
+          {
+            "k": "Kapasite",
+            "v": "300–30.000 m³/gün"
+          },
+          {
+            "k": "Su alma tesisleri",
+            "v": "5.000 m³’ün üzerinde hacim"
+          }
+        ],
+        "dwg": {
+          "a": "Su alma",
+          "b": "Rezervuar · pompa",
+          "c": "300–30.000 m³/gün"
+        }
       },
       "towers": {
-        "title": "Su Kuleleri ve Su Alma İstasyonları",
-        "desc": "Su kulelerinin (10–75 m³, yılda 50'ye kadar) ve toplam 5.000 m³'ün üzerinde hacimli su alma istasyonlarının tasarımı ve inşaatı."
-      }
-    },
-    "learnMore": "Daha Fazla →",
-    "extra": {
+        "label": "03 · Su kuleleri",
+        "short": "Su kuleleri",
+        "title": "Su kuleleri",
+        "desc": "Su kulelerinin imalatı ve sahada montajı.",
+        "scope": [
+          "Su kulesi imalatı",
+          "Sahada montaj",
+          "10 ile 75 m³ arası hacim"
+        ],
+        "cap": [
+          {
+            "k": "Kuleler",
+            "v": "yılda 50’ye kadar"
+          },
+          {
+            "k": "Hacim",
+            "v": "10–75 m³"
+          }
+        ],
+        "dwg": {
+          "a": "Su kulesi",
+          "b": "10–75 m³",
+          "c": "yılda 50’ye kadar"
+        }
+      },
       "civil": {
+        "label": "04 · İnşaat işleri",
+        "short": "İnşaat ve yapısal işler",
         "title": "İnşaat ve yapısal işler",
-        "desc": "Beton yapılar, pompa istasyonları, su alma odaları."
+        "desc": "Su temini tesisleri için beton yapılar, binalar, temeller ve toprak işleri.",
+        "scope": [
+          "Beton yapılar",
+          "Pompa istasyonu binaları",
+          "Toprak işleri",
+          "Erişim yolları ve çalışma alanları",
+          "Sondaj kulesi ve ekipman temelleri"
+        ],
+        "cap": [],
+        "dwg": {
+          "a": "Beton yapı",
+          "b": "Temel",
+          "c": "Toprak işleri"
+        }
       },
-      "site": {
-        "title": "Saha hazırlığı ve kazı işleri",
-        "desc": "Kazı, erişim yolları, sondaj platformları."
-      }
-    },
-    "ctaButton": "Projenizi Görüşelim"
-  },
-  "clients": {
-    "label": "Bize Güvenenler",
-    "title": "Devlet Kurumları ve Uluslararası Kuruluşlar",
-    "domesticLabel": "Yerli Müşteriler",
-    "internationalLabel": "Uluslararası Ortaklar",
-    "domestic": {
-      "ozsuvtaminot": "O'ZSUVTA'MINOT",
-      "uzauto": "UzAuto",
-      "uzgazoil": "UzGazOil",
-      "security": "Özbekistan Devlet Güvenlik Servisi",
-      "sirdaryo": "Sirderya Vilayeti",
-      "namangan": "Namangan Vilayeti",
-      "samarqand": "Semerkant Vilayeti",
-      "yangiyul": "Yangiyul Hokimliği"
-    },
-    "international": {
-      "worldbank": "Dünya Bankası (IBRD/IDA)",
-      "adb": "Asya Kalkınma Bankası",
-      "ebrd": "Avrupa İmar ve Kalkınma Bankası",
-      "opec": "OPEC Fonu",
-      "saudi": "Suudi Kalkınma Fonu",
-      "orient": "Orient Group of Companies"
-    }
-  },
-  "certifications": {
-    "label": "Sertifikalar",
-    "iso9001": {
-      "title": "ISO 9001:2015",
-      "desc": "Kalite Yönetimi"
-    },
-    "iso14001": {
-      "title": "ISO 14001:2019",
-      "desc": "Çevre Yönetimi"
-    },
-    "iso45001": {
-      "title": "ISO 45001:2020",
-      "desc": "İş Sağlığı ve Güvenliği"
-    },
-    "issuer": "AVVISO CERT LLC"
-  },
-  "featuredProjects": {
-    "label": "Seçilmiş Çalışmalar",
-    "title": "Seçilmiş Projeler",
-    "completed": "Tamamlandı",
-    "ongoing": "Devam Ediyor",
-    "funder": "Finansör",
-    "items": {
-      "koshrabad": {
-        "title": "Koşrabad İçme Suyu İyileştirme Projesi",
-        "location": "Semerkant Bölgesi",
-        "period": "2019–2021",
-        "amount": "$5,54M",
-        "funder": "OPEC Fonu + Suudi Kalkınma Fonu"
-      },
-      "zhiydakapa": {
-        "title": "Jiydakapa Su Alma Tesisi Rekonstrüksiyonu",
-        "location": "Namangan",
-        "period": "2022–devam ediyor",
-        "amount": "$5,21M",
-        "funder": "Avrupa İmar ve Kalkınma Bankası"
-      },
-      "yangiyul": {
-        "title": "Yangiyul Su Temini Sistemi",
-        "location": "Yangiyul Şehri",
-        "period": "2022–2024",
-        "amount": "$5,59M",
-        "funder": "Yatırım ve Dış Ticaret Bakanlığı"
+      "wells": {
+        "label": "05 · Kuyular",
+        "short": "Hidrojeolojik kuyular",
+        "title": "Hidrojeolojik kuyular",
+        "desc": "İçme, proses ve arazi ıslahı suyu için kuyu sondajı, yenileme ve onarım.",
+        "scope": [
+          "Arama ve üretim kuyuları",
+          "Dikey drenaj kuyularının yenilenmesi",
+          "Kuyu onarımı ve rehabilitasyonu",
+          "6 modelde 7 sondaj makinesi: URB-3AM (2 adet), URB-2D3, URB-2.5, YDZ1500, UKS-22, BA-15"
+        ],
+        "cap": [
+          {
+            "k": "Kuyular",
+            "v": "yılda yaklaşık 120"
+          },
+          {
+            "k": "Derinlik",
+            "v": "30–1200 m"
+          }
+        ],
+        "dwg": {
+          "a": "Kuyu",
+          "b": "30–1200 m",
+          "c": "Filtre"
+        }
       }
     }
-  },
-  "homeMap": {
-    "label": "PROJE KONUMLARI",
-    "title": "Özbekistan'ın Her Bölgesinde",
-    "subtitle": "2001'den bu yana Özbekistan genelinde 20 tamamlanan proje.",
-    "openFullMap": "Tam İnteraktif Haritayı Aç →",
-    "stats": {
-      "projects": "20 Proje",
-      "regions": "12 Bölge",
-      "years": "2001–Günümüz",
-      "value": "$55M+"
-    }
-  },
-  "cta": {
-    "title": "Projenizi Görüşmeye Hazır mısınız?",
-    "subtitle": "Tüm sorularınıza 24 saat içinde yanıt veriyoruz.",
-    "button": "İletişime Geçin"
-  },
-  "footer": {
-    "tagline": "Su Kaynakları Geliştirme ve Altyapı — sürdürülebilir su kaynakları için profesyonel mühendislik çözümleri.",
-    "quickLinks": "Hızlı Bağlantılar",
-    "servicesTitle": "Hizmetler",
-    "services": {
-      "drilling": "Yeraltı Suyu Sondajı",
-      "waterSupply": "Su Temini Sistemleri",
-      "irrigation": "Sulama Şebekeleri",
-      "geological": "Jeolojik Araştırmalar",
-      "civilEngineering": "İnşaat Mühendisliği"
-    },
-    "contactTitle": "İletişim",
-    "address": "18 Husan Şams Cd., Mirzo-Ulugbek, Taşkent",
-    "rights": "Tüm hakları saklıdır."
   },
   "equipmentPage": {
-    "title": "İnşaat Ekipmanları ve Aletler",
-    "subtitle": "Yılda 200 km boru hattı ve 120 kuyu sondajını mümkün kılan modern makineler",
-    "stats": {
-      "machinery": "30+",
-      "machineLabel": "Ağır Makine Birimi",
-      "depth": "1200m",
-      "depthLabel": "Maks. Sondaj Derinliği",
-      "diameter": "1200mm",
-      "diameterLabel": "Maks. Boru Hattı Çapı",
-      "capacity": "200km",
-      "capacityLabel": "Yıllık Boru Hattı Kapasitesi"
+    "hero": {
+      "title": "Kendi makine parkımız: toprak işlerinden kuyu sondajına",
+      "lead": "Şirketin ana makine parkı, model ve adetleriyle: {models} model, {units} adet — ekskavatör ve yükleyicilerden sondaj makinelerine.",
+      "toc": "Gruplar"
     },
-    "categories": {
-      "drilling": "Sondaj Ekipmanları",
-      "cranes": "Vinçler ve Kaldırma Ekipmanları",
-      "excavators": "Ekskavatörler ve Yükleyiciler",
-      "tools": "Aletler ve Özel Ekipmanlar"
+    "caption": "Fotoğraflarda ekipman modelleri gösterilmektedir.",
+    "summary": "{models} model · {units} adet",
+    "quantity": "{count} adet",
+    "qtyLabel": "Adet",
+    "groups": {
+      "earth": "Ekskavatörler, yükleyiciler ve sıkıştırma",
+      "cranes": "Mobil vinçler ve manipülatör",
+      "trucks": "Kamyonlar ve traktör",
+      "welding": "Boru kaynağı ve muayene",
+      "power": "Beton, enerji, basınçlı hava ve su tahliyesi",
+      "drilling": "Sondaj makineleri"
     }
   },
   "projectsPage": {
-    "title": "Projelerimiz",
-    "subtitle": "2001'den bu yana Özbekistan genelinde 55M$+ su altyapısı projeleri.",
-    "statsProjects": "20 Proje",
-    "statsValue": "55M$+ Toplam Değer",
-    "statsYears": "2001–Günümüz",
-    "filterAll": "Tümü",
-    "filterDrilling": "Sondaj",
-    "filterInfrastructure": "Altyapı",
-    "completed": "Tamamlandı",
-    "ongoing": "Devam Ediyor",
-    "fundedBy": "Finansör",
-    "generalContractor": "Ana Müteahhit",
-    "subcontractor": "Alt Müteahhit",
-    "international": "Uluslararası",
-    "mapTitle": "Proje Konumları",
-    "geographicFootprint": "Coğrafi Kapsamımız",
-    "openFullMap": "Tam interaktif haritayı aç",
-    "viewDetails": "Detaylar",
-    "mapSubtitle": "20 projenin tamamını haritada keşfedin. Türe veya duruma göre filtreleyin ve ayrıntılar için bir işaretçiye tıklayın."
+    "hero": {
+      "title": "20 proje — işveren, finansör ve sözleşme bedeliyle",
+      "lead": "2004’ten bu yana Özbekistan genelinde tamamlanan büyük projelerin sicili. Her proje sayfasında yıllar, rol, sözleşme numarası ve iş kapsamı yer alır.",
+      "totalLabel": "Toplam bedel",
+      "total": "$55M+",
+      "statusLabel": "Durum",
+      "status": "{done} tamamlandı · {ongoing} devam ediyor"
+    },
+    "register": {
+      "label": "01 · Sicil",
+      "title": "Proje sicili",
+      "filterLabel": "Tür",
+      "filters": {
+        "all": "Tümü",
+        "infrastructure": "Su temini tesisleri",
+        "drilling": "Kuyu sondajı"
+      },
+      "columns": {
+        "years": "Yıllar",
+        "project": "Proje",
+        "region": "Bölge",
+        "client": "İşveren / finansör",
+        "value": "Bedel",
+        "status": "Durum"
+      },
+      "present": "günümüz",
+      "amount": "${amount} milyon",
+      "status": {
+        "completed": "Tamamlandı",
+        "ongoing": "Devam ediyor"
+      },
+      "sumAll": "Toplam: {count} proje · $55M+",
+      "sumPart": "{count} proje · {value}"
+    },
+    "map": {
+      "label": "02 · Harita",
+      "title": "Projeler haritada",
+      "lead": "Her işaret sicildeki bir projedir. Adı, yılları, bedeli ve proje sayfası bağlantısı için bir işarete dokunun.",
+      "aria": "Proje haritası",
+      "frame": "Proje konumları",
+      "completed": "Tamamlandı",
+      "ongoing": "Devam ediyor",
+      "loading": "Harita yükleniyor…",
+      "noscript": "Harita JavaScript açıkken yüklenir. Tüm projeler yukarıdaki sicilde.",
+      "open": "Proje sayfası",
+      "unpinned": "Birden fazla yerde yürütülen, konumu belirtilmemiş veya gizli olan projeler haritada gösterilmez; yukarıdaki sicilde yer alırlar."
+    }
   },
   "projectDetailPage": {
-    "backToProjects": "Projelere dön",
-    "overview": "Genel Bakış",
-    "scope": "İş kapsamı",
-    "completed": "Tamamlandı",
-    "ongoing": "Devam Ediyor",
-    "international": "Uluslararası",
-    "client": "Müşteri",
+    "back": "Proje sicili",
+    "position": "{n} / {total}",
+    "factsTitle": "Proje bilgileri",
+    "years": "Yıllar",
+    "region": "Bölge",
+    "client": "İşveren",
     "funder": "Finansör",
-    "amount": "Sözleşme bedeli",
-    "amountUzs": "Sözleşme bedeli (UZS)",
-    "period": "Dönem",
-    "location": "Konum",
     "role": "Rol",
-    "contractNumber": "Sözleşme No.",
-    "category": "Kategori",
-    "drilling": "Sondaj",
-    "infrastructure": "Altyapı",
-    "generalContractor": "Ana Müteahhit",
-    "subcontractor": "Alt Müteahhit",
-    "gallery": "Proje galerisi",
-    "galleryEmpty": "Bu projeye ait fotoğraflar yakında eklenecektir.",
-    "contactCta": "Benzer bir projeyi görüşün"
+    "contract": "Sözleşme No.",
+    "value": "Sözleşme bedeli",
+    "valueUzs": "Bedel (UZS)",
+    "status": "Durum",
+    "completed": "Tamamlandı",
+    "ongoing": "Devam ediyor",
+    "present": "günümüz",
+    "amount": "${amount} milyon",
+    "roles": {
+      "general": "Ana yüklenici",
+      "sub": "Alt yüklenici"
+    },
+    "description": "Açıklama",
+    "scope": "İş kapsamı",
+    "prev": "Önceki proje",
+    "next": "Sonraki proje",
+    "cta": "Benzer bir projeyi görüşelim",
+    "closingTitle": "Benzer bir proje mi planlıyorsunuz? Belgeleri gönderin — 24 saat içinde yanıt verelim"
   },
   "contactPage": {
-    "address": "Taşkent, Mirzo Ulugbek ilçesi, Alişer Navoi MSG, Husan Şams caddesi, 18 numara",
-    "sti": "Vergi No: 203 681 239",
-    "workingHours": "Çalışma Saatleri",
-    "workingHoursValue": "Pzt–Cum: 9:00–18:00",
-    "phoneLabel": "Telefon",
-    "phoneValue": "+998 55 055 37 37",
-    "emailLabel": "E-posta"
-  },
-  "contact": {
-    "title": "Bize Ulaşın",
-    "subtitle": "Mühendislik ekibimizle iletişime geçin.",
-    "name": "Ad Soyad",
-    "email": "E-posta Adresi",
-    "phone": "Telefon Numarası",
-    "company": "Şirket / Kuruluş",
-    "message": "Mesaj",
-    "submit": "Mesaj Gönder",
-    "success": "Mesaj başarıyla gönderildi!",
-    "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+    "hero": {
+      "title": "Projeniz için talep gönderin",
+      "lead": "Sahayı, iş kapsamını ve süreyi yazın — 24 saat içinde yanıt veriyoruz. Belgeleri e-postayla gönderebilirsiniz.",
+      "call": "Bizi arayın",
+      "toForm": "Talep formuna geç",
+      "note": "Pazartesi–Cuma, 9:00–18:00"
+    },
+    "form": {
+      "label": "01 · Talep",
+      "title": "Talep formu",
+      "name": "Ad soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "company": "Kuruluş",
+      "message": "Proje hakkında",
+      "messageHint": "Saha, iş kapsamı, süre ve finansman kaynağı.",
+      "required": "zorunlu",
+      "optional": "isteğe bağlı",
+      "submit": "Talebi gönder",
+      "sending": "Gönderiliyor…",
+      "success": "Talebiniz gönderildi. 24 saat içinde yanıt vereceğiz.",
+      "errorServer": "Talep gönderilemedi. Tekrar deneyin veya doğrudan yazın:",
+      "errRequired": "Bu alanı doldurun.",
+      "errEmail": "E-posta adresini eksiksiz girin, örneğin: ad@kurulus.uz",
+      "noscript": "Tarayıcınızda JavaScript kapalı: “Talebi gönder” düğmesi e-posta programınızı açar. Ya da doğrudan yazın:"
+    },
+    "details": {
+      "label": "02 · Bilgiler",
+      "title": "Telefon, e-posta ve adres",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "address": "Adres",
+      "addressValue": "Xusan Shams Caddesi 18, Alisher Navoiy Mahallesi, Mirzo Uluğbek İlçesi, Taşkent",
+      "hours": "Çalışma saatleri",
+      "hoursValue": "Pazartesi–Cuma, 9:00–18:00",
+      "tin": "VKN",
+      "google": "Google Haritalar’da aç",
+      "yandex": "Yandex Haritalar’da aç"
+    }
   },
   "seoFaq": {
-    "label": "Sıkça Sorulan Sorular",
-    "title": "Su Kuyusu Sondajı ve Su Temini — Sık Sorulan Sorular",
+    "label": "Sıkça sorulan sorular",
+    "title": "Su kuyusu sondajı ve su temini — sık sorulan sorular",
     "items": {
       "q1": {
-        "q": "Taşkent ve Özbekistan'ın diğer bölgelerinde artezyen kuyu sondajı yapıyor musunuz?",
-        "a": "Evet. SUV-TARAQQIYOT LLC, Taşkent, Namangan, Semerkant, Kaşkaderya, Sırderya ve Fergana Vadisi dahil Özbekistan'ın tüm bölgelerinde artezyen ve hidrojeolojik kuyu sondajı yapmaktadır. Sondaj derinliği 30 ile 1.200 metre arasındadır ve yılda yaklaşık 120 kuyu teslim edilmektedir."
+        "q": "Taşkent ve Özbekistan’ın diğer bölgelerinde artezyen kuyu sondajı yapıyor musunuz?",
+        "a": "Evet. SUV-TARAQQIYOT LLC, Taşkent şehri ve vilayeti, Namangan, Semerkant, Kaşkaderya ve Sirderya dahil Özbekistan’ın 12 bölgesinde artezyen ve hidrojeolojik kuyu sondajı yapmaktadır. Sondaj derinliği 30–1200 m, yılda yaklaşık 120 kuyudur."
       },
       "q2": {
         "q": "Hangi çaplarda ve malzemelerde su boru hatları kuruyorsunuz?",
-        "a": "32 mm'den 1.200 mm'ye kadar çaplarda polietilen (HDPE) ve çelik boru kullanarak iletim ve dağıtım su boru hatları inşa ediyoruz. Yıllık kurulum kapasitesi 200 kilometreye kadar çıkmaktadır."
+        "a": "32 ile 1200 mm arası çaplarda polietilen (HDPE) ve çelik borularla ana iletim ve dağıtım hatları inşa ediyoruz: yılda 200 km’ye kadar, belediye su temini ve sanayi tesisleri için."
       },
       "q3": {
-        "q": "Dünya Bankası, EBRD, ADB ve OPEC Fonu tarafından finanse edilen projeleri yürütüyor musunuz?",
-        "a": "Evet. SUV-TARAQQIYOT, Dünya Bankası (IBRD/IDA), Avrupa İmar ve Kalkınma Bankası (EBRD), Asya Kalkınma Bankası (ADB), OPEC Uluslararası Kalkınma Fonu ve Suudi Kalkınma Fonu tarafından finanse edilen su altyapı projelerini FIDIC sözleşme şartları kapsamında tamamlamıştır."
+        "q": "Dünya Bankası, EBRD ve OPEC Fonu tarafından finanse edilen projeleri yürütüyor musunuz?",
+        "a": "Evet. Sicildeki projeler: Jiydakapa su alma yapısı (NWP-6) — EBRD; Koşrabat ilçesi (W/3.1, W/4.1) — OPEC Fonu ve Suudi Kalkınma Fonu; Namangan şehri, 2. etap (NWSP/ICB/W-4-2) — OPEC Fonu; Yangiyol su temini (MSC-Y/W/1.2) — Dünya Bankası (IBRD kredisi 8914-UZ), FIDIC şartlarına göre."
       }
     }
   },
   "aboutPage": {
     "hero": {
-      "title": "2001'den Bu Yana Mühendislik Mükemmelliği",
-      "subtitle": "Tek bir sondaj operasyonundan Özbekistan'ın önde gelen su altyapısı müteahhitlerinden birine — 25 yıllık kesintisiz teslimat."
+      "title": "2001’den bu yana su temini tesisleri inşa ediyoruz",
+      "lead": "NPO Wolfram temelinde kurulmuş bir yüklenici: 20 büyük proje, üç yönetim sistemi sertifikası (O‘z DSt ISO) ve devlet kurumlarından dört teşekkür belgesi.",
+      "foundedLabel": "Kuruluş",
+      "founded": "21 Ağustos 2001",
+      "tinLabel": "VKN",
+      "tin": "203 681 239"
     },
-    "story": {
-      "label": "TARİHÇEMİZ",
-      "title": "Mühendislik Üzerine Kuruldu. Teslimat ile Büyüdü.",
-      "p1": "SUV-TARAQQIYOT LLC, 21 Ağustos 2001 tarihinde, jeolojik araştırma ve sondaj mühendisliğinde derin kökleri olan Sovyet dönemi bilimsel üretim kuruluşu NPO Wolfram temeli üzerinde kurulmuştur. Faaliyetinin ilk yılından itibaren şirket, Özbekistan genelinde hidrojeolojik kuyu sondajı ve su temini inşaatına odaklanmıştır.",
-      "p2": "Yirmi yıl boyunca SUV-TARAQQIYOT, ilk incelemeden nihai devreye almaya kadar projeleri teslim edebilen tam döngü müteahhit konumuna ulaşmıştır. Şirket yılda yaklaşık 120 kuyuyu 1.200 metre derinliğe kadar açmakta, 32 ile 1.200 mm çap aralığında 200 km'ye kadar su boru hattı inşa etmekte ve günlük 300 ile 30.000 metreküp kapasiteli 50'ye kadar su dağıtım ünitesi kurmaktadır.",
-      "p3": "Bugün SUV-TARAQQIYOT, Dünya Bankası, Avrupa İmar ve Kalkınma Bankası, Asya Kalkınma Bankası, Uluslararası Kalkınma için OPEC Fonu ve Suudi Kalkınma Fonu tarafından finanse edilen sözleşmeleri yürütmektedir. Şirket, AVVISO CERT LLC, Taşkent tarafından verilen ISO 9001:2015, ISO 14001:2019 ve ISO 45001:2020 sertifikaları altında faaliyet göstermektedir."
-    },
-    "figures": {
-      "years": {
-        "value": "25",
-        "label": "Yıllık Faaliyet"
-      },
-      "depth": {
-        "value": "1.200 m",
-        "label": "Maks. Sondaj Derinliği"
-      },
-      "value": {
-        "value": "$55M+",
-        "label": "Teslim Edilen Projeler"
-      },
-      "iso": {
-        "value": "3 ISO",
-        "label": "Kalite Sertifikaları"
-      }
-    },
-    "team": {
-      "label": "EKİBİMİZ",
-      "title": "Her Projenin Arkasındaki Ekip",
-      "subtitle": "FIDIC, Dünya Bankası ve KfW proje deneyimine sahip mühendisler ve proje yöneticileri.",
-      "members": {
-        "projectManager": {
-          "role": "Müteahhit Temsilcisi / Proje Müdürü",
-          "credentials": "FIDIC Red Book sözleşme deneyimi"
+    "history": {
+      "label": "01 · Tarihçe",
+      "title": "NPO Wolfram’dan 20 büyük projeye",
+      "p1": "SUV-TARAQQIYOT LLC, 2001 yılında NPO Wolfram temelinde kuruldu. Şirket her yıl su temini sistemlerinin yapımında yüklenici olarak çalışır: su boru hatları, su alma ve dağıtım tesisleri, su kuleleri ve hidrojeolojik kuyular.",
+      "p2": "Sicilde 2004’ten bu yana tamamlanan, toplam değeri 55 milyon ABD dolarını aşan 20 büyük proje yer alıyor. İşverenler arasında Uzsuvtaminot AŞ, Uzkommunhizmat Ajansı ve vilayet valilikleri; finansörler arasında EBRD, OPEC Fonu, Suudi Kalkınma Fonu ve Dünya Bankası bulunuyor.",
+      "rows": {
+        "founded": {
+          "title": "NPO Wolfram temelinde kuruldu",
+          "text": "Devlet tescili 21 Ağustos’ta, tescil numarası 09‑000344."
         },
-        "siteManager": {
-          "role": "Genel Saha Müdürü",
-          "credentials": "20+ yıl saha yönetimi"
+        "uzgazoil": {
+          "title": "Petrol sondaj kuleleri için 148 kuyu",
+          "text": "UzGazOil / GISSARNEFTIGAZ Ortak Girişimi · ana yüklenici"
         },
-        "hseManager": {
-          "role": "İş Sağlığı ve Güvenliği Müdürü",
-          "credentials": "ISO 45001 sertifikalı"
+        "bayaut": {
+          "title": "Bayavut ilçesinde dikey drenaj sistemlerinin yenilenmesi",
+          "text": "Maliye Bakanlığı Arazi Islahı Fonu · ana yüklenici"
         },
-        "envManager": {
-          "role": "Çevre Müdürü",
-          "credentials": "ISO 14001 sertifikalı"
+        "syrdarya": {
+          "title": "Sirderya vilayetinde su temini sistemleri",
+          "text": "Tek Müşteri Hizmeti Mühendislik Şirketi · ana yüklenici"
         },
-        "civilEng": {
-          "role": "İnşaat Mühendisi",
-          "credentials": "Boru hattı ve yapısal tasarım"
+        "koshrabad": {
+          "title": "Koşrabat ilçesi içme suyu temini, W/3.1 ve W/4.1",
+          "text": "Uzkommunhizmat Ajansı; işveren: Samarqand Suv Ta’minoti LLC · OPEC Fonu, Suudi Kalkınma Fonu"
         },
-        "electricalEng": {
-          "role": "Elektrik Mühendisi",
-          "credentials": "Pompa istasyonu sistemleri"
+        "zhiydakapa": {
+          "title": "Jiydakapa su alma yapısının yenilenmesi",
+          "text": "Uzsuvtaminot AŞ · EBRD · devam ediyor"
         },
-        "instrumentEng": {
-          "role": "Enstrümantasyon Mühendisi",
-          "credentials": "SCADA ve telemetri"
+        "yangiyul": {
+          "title": "Yangiyol şehri su temini sisteminin yenilenmesi",
+          "text": "Ekonomi ve Maliye Bakanlığı, orta ölçekli şehirler projesi · ana yüklenici"
         },
-        "mechanicalEng": {
-          "role": "Makine Mühendisi",
-          "credentials": "Sondaj kulesi bakımı"
-        },
-        "waterSpecialist": {
-          "role": "Su Temini Uzmanı",
-          "credentials": "Hidrolik modelleme"
-        },
-        "surveyor": {
-          "role": "Harita Mühendisi",
-          "credentials": "GPS/GNSS ve topografik ölçüm"
+        "namangan2": {
+          "title": "Namangan şehrinin kuzey kesimine su temini, 2. etap",
+          "text": "Namangan Suv Taminoti · OPEC Fonu · devam ediyor"
         }
-      }
-    },
-    "certifications": {
-      "label": "Kalite Standartları",
-      "title": "ISO Sertifikalı. Devlet Tescilli.",
-      "iso9001Title": "O'z DSt ISO 9001:2015",
-      "iso9001Desc": "Kalite Yönetim Sistemi — Su temini mühendislik tesislerinin inşaatı",
-      "iso14001Title": "O'z DSt ISO 14001:2019",
-      "iso14001Desc": "Çevre Yönetim Sistemi",
-      "iso45001Title": "O'z DSt ISO 45001:2020",
-      "iso45001Desc": "İş Sağlığı ve Güvenliği Yönetim Sistemi",
-      "issuer": "Veren",
-      "validUntil": "Geçerlilik"
+      },
+      "present": "günümüz",
+      "amount": "${amount} milyon",
+      "source": "Kaynak: şirket sunumu ve proje sicili."
     },
     "legal": {
-      "label": "HUKUKİ BİLGİLER",
-      "title": "Şirket Tescili",
+      "label": "02 · Hukuki bilgiler",
+      "title": "Şirket bilgileri ve devlet tescili",
       "rows": {
         "fullName": {
-          "label": "Tam Adı",
-          "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat"
+          "label": "Tam unvan",
+          "value": "SUV-TARAQQIYOT Limited Şirketi"
         },
-        "sti": {
-          "label": "Vergi No",
-          "value": "203 681 239"
+        "shortName": {
+          "label": "Kısa unvan",
+          "value": "SUV-TARAQQIYOT LLC"
         },
-        "regNumber": {
-          "label": "Tescil No",
+        "tin": {
+          "label": "VKN",
+          "value": "203 681 239"
+        },
+        "regNo": {
+          "label": "Tescil numarası",
           "value": "09-000344"
         },
         "regDate": {
-          "label": "Tescil Tarihi",
-          "value": "21 Ağustos 2001"
+          "label": "Tescil tarihi",
+          "value": "21.08.2001"
         },
         "registrar": {
-          "label": "Tescil Kurumu",
-          "value": "Mirzo-Ulugbek İlçesi Devlet Hizmetleri Merkezi, Taşkent"
+          "label": "Tescil eden kurum",
+          "value": "Mirzo Uluğbek İlçesi Devlet Hizmetleri Merkezi"
         },
         "address": {
-          "label": "Adres",
-          "value": "18 Husan Şams Caddesi, Mirzo-Ulugbek ilçesi, Taşkent, Özbekistan"
+          "label": "Faaliyet adresi",
+          "value": "Xusan Shams Caddesi 18, Alisher Navoiy Mahallesi, Mirzo Uluğbek İlçesi, Taşkent"
+        }
+      },
+      "source": "Kaynak: devlet tescil belgesi."
+    },
+    "capacityLabel": "03 · Yıllık kapasite",
+    "certificatesLabel": "04 · Sertifikalar",
+    "letters": {
+      "label": "05 · Teşekkür belgeleri",
+      "title": "Devlet kurumlarından teşekkür belgeleri",
+      "items": {
+        "rmm": {
+          "authority": "Cumhuriyet Mülkiyet Merkezi",
+          "year": "2021",
+          "text": "Bağımsızlığın 30. yılı vesilesiyle — vatandaşların haklarını korumadaki etkin çalışma için."
         },
-        "phone": {
-          "label": "Telefon",
-          "value": "+998 55 055 37 37"
+        "education": {
+          "authority": "Halk Eğitimi Bakanlığı",
+          "year": "2018",
+          "text": "Mirzo Uluğbek ilçesindeki 241 numaralı okulun 2018–2019 eğitim yılına hazırlanmasına katkı için (G. A. Vahobov adına)."
         },
-        "contactManager": {
-          "label": "İletişim Yetkilisi",
-          "value": "Usmonov Bekzod"
+        "yunusobod": {
+          "authority": "Yunusabad İlçe Valiliği",
+          "year": "",
+          "text": "İlçe halkının yaşam düzeyini ve refahını artırmaya etkin katılım için."
+        },
+        "police": {
+          "authority": "Yunusabad İlçe Emniyet Müdürlüğü, 1 No’lu Karakol",
+          "year": "2021",
+          "text": "Yunusabad ilçesinin 2021 yılındaki sosyo-ekonomik kalkınmasına katkı için."
+        }
+      },
+      "noYear": "tarihsiz",
+      "source": "Kaynak: şirket sunumu, 2025."
+    },
+    "clientsLabel": "06 · İşverenler"
+  },
+  "home": {
+    "hero": {
+      "title": "Su temini altyapısı inşa ediyoruz",
+      "lead": "Ana iletim hatları, su alma ve dağıtım tesisleri, su kuleleri — 2001’den bu yana Özbekistan’ın 12 bölgesinde. Toplam değeri 55 milyon ABD dolarını aşan 20 büyük proje.",
+      "cta": "Projeyi görüşelim",
+      "projectsLink": "20 projeyi inceleyin",
+      "note": "Taleplere 24 saat içinde yanıt veriyoruz",
+      "clientsLabel": "İşverenler",
+      "clients": "Uzsuvtaminot, Uzkommunhizmat, vilayet valilikleri.",
+      "fundersLabel": "Finansörler",
+      "funders": "EBRD, OPEC Fonu, Suudi Kalkınma Fonu, Dünya Bankası.",
+      "drawing": {
+        "aria": "Akış sırasıyla su temini sistemi kesiti: dalgıç pompalı kuyular (30–1200 m), klorlama, temiz su deposu, II. kademe pompa istasyonu (300–30.000 m³/gün), ana iletim hattı (çap 32–1200 mm, vantuz ve tahliye ile), su kulesi (10–75 m³), dağıtım şebekesi ve evler. Hidrolik eğim çizgisi her pompada yükselir, akış yönünde alçalır ve evlerin üzerinde kalır.",
+        "wells": "Kuyular",
+        "wellDepth": "30–1200 m",
+        "staticLevel": "statik seviye",
+        "dynamicLevel": "dinamik seviye",
+        "submersible": "dalgıç pompa",
+        "aquifer": "akifer",
+        "chlorination": "Klorlama",
+        "reservoir": "Temiz su deposu",
+        "pump": "Pompa istasyonu",
+        "lift": "II. kademe",
+        "flow": "300–30.000 m³/gün",
+        "checkValve": "çek valf",
+        "gateValve": "sürgülü vana",
+        "gauge": "manometre",
+        "main": "Ana iletim hattı",
+        "mainLength": "yılda 200 km’ye kadar",
+        "diameter": "Ø 32–1200 mm",
+        "frost": "h ≥ don derinliği",
+        "airValve": "hava vantuzu",
+        "washout": "tahliye",
+        "tower": "Su kulesi",
+        "towerVolume": "10–75 m³",
+        "network": "Dağıtım şebekesi",
+        "service": "abone bağlantısı",
+        "hgl": "hidrolik eğim çizgisi"
+      }
+    },
+    "capacity": {
+      "label": "01 · İş hacmi",
+      "title": "Yılda 200 km’ye kadar su boru hattı, 50 dağıtım ünitesi ve 50 su kulesi",
+      "columns": {
+        "pos": "Poz.",
+        "item": "Tesis",
+        "qty": "Yıllık hacim",
+        "par": "Gösterge"
+      },
+      "rows": [
+        {
+          "item": "Su boru hatları",
+          "qty": "200 km’ye kadar",
+          "par": "çap 32–1200 mm"
+        },
+        {
+          "item": "Su dağıtım üniteleri",
+          "qty": "50’ye kadar",
+          "par": "300–30.000 m³/gün"
+        },
+        {
+          "item": "Su alma tesisleri",
+          "qty": "—",
+          "par": "5.000 m³’ün üzerinde hacimli bina ve tesisler"
+        },
+        {
+          "item": "Su kuleleri",
+          "qty": "50’ye kadar",
+          "par": "10–75 m³"
+        },
+        {
+          "item": "Hidrojeolojik kuyular",
+          "qty": "yaklaşık 120",
+          "par": "derinlik 30–1200 m"
+        }
+      ],
+      "source": "Kaynak: şirket sunumu, 2025.",
+      "sourceDepth": "Kuyu derinliği (1200 m’ye kadar): şirket verisi, 2026."
+    },
+    "register": {
+      "label": "02 · Proje sicili",
+      "title": "Her biri işvereni ve sözleşme bedeliyle 20 proje",
+      "columns": {
+        "years": "Yıllar",
+        "project": "Proje",
+        "region": "Bölge",
+        "client": "İşveren / finansör",
+        "value": "Bedel",
+        "status": "Durum"
+      },
+      "present": "günümüz",
+      "amount": "${amount} milyon",
+      "status": {
+        "completed": "Tamamlandı",
+        "ongoing": "Devam ediyor"
+      },
+      "allLink": "20 projenin tamamı — yıllar, işverenler ve bedellerle",
+      "count": "{shown} / {total}",
+      "rows": {
+        "uzgazoil": {
+          "title": "Petrol sondaj kuleleri için 148 kuyu sondajı",
+          "region": "Özbekistan, birden fazla saha",
+          "client": "UzGazOil / GISSARNEFTIGAZ Ortak Girişimi"
+        },
+        "koshrabad": {
+          "title": "Koşrabat ilçesinde içme suyu temininin iyileştirilmesi (W/3.1 ve W/4.1)",
+          "region": "Semerkant vilayeti",
+          "client": "Uzkommunhizmat Ajansı; işveren: Samarqand Suv Ta’minoti LLC",
+          "funder": "OPEC Fonu, Suudi Kalkınma Fonu"
+        },
+        "yangiyul": {
+          "title": "Yangiyol şehri su temini sisteminin yenilenmesi",
+          "region": "Taşkent vilayeti",
+          "client": "Orta Ölçekli Şehirler Proje Uygulama Birimi, Ekonomi ve Maliye Bakanlığı",
+          "funder": "Dünya Bankası (IBRD)"
+        },
+        "zhiydakapa": {
+          "title": "Jiydakapa su alma yapısının yenilenmesi",
+          "region": "Namangan vilayeti",
+          "client": "Uzsuvtaminot AŞ",
+          "funder": "EBRD"
+        },
+        "syrdarya": {
+          "title": "Sirderya vilayetinde su temini sistemlerinin inşası",
+          "region": "Sirderya vilayeti",
+          "client": "Tek Müşteri Hizmeti Mühendislik Şirketi"
+        },
+        "namangan2": {
+          "title": "Namangan şehrinin kuzey kesimine su temini, 2. etap",
+          "region": "Namangan şehri",
+          "client": "Namangan Suv Taminoti",
+          "funder": "OPEC Fonu"
         }
       }
     },
-    "recognition": {
-      "label": "Tanınma",
-      "title": "Devlet Kurumları Tarafından Onaylandı",
-      "tahakkurnoma": "TASHAKKURNOMA",
-      "suvTaraqqiyot": "\"SUV-TARAQQIYOT\" MChJ",
-      "rmm": {
-        "authority": "RMM (Cumhuriyet Mülkiyet Merkezi)",
-        "desc": "Vatandaşların çıkarlarını korumak için, Özbekistan'ın 30. bağımsızlık yıldönümü vesilesiyle"
-      },
-      "education": {
-        "authority": "Özbekistan Eğitim Bakanlığı",
-        "desc": "2018-2019 akademik yılı için okul inşaatı hazırlığına katkısı nedeniyle, Mirzo Ulugbek ilçesi"
-      },
-      "yunusobod": {
-        "authority": "Yunusobod İlçe Yönetimi",
-        "desc": "Sakinlerin yaşam standartlarını ve refah düzeyini yükseltmek için"
+    "services": {
+      "label": "03 · Hizmetler",
+      "title": "Su temini sistemini baştan sona inşa ediyoruz",
+      "link": "Hizmetler ve iş hacimleri",
+      "items": {
+        "pipes": {
+          "title": "Su boru hattı inşaatı",
+          "desc": "Ana iletim ve dağıtım şebekeleri, 32 ile 1200 mm arası, polietilen ve çelik borular. Yılda 200 km’ye kadar."
+        },
+        "facilities": {
+          "title": "Su alma ve dağıtım tesisleri",
+          "desc": "Pompa istasyonları, rezervuarlar ve su dağıtım üniteleri; günde 300 ile 30.000 m³ arası."
+        },
+        "towers": {
+          "title": "Su kuleleri",
+          "desc": "10 ile 75 m³ arası, yılda 50’ye kadar."
+        },
+        "civil": {
+          "title": "İnşaat ve yapısal işler",
+          "desc": "Beton yapılar, pompa istasyonu binaları, toprak işleri, erişim yolları."
+        },
+        "wells": {
+          "title": "Hidrojeolojik kuyular",
+          "desc": "30 ile 1200 metre derinlikte, yılda yaklaşık 120 adet."
+        }
       }
-    }
-  },
-  "projectMap": {
-    "showing": "{total} projeden {count} tanesi gösteriliyor",
-    "totalValue": "Toplam değer",
-    "filterLabel": "Proje Filtresi",
-    "completed": "Tamamlandı",
-    "ongoing": "Devam ediyor",
-    "fundedBy": "Finanse eden",
-    "viewDetails": "Ayrıntılar",
-    "category": {
-      "all": "Tümü",
-      "drilling": "Sondaj",
-      "infrastructure": "Altyapı"
     },
-    "statusFilter": {
-      "all": "Tümü",
-      "completed": "Tamamlandı",
-      "ongoing": "Devam ediyor"
+    "fleet": {
+      "label": "04 · Ekipman",
+      "title": "Kendi makine parkımız: ekskavatörler, vinçler, boru kaynak makineleri",
+      "lines": [
+        "Hyundai ve JCB ekskavatörleri ve yükleyicileri.",
+        "Sany STC500 mobil vinç (50 t).",
+        "Turan Makina boru kaynak makineleri (180–800 mm).",
+        "Shacman damperli kamyonlar.",
+        "6 modelde 7 sondaj makinesi: URB-3AM (2 adet), URB-2D3, URB-2.5, YDZ1500, UKS-22, BA-15."
+      ],
+      "caption": "Fotoğraflarda ekipman modelleri gösterilmektedir.",
+      "link": "Ekipman listesi",
+      "quantity": "{count} adet",
+      "types": {
+        "excavator": "lastik tekerlekli ekskavatör",
+        "backhoe": "kazıcı yükleyici",
+        "crane": "mobil vinç",
+        "dump": "damperli kamyon",
+        "welder": "boru kaynak makinesi"
+      }
+    },
+    "clients": {
+      "label": "05 · İşverenler",
+      "title": "Devlet işverenleri ve uluslararası finans kuruluşları",
+      "clientsLabel": "İşverenler",
+      "fundersLabel": "Finansörler",
+      "clients": [
+        "Uzsuvtaminot AŞ",
+        "Uzkommunhizmat Ajansı",
+        "Sirderya Vilayeti Valiliği",
+        "Namangan Vilayeti Valiliği",
+        "Semerkant Vilayeti Valiliği",
+        "Yangiyol Şehir Valiliği",
+        "UzGazOil",
+        "UzAuto",
+        "ORIENT Holding"
+      ],
+      "funders": [
+        "Avrupa İmar ve Kalkınma Bankası",
+        "OPEC Fonu",
+        "Suudi Kalkınma Fonu",
+        "Dünya Bankası",
+        "Asya Kalkınma Bankası"
+      ]
+    },
+    "certificates": {
+      "label": "06 · Sertifikalar",
+      "title": "Üç yönetim sistemi sertifikası",
+      "lead": "O‘z DSt ISO, ilgili ISO standartlarıyla özdeş Özbekistan ulusal standartlarıdır.",
+      "items": {
+        "iso9001": "Kalite yönetimi",
+        "iso14001": "Çevre yönetimi",
+        "iso45001": "İş sağlığı ve güvenliği"
+      },
+      "note": "Sertifikalar AVVISO CERT LLC tarafından verilmiştir.",
+      "std": "O‘z DSt"
+    },
+    "faqNo": "07",
+    "closing": {
+      "title": "Proje belgelerinizi gönderin — 24 saat içinde yanıt verelim",
+      "button": "Projeyi görüşelim"
     }
   }
 }

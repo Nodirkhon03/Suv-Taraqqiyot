@@ -46,3 +46,8 @@ next-env.d.ts
 
 # review evidence
 .review/
+
+# local working files (public repo)
+/design/
+/PRODUCT.md
+/STATE.md

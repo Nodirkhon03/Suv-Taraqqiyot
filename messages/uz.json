@@ -1,4 +1,28 @@
 {
+  "site": {
+    "nav": {
+      "company": "Kompaniya",
+      "services": "Xizmatlar",
+      "equipment": "Texnika",
+      "projects": "Loyihalar",
+      "contact": "Aloqa"
+    },
+    "cta": "Loyihani muhokama qilish",
+    "menu": "Menyu",
+    "language": "Til",
+    "homeLabel": "SUV-TARAQQIYOT — bosh sahifa",
+    "mainNav": "Asosiy menyu",
+    "quickNav": "Tezkor havolalar",
+    "footerNav": "Pastki menyu",
+    "skip": "Asosiy mazmunga oʻtish",
+    "footer": {
+      "company": "“SUV-TARAQQIYOT” MChJ",
+      "founded": "2001-yilda tashkil etilgan",
+      "tin": "STIR 203 681 239",
+      "address": "Toshkent shahri, Mirzo Ulugʻbek tumani, Xusan Shams koʻchasi, 18",
+      "copy": "© {year} “SUV-TARAQQIYOT” MChJ"
+    }
+  },
   "nav": {
     "home": "Bosh sahifa",
     "about": "Biz haqimizda",
@@ -7,454 +31,650 @@
     "projects": "Loyihalar",
     "contact": "Aloqa"
   },
-  "hero": {
-    "eyebrow": "Suv infratuzilmasi · Gidrogeologik burg'ulash · Fuqarolik qurilishi",
-    "title": "Markaziy Osiyo uchun suv infratuzilmasini qurish va loyihalash",
-    "subtitle": "2001 yildan buyon gidrogeologik quduq burg'ulash va suv ta'minoti tizimlarini qurish bo'yicha O'zbekiston yetakchilaridan biri",
-    "cta": "Loyihalarimiz",
-    "ctaSecondary": "Xizmatlarimiz",
-    "credibility": "20 loyiha · $55M+ amalga oshirilgan · Jahon banki va YeTTB ishonchi"
-  },
-  "capacity": {
-    "label": "Bizning quvvatimiz",
-    "title": "Har yili amalga oshiriladi",
-    "pipelines": {
-      "value": "200 km",
-      "label": "Suv quvurlari",
-      "desc": "Diametri 32–1200 mm"
+  "servicesPage": {
+    "hero": {
+      "title": "Suv quvuridan quduqqacha: beshta xizmat, bitta pudratchi",
+      "lead": "Magistral suv quvurlari, suv olish va taqsimlash inshootlari, suv minoralari, umumqurilish ishlari va gidrogeologik quduqlar. Yillik hajmlar — kompaniya taqdimotidan.",
+      "toc": "Mundarija"
     },
-    "wells": {
-      "value": "120",
-      "label": "Quduq yiliga",
-      "desc": "Chuqurligi 30–1200 m"
-    },
-    "units": {
-      "value": "50",
-      "label": "Suv taqsimlash inshootlari",
-      "desc": "300–30 000 m³/kun"
-    },
-    "intake": {
-      "value": "5 000+",
-      "label": "m³ suv olish stansiyasi",
-      "desc": "Suv olish stansiyalari hajmi"
-    }
-  },
-  "about": {
-    "label": "Biz haqimizda",
-    "title": "25 yillik muhandislik tajribasi asosida qurilgan",
-    "description": "2001 yilda NPO Wolfram bazasida tashkil etilgan \"SUV-TARAQQIYOT\" MChJ O'zbekiston Respublikasida gidrogeologik burg'ulash va suv ta'minoti infratuzilmasini qurish bo'yicha yetakchi pudratchilardan biriga aylandi. Biz davlat organlari, xalqaro taraqqiyot banklari va Markaziy Osiyo bo'ylab sanoat mijozlari bilan ishlaymiz.",
-    "stats": {
-      "established": "2001 y.",
-      "establishedLabel": "Tashkil etilgan",
-      "projects": "20+",
-      "projectsLabel": "Yirik loyihalar",
-      "value": "$55M+",
-      "valueLabel": "Loyihalar umumiy qiymati"
-    }
-  },
-  "servicesOverview": {
-    "label": "Faoliyatimiz",
-    "title": "Asosiy xizmatlar",
+    "scope": "Ish tarkibi",
+    "capacity": "Yillik hajm",
+    "refs": "Reestrdagi loyihalar",
+    "amount": "${amount} mln",
+    "present": "hozir",
+    "source": "Manba: kompaniya taqdimoti, 2025.",
+    "sourceDepth": "Quduq chuqurligi (1200 m gacha): kompaniya maʼlumoti, 2026.",
     "items": {
-      "drilling": {
-        "title": "Gidrogeologik quduq burg'ulash",
-        "desc": "30 dan 1200 metrgacha chuqurlikda professional suv quduqlari burg'ulash. Jamoamiz yiliga taxminan 120 ta quduqni amalga oshiradi va mamlakat bo'ylab munitsipal va sanoat suv ehtiyojlarini qondiradi."
+      "pipes": {
+        "label": "01 · Suv quvurlari",
+        "short": "Suv quvurlari",
+        "title": "Magistral va taqsimlash suv quvurlari",
+        "desc": "Polietilen va poʻlat quvurlardan magistral va taqsimlash tarmoqlari: yer ishlari, quvur yotqizish, payvandlash, sinov va ishga tushirish.",
+        "scope": [
+          "Magistral suv quvurlari",
+          "Aholi punktlaridagi taqsimlash tarmoqlari va ulanishlar",
+          "Polietilen va poʻlat quvurlar, diametri 32–1200 mm",
+          "Polietilen quvurlarni payvandlash — oʻz apparatlarimiz bilan",
+          "Mavjud suv quvurlarini rekonstruksiya qilish"
+        ],
+        "cap": [
+          {
+            "k": "Quvur yotqizish",
+            "v": "yiliga 200 km gacha"
+          },
+          {
+            "k": "Diametr",
+            "v": "32–1200 mm"
+          }
+        ],
+        "dwg": {
+          "a": "Magistral quvur",
+          "b": "Ø 32–1200 mm",
+          "c": "yiliga 200 km gacha"
+        }
       },
-      "pipelines": {
-        "title": "Suv quvurlari qurilishi",
-        "desc": "Yiliga 200 km gacha magistral va taqsimlash suv quvurlarini loyihalash va o'rnatish, diametri 32 mm dan 1200 mm gacha har qanday miqyosdagi tizimlar uchun."
-      },
-      "distribution": {
-        "title": "Suv taqsimlash inshootlari",
-        "desc": "Kuniga 300 dan 30 000 kub metrgacha sig'imga ega suv taqsimlash ob'ektlarini qurish. Biz yiliga 50 tagacha inshoot quramiz."
+      "facilities": {
+        "label": "02 · Inshootlar",
+        "short": "Suv olish va taqsimlash inshootlari",
+        "title": "Suv olish va taqsimlash inshootlari",
+        "desc": "Suv olish inshootlarining bino va qurilmalarini qurish va rekonstruksiya qilish, nasos stansiyalari, rezervuarlar va suv taqsimlash inshootlari.",
+        "scope": [
+          "Suv olish inshootlari — yangi qurilish va rekonstruksiya",
+          "Nasos stansiyalari va ularning binolari",
+          "Rezervuarlar",
+          "Suv taqsimlash inshootlari"
+        ],
+        "cap": [
+          {
+            "k": "Suv taqsimlash inshootlari",
+            "v": "yiliga 50 tagacha"
+          },
+          {
+            "k": "Unumdorlik",
+            "v": "300–30 000 m³/kun"
+          },
+          {
+            "k": "Suv olish inshootlari",
+            "v": "hajmi 5 000 m³ dan ortiq"
+          }
+        ],
+        "dwg": {
+          "a": "Suv olish",
+          "b": "Rezervuar · nasos",
+          "c": "300–30 000 m³/kun"
+        }
       },
       "towers": {
-        "title": "Suv minoralari va suv olish stansiyalari",
-        "desc": "Suv minoralarini (10–75 m³, yiliga 50 tagacha) va umumiy hajmi 5 000 m³ dan ortiq suv olish stansiyalarini loyihalash va qurish."
-      }
-    },
-    "learnMore": "Batafsil →",
-    "extra": {
+        "label": "03 · Suv minoralari",
+        "short": "Suv minoralari",
+        "title": "Suv minoralari",
+        "desc": "Suv minoralarini ishlab chiqarish va obyektda oʻrnatish.",
+        "scope": [
+          "Suv minoralarini ishlab chiqarish",
+          "Obyektda oʻrnatish",
+          "Hajmi 10 dan 75 m³ gacha"
+        ],
+        "cap": [
+          {
+            "k": "Minoralar",
+            "v": "yiliga 50 tagacha"
+          },
+          {
+            "k": "Hajm",
+            "v": "10–75 m³"
+          }
+        ],
+        "dwg": {
+          "a": "Suv minorasi",
+          "b": "10–75 m³",
+          "c": "yiliga 50 tagacha"
+        }
+      },
       "civil": {
-        "title": "Fuqarolik va konstruktiv ishlar",
-        "desc": "Beton inshootlar, nasos stansiyalari, suv qabul kameralari."
+        "label": "04 · Umumqurilish ishlari",
+        "short": "Umumqurilish va konstruktiv ishlar",
+        "title": "Umumqurilish va konstruktiv ishlar",
+        "desc": "Suv taʼminoti obyektlari uchun beton inshootlar, binolar, poydevorlar va yer ishlari.",
+        "scope": [
+          "Beton inshootlar",
+          "Nasos stansiyalari binolari",
+          "Yer ishlari",
+          "Kirish yoʻllari va ish maydonchalari",
+          "Qurilmalar va uskunalar uchun poydevorlar"
+        ],
+        "cap": [],
+        "dwg": {
+          "a": "Beton inshoot",
+          "b": "Poydevor",
+          "c": "Yer ishlari"
+        }
       },
-      "site": {
-        "title": "Maydonni tayyorlash va yer ishlari",
-        "desc": "Qazish ishlari, kirish yo'llari, burg'ulash maydonchalari."
-      }
-    },
-    "ctaButton": "Loyihangizni muhokama qiling"
-  },
-  "clients": {
-    "label": "Bizga ishonishadi",
-    "title": "Davlat organlari va xalqaro tashkilotlar",
-    "domesticLabel": "Mahalliy mijozlar",
-    "internationalLabel": "Xalqaro hamkorlar",
-    "domestic": {
-      "ozsuvtaminot": "O'ZSUVTA'MINOT",
-      "uzauto": "UzAuto",
-      "uzgazoil": "UzGazOil",
-      "security": "O'zbekiston Davlat xavfsizlik xizmati",
-      "sirdaryo": "Sirdaryo viloyati",
-      "namangan": "Namangan viloyati",
-      "samarqand": "Samarqand viloyati",
-      "yangiyul": "Yangiyo'l hokimligi"
-    },
-    "international": {
-      "worldbank": "Jahon banki (IBRD/IDA)",
-      "adb": "Osiyo taraqqiyot banki",
-      "ebrd": "Yevropa tiklanish va taraqqiyot banki",
-      "opec": "OPEK fondi",
-      "saudi": "Saudiya taraqqiyot fondi",
-      "orient": "Orient Group of Companies"
-    }
-  },
-  "certifications": {
-    "label": "Sertifikatlar",
-    "iso9001": {
-      "title": "ISO 9001:2015",
-      "desc": "Sifat menejmenti"
-    },
-    "iso14001": {
-      "title": "ISO 14001:2019",
-      "desc": "Ekologik menejment"
-    },
-    "iso45001": {
-      "title": "ISO 45001:2020",
-      "desc": "Mehnat xavfsizligi"
-    },
-    "issuer": "AVVISO CERT LLC"
-  },
-  "featuredProjects": {
-    "label": "Tanlangan ishlar",
-    "title": "Tanlangan loyihalar",
-    "completed": "Yakunlangan",
-    "ongoing": "Davom etmoqda",
-    "funder": "Moliyalashtiruvchi",
-    "items": {
-      "koshrabad": {
-        "title": "Koshrobod ichimlik suvi yaxshilash loyihasi",
-        "location": "Samarqand viloyati",
-        "period": "2019–2021",
-        "amount": "$5,54M",
-        "funder": "OPEK fondi + Saudiya taraqqiyot fondi"
-      },
-      "zhiydakapa": {
-        "title": "Jiydaqapa suv olish inshooti rekonstruksiyasi",
-        "location": "Namangan",
-        "period": "2022–hozir",
-        "amount": "$5,21M",
-        "funder": "Yevropa tiklanish va taraqqiyot banki"
-      },
-      "yangiyul": {
-        "title": "Yangiyo'l suv ta'minoti tizimi",
-        "location": "Yangiyo'l shahri",
-        "period": "2022–2024",
-        "amount": "$5,59M",
-        "funder": "Investitsiyalar va tashqi savdo vazirligi"
+      "wells": {
+        "label": "05 · Quduqlar",
+        "short": "Gidrogeologik quduqlar",
+        "title": "Gidrogeologik quduqlar",
+        "desc": "Ichimlik, texnik va meliorativ suv uchun quduqlarni burgʻulash, rekonstruksiya qilish va taʼmirlash.",
+        "scope": [
+          "Qidiruv va ekspluatatsiya quduqlari",
+          "Vertikal drenaj quduqlarini rekonstruksiya qilish",
+          "Quduqlarni taʼmirlash va tiklash",
+          "6 rusumdagi 7 ta burgʻulash qurilmasi: URB-3AM (2 ta), URB-2D3, URB-2.5, YDZ1500, UKS-22, BA-15"
+        ],
+        "cap": [
+          {
+            "k": "Quduqlar",
+            "v": "yiliga 120 taga yaqin"
+          },
+          {
+            "k": "Chuqurlik",
+            "v": "30–1200 m"
+          }
+        ],
+        "dwg": {
+          "a": "Quduq",
+          "b": "30–1200 m",
+          "c": "Filtr"
+        }
       }
     }
-  },
-  "homeMap": {
-    "label": "LOYIHALAR JOYLASHUVI",
-    "title": "O'zbekistonning barcha hududlarida",
-    "subtitle": "2001 yildan beri O'zbekiston bo'ylab 20 ta amalga oshirilgan loyiha.",
-    "openFullMap": "To'liq interaktiv xaritani ochish →",
-    "stats": {
-      "projects": "20 loyiha",
-      "regions": "12 hudud",
-      "years": "2001–hozir",
-      "value": "$55M+"
-    }
-  },
-  "cta": {
-    "title": "Loyihangizni muhokama qilishga tayyormisiz?",
-    "subtitle": "Biz barcha so'rovlarga 24 soat ichida javob beramiz.",
-    "button": "Bog'lanish"
-  },
-  "footer": {
-    "tagline": "Suv resurslari va infratuzilmani rivojlantirish — barqaror suv ta'minoti uchun professional muhandislik yechimlari.",
-    "quickLinks": "Tezkor havolalar",
-    "servicesTitle": "Xizmatlar",
-    "services": {
-      "drilling": "Yer osti suvlarini burg'ulash",
-      "waterSupply": "Suv ta'minoti tizimlari",
-      "irrigation": "Sug'orish tarmoqlari",
-      "geological": "Geologik tadqiqotlar",
-      "civilEngineering": "Fuqarolik qurilishi"
-    },
-    "contactTitle": "Aloqa",
-    "address": "Xuson Shams ko'chasi 18, Mirzo Ulug'bek, Toshkent",
-    "rights": "Barcha huquqlar himoyalangan."
   },
   "equipmentPage": {
-    "title": "Qurilish texnikasi va uskunalari",
-    "subtitle": "Yiliga 200 km quvur va 120 ta quduq burg'ulashni ta'minlovchi zamonaviy texnika",
-    "stats": {
-      "machinery": "30+",
-      "machineLabel": "Og'ir texnika birliklari",
-      "depth": "1200m",
-      "depthLabel": "Maks. burg'ulash chuqurligi",
-      "diameter": "1200mm",
-      "diameterLabel": "Maks. quvur diametri",
-      "capacity": "200km",
-      "capacityLabel": "Yillik quvur quvvati"
+    "hero": {
+      "title": "Oʻz texnikamiz: yer ishlaridan quduq burgʻulashgacha",
+      "lead": "Kompaniyaning asosiy texnika parki — model va soni bilan: {models} model, {units} dona; ekskavatorlar va yuklagichlardan burgʻulash qurilmalarigacha.",
+      "toc": "Guruhlar"
     },
-    "categories": {
-      "drilling": "Burg'ulash uskunalari",
-      "cranes": "Kranlar va ko'tarish texnikasi",
-      "excavators": "Ekskavatorlar va yuklagichlar",
-      "tools": "Asboblar va maxsus uskunalar"
+    "caption": "Suratlarda — texnika modellari.",
+    "summary": "{models} model · {units} dona",
+    "quantity": "{count} dona",
+    "qtyLabel": "Soni",
+    "groups": {
+      "earth": "Ekskavatorlar, yuklagichlar va zichlash texnikasi",
+      "cranes": "Avtokranlar va kran-manipulyator",
+      "trucks": "Yuk mashinalari va traktor",
+      "welding": "Quvur payvandlash va diagnostika",
+      "power": "Beton, energiya, siqilgan havo va suv chiqarish",
+      "drilling": "Burgʻulash qurilmalari"
     }
   },
   "projectsPage": {
-    "title": "Bizning loyihalar",
-    "subtitle": "2001 yildan buyon O'zbekiston bo'ylab $55M+ suv infratuzilmasi loyihalari.",
-    "statsProjects": "20 loyiha",
-    "statsValue": "$55M+ umumiy qiymat",
-    "statsYears": "2001–hozir",
-    "filterAll": "Barchasi",
-    "filterDrilling": "Burg'ulash",
-    "filterInfrastructure": "Infratuzilma",
-    "completed": "Yakunlangan",
-    "ongoing": "Davom etmoqda",
-    "fundedBy": "Moliyalashtiruvchi",
-    "generalContractor": "Bosh pudratchi",
-    "subcontractor": "Subpudratchi",
-    "international": "Xalqaro",
-    "mapTitle": "Loyihalar joylashuvi",
-    "geographicFootprint": "Geografik qamrov",
-    "openFullMap": "To'liq interaktiv xaritani ochish",
-    "viewDetails": "Batafsil",
-    "mapSubtitle": "Barcha 20 ta loyihani xaritada ko'ring. Turi yoki holati bo'yicha filtrlang va tafsilotlar uchun belgini bosing."
+    "hero": {
+      "title": "20 ta loyiha — buyurtmachi, moliyalashtiruvchi va qiymati bilan",
+      "lead": "Oʻzbekiston boʻylab 2004-yildan beri bajarilgan yirik loyihalar reestri. Har bir loyiha sahifasida — yillar, rol, shartnoma raqami va ish tarkibi.",
+      "totalLabel": "Umumiy qiymat",
+      "total": "$55M+",
+      "statusLabel": "Holati",
+      "status": "{done} ta yakunlangan · {ongoing} ta davom etmoqda"
+    },
+    "register": {
+      "label": "01 · Reestr",
+      "title": "Loyihalar reestri",
+      "filterLabel": "Turi",
+      "filters": {
+        "all": "Barchasi",
+        "infrastructure": "Suv taʼminoti inshootlari",
+        "drilling": "Quduq burgʻulash"
+      },
+      "columns": {
+        "years": "Yillar",
+        "project": "Loyiha",
+        "region": "Hudud",
+        "client": "Buyurtmachi / moliyalashtiruvchi",
+        "value": "Qiymati",
+        "status": "Holati"
+      },
+      "present": "hozir",
+      "amount": "${amount} mln",
+      "status": {
+        "completed": "Yakunlangan",
+        "ongoing": "Davom etmoqda"
+      },
+      "sumAll": "Jami: {count} ta loyiha · $55M+",
+      "sumPart": "{count} ta loyiha · {value}"
+    },
+    "map": {
+      "label": "02 · Xarita",
+      "title": "Loyihalar xaritada",
+      "lead": "Har bir belgi — reestrdagi loyiha. Belgini bosing: nomi, yillari, qiymati va loyiha sahifasiga havola.",
+      "aria": "Loyihalar xaritasi",
+      "frame": "Loyihalar joylashuvi",
+      "completed": "Yakunlangan",
+      "ongoing": "Davom etmoqda",
+      "loading": "Xarita yuklanmoqda…",
+      "noscript": "Xarita JavaScript yoqilganda yuklanadi. Barcha loyihalar yuqoridagi reestrda.",
+      "open": "Loyiha sahifasi",
+      "unpinned": "Bir nechta obyektda bajarilgan, joylashuvi koʻrsatilmagan yoki maxfiy boʻlgan loyihalar xaritada koʻrsatilmagan; ular yuqoridagi reestrda bor."
+    }
   },
   "projectDetailPage": {
-    "backToProjects": "Loyihalarga qaytish",
-    "overview": "Umumiy ma'lumot",
-    "scope": "Ish hajmi",
-    "completed": "Yakunlangan",
-    "ongoing": "Davom etmoqda",
-    "international": "Xalqaro",
+    "back": "Loyihalar reestri",
+    "position": "{n} / {total}",
+    "factsTitle": "Loyiha maʼlumotlari",
+    "years": "Yillar",
+    "region": "Hudud",
     "client": "Buyurtmachi",
     "funder": "Moliyalashtiruvchi",
-    "amount": "Shartnoma qiymati",
-    "amountUzs": "Shartnoma qiymati (UZS)",
-    "period": "Muddat",
-    "location": "Joylashuv",
     "role": "Rol",
-    "contractNumber": "Shartnoma №",
-    "category": "Toifa",
-    "drilling": "Burg'ulash",
-    "infrastructure": "Infratuzilma",
-    "generalContractor": "Bosh pudratchi",
-    "subcontractor": "Subpudratchi",
-    "gallery": "Loyiha galereyasi",
-    "galleryEmpty": "Ushbu loyiha rasmlari tez orada qo'shiladi.",
-    "contactCta": "Shunga o'xshash loyihani muhokama qilish"
+    "contract": "Shartnoma raqami",
+    "value": "Shartnoma qiymati",
+    "valueUzs": "Qiymati, soʻmda",
+    "status": "Holati",
+    "completed": "Yakunlangan",
+    "ongoing": "Davom etmoqda",
+    "present": "hozir",
+    "amount": "${amount} mln",
+    "roles": {
+      "general": "Bosh pudratchi",
+      "sub": "Subpudratchi"
+    },
+    "description": "Tavsif",
+    "scope": "Ish tarkibi",
+    "prev": "Oldingi loyiha",
+    "next": "Keyingi loyiha",
+    "cta": "Shunga oʻxshash loyihani muhokama qilish",
+    "closingTitle": "Shunga oʻxshash loyiha rejalashtiryapsizmi? Hujjatlarni yuboring — 24 soat ichida javob beramiz"
   },
   "contactPage": {
-    "address": "Toshkent shahri, Mirzo Ulug'bek tumani, Alisher Navoiy MFY, Xuson Shams ko'chasi, 18-bino",
-    "sti": "STIR: 203 681 239",
-    "workingHours": "Ish vaqti",
-    "workingHoursValue": "Du–Ju: 9:00–18:00",
-    "phoneLabel": "Telefon",
-    "phoneValue": "+998 55 055 37 37",
-    "emailLabel": "Elektron pochta"
-  },
-  "contact": {
-    "title": "Biz bilan bog'laning",
-    "subtitle": "Muhandislik jamoamiz bilan bog'laning.",
-    "name": "To'liq ism",
-    "email": "Elektron pochta",
-    "phone": "Telefon raqami",
-    "company": "Kompaniya / Tashkilot",
-    "message": "Xabar",
-    "submit": "Xabar yuborish",
-    "success": "Xabar muvaffaqiyatli yuborildi!",
-    "error": "Xabar yuborib bo'lmadi. Qayta urinib ko'ring."
+    "hero": {
+      "title": "Loyiha boʻyicha soʻrov yuboring",
+      "lead": "Obyekt, ish hajmi va muddatlarni yozing — soʻrovga 24 soat ichida javob beramiz. Hujjatlarni pochta orqali yuborish mumkin.",
+      "call": "Qoʻngʻiroq qilish",
+      "toForm": "Soʻrov shakliga oʻtish",
+      "note": "Dushanba–juma, 9:00–18:00"
+    },
+    "form": {
+      "label": "01 · Soʻrov",
+      "title": "Soʻrov shakli",
+      "name": "Ism va familiya",
+      "email": "Elektron pochta",
+      "phone": "Telefon",
+      "company": "Tashkilot",
+      "message": "Loyiha haqida",
+      "messageHint": "Obyekt, ish hajmi, muddat va moliyalashtirish manbai.",
+      "required": "majburiy",
+      "optional": "ixtiyoriy",
+      "submit": "Soʻrovni yuborish",
+      "sending": "Yuborilmoqda…",
+      "success": "Soʻrov yuborildi. 24 soat ichida javob beramiz.",
+      "errorServer": "Soʻrov yuborilmadi. Qayta urinib koʻring yoki toʻgʻridan-toʻgʻri yozing:",
+      "errRequired": "Bu maydonni toʻldiring.",
+      "errEmail": "Elektron pochta manzilini toʻliq kiriting, masalan: nom@tashkilot.uz",
+      "noscript": "Brauzeringizda JavaScript oʻchiq: “Soʻrovni yuborish” tugmasi pochta dasturingizni ochadi. Yoki toʻgʻridan-toʻgʻri yozing:"
+    },
+    "details": {
+      "label": "02 · Rekvizitlar",
+      "title": "Telefon, pochta va manzil",
+      "phone": "Telefon",
+      "email": "Elektron pochta",
+      "address": "Manzil",
+      "addressValue": "Toshkent shahri, Mirzo Ulugʻbek tumani, Alisher Navoiy MFY, Xusan Shams koʻchasi, 18-uy",
+      "hours": "Ish vaqti",
+      "hoursValue": "Dushanba–juma, 9:00–18:00",
+      "tin": "STIR",
+      "google": "Google Xaritalarda ochish",
+      "yandex": "Yandex Xaritalarda ochish"
+    }
   },
   "seoFaq": {
-    "label": "Ko'p beriladigan savollar",
-    "title": "Quduq burg'ulash va suv ta'minoti — asosiy savollar",
+    "label": "Koʻp beriladigan savollar",
+    "title": "Quduq burgʻulash va suv taʼminoti — asosiy savollar",
     "items": {
       "q1": {
-        "q": "Toshkent va O'zbekistonning boshqa viloyatlarida artezian quduq burg'ulaysizmi?",
-        "a": "Ha. SUV-TARAQQIYOT MChJ O'zbekistonning barcha viloyatlarida — Toshkent, Namangan, Samarqand, Qashqadaryo, Sirdaryo va Farg'ona vodiysida — artezian va gidrogeologik quduqlar burg'ulaydi. Burg'ulash chuqurligi 30 dan 1200 metrgacha, yillik hajm — taxminan 120 quduq."
+        "q": "Toshkent va Oʻzbekistonning boshqa viloyatlarida artezian quduq burgʻulaysizmi?",
+        "a": "Ha. “SUV-TARAQQIYOT” MChJ Oʻzbekistonning 12 ta hududida, jumladan Toshkent shahri va viloyati, Namangan, Samarqand, Qashqadaryo va Sirdaryo viloyatlarida artezian va gidrogeologik quduqlar burgʻulaydi. Burgʻulash chuqurligi — 30 dan 1200 metrgacha, yiliga 120 taga yaqin quduq."
       },
       "q2": {
-        "q": "Qanday diametr va materialdagi suv quvurlarini o'rnatasiz?",
-        "a": "32 mm dan 1200 mm gacha bo'lgan diametrli polietilen (HDPE) va po'lat quvurlardan magistral va taqsimlovchi suv quvurlarini quramiz. Yillik hajm — yiliga 200 km gacha quvur, kommunal suv ta'minoti va sanoat infratuzilmasi uchun."
+        "q": "Qanday diametr va materialdagi suv quvurlarini oʻrnatasiz?",
+        "a": "32 dan 1200 mm gacha diametrli polietilen (HDPE) va poʻlat quvurlardan magistral va taqsimlash suv quvurlarini quramiz: yiliga 200 km gacha, kommunal suv taʼminoti va sanoat obyektlari uchun."
       },
       "q3": {
-        "q": "Jahon banki, EBRD, ADB va OPEC fondi loyihalarida ishlaysizmi?",
-        "a": "Ha. SUV-TARAQQIYOT Jahon banki (IBRD/IDA), Yevropa tiklanish va taraqqiyot banki (EBRD), Osiyo taraqqiyot banki (ADB), OPEC fondi va Saudiya taraqqiyot fondi tomonidan moliyalashtirilgan suv infratuzilmasi loyihalarini FIDIC shartnoma shartlari asosida amalga oshirgan."
+        "q": "Jahon banki, YeTTB va OPEK fondi moliyalashtirgan loyihalarda ishlaysizmi?",
+        "a": "Ha. Reestrdagi loyihalar: Jiydakapa suv olish inshooti (NWP-6) — YeTTB; Qoʻshrabot tumani (W/3.1, W/4.1) — OPEK fondi va Saudiya taraqqiyot fondi; Namangan shahri, 2-bosqich (NWSP/ICB/W-4-2) — OPEK fondi; Yangiyoʻl shahri suv taʼminoti (MSC-Y/W/1.2) — Jahon banki (XTTB qarzi 8914-UZ), FIDIC shartlari asosida."
       }
     }
   },
   "aboutPage": {
     "hero": {
-      "title": "2001 yildan muhandislik mukammalligi asosida",
-      "subtitle": "Bitta burg'ulash loyihasidan O'zbekistonning yetakchi suv infratuzilmasi pudratchilaridan biriga — 25 yillik uzluksiz faoliyat."
+      "title": "2001-yildan beri suv taʼminoti inshootlarini quramiz",
+      "lead": "NPO Wolfram bazasida tashkil etilgan pudratchi: 20 ta yirik loyiha, uchta menejment tizimi sertifikati (Oʻz DSt ISO) va davlat organlarining toʻrtta tashakkurnomasi.",
+      "foundedLabel": "Tashkil etilgan",
+      "founded": "2001-yil 21-avgust",
+      "tinLabel": "STIR",
+      "tin": "203 681 239"
     },
-    "story": {
-      "label": "TARIXIMIZ",
-      "title": "Muhandislik asosida tashkil etilgan. Amalga oshirish orqali o'sgan.",
-      "p1": "\"SUV-TARAQQIYOT\" MChJ 2001 yil 21 avgustda NPO Wolfram — geologik tadqiqot va burg'ulash muhandisligi sohasida chuqur ildizlarga ega sovet davri ilmiy-ishlab chiqarish tashkiloti bazasida tashkil etilgan. Faoliyatining birinchi yilidan boshlab kompaniya O'zbekiston bo'ylab gidrogeologik quduq burg'ulash va suv ta'minoti qurilishiga e'tibor qaratdi.",
-      "p2": "Yigirma yil davomida SUV-TARAQQIYOT dastlabki tekshiruvdan tortib yakuniy ishga tushirishgacha loyihalarni amalga oshirishga qodir to'liq tsiklli pudratchi darajasiga o'sdi. Kompaniya yiliga taxminan 120 ta quduqni 1 200 metr chuqurlikkacha burg'ulaydi, diametri 32 dan 1 200 mm gacha bo'lgan 200 km gacha suv quvurlarini quradi va kundalik sig'imi 300 dan 30 000 kub metrgacha bo'lgan 50 tagacha suv taqsimlash inshootlarini o'rnatadi.",
-      "p3": "Bugungi kunda SUV-TARAQQIYOT Jahon banki, Yevropa tiklanish va taraqqiyot banki, Osiyo taraqqiyot banki, Xalqaro taraqqiyot uchun OPEK fondi va Saudiya taraqqiyot fondi tomonidan moliyalashtirilgan shartnomalarni amalga oshirmoqda. Kompaniya AVVISO CERT LLC, Toshkent tomonidan berilgan ISO 9001:2015, ISO 14001:2019 va ISO 45001:2020 sertifikatlari asosida faoliyat yuritadi."
-    },
-    "figures": {
-      "years": {
-        "value": "25",
-        "label": "Yillik faoliyat"
-      },
-      "depth": {
-        "value": "1 200 m",
-        "label": "Maks. burg'ulash chuqurligi"
-      },
-      "value": {
-        "value": "$55M+",
-        "label": "Amalga oshirilgan loyihalar"
-      },
-      "iso": {
-        "value": "3 ISO",
-        "label": "Sifat sertifikatlari"
-      }
-    },
-    "team": {
-      "label": "JAMOAMIZ",
-      "title": "Har bir loyiha ortidagi jamoa",
-      "subtitle": "FIDIC, Jahon banki va KfW loyiha tajribasiga ega muhandislar va loyiha rahbarlari.",
-      "members": {
-        "projectManager": {
-          "role": "Pudratchi vakili / Loyiha rahbari",
-          "credentials": "FIDIC Red Book shartnoma tajribasi"
+    "history": {
+      "label": "01 · Tarix",
+      "title": "NPO Wolfram bazasidan 20 ta yirik loyihagacha",
+      "p1": "“SUV-TARAQQIYOT” MChJ 2001-yilda NPO Wolfram bazasida tashkil etilgan. Kompaniya har yili suv taʼminoti tizimlarini qurish boʻyicha pudrat ishlarini bajaradi: suv quvurlari, suv olish va taqsimlash inshootlari, suv minoralari va gidrogeologik quduqlar.",
+      "p2": "Reestrda 2004-yildan beri bajarilgan 20 ta yirik loyiha bor, umumiy qiymati 55 million AQSH dollaridan ortiq. Buyurtmachilar — “Oʻzsuvtaʼminot” AJ, “Oʻzkommunxizmat” agentligi, viloyat hokimliklari; moliyalashtiruvchilar — YeTTB, OPEK fondi, Saudiya taraqqiyot fondi, Jahon banki.",
+      "rows": {
+        "founded": {
+          "title": "NPO Wolfram bazasida tashkil etildi",
+          "text": "Davlat roʻyxatidan oʻtgan sana — 21-avgust, roʻyxat raqami 09‑000344."
         },
-        "siteManager": {
-          "role": "Bosh obyekt menejeri",
-          "credentials": "20+ yillik maydon boshqaruvi"
+        "uzgazoil": {
+          "title": "Neft burgʻulash qurilmalari uchun 148 ta quduq",
+          "text": "UzGazOil / “GISSARNEFTIGAZ” QK · bosh pudratchi"
         },
-        "hseManager": {
-          "role": "Mehnat xavfsizligi menejeri",
-          "credentials": "ISO 45001 sertifikatlangan"
+        "bayaut": {
+          "title": "Boyovut tumanida vertikal drenaj tizimlarini rekonstruksiya qilish",
+          "text": "Moliya vazirligi huzuridagi meliorativ jamgʻarma · bosh pudratchi"
         },
-        "envManager": {
-          "role": "Ekologiya menejeri",
-          "credentials": "ISO 14001 sertifikatlangan"
+        "syrdarya": {
+          "title": "Sirdaryo viloyatida suv taʼminoti tizimlari",
+          "text": "Yagona buyurtmachi xizmati injiniring kompaniyasi · bosh pudratchi"
         },
-        "civilEng": {
-          "role": "Qurilish muhandisi",
-          "credentials": "Quvur va konstruksiya loyihalash"
+        "koshrabad": {
+          "title": "Qoʻshrabot tumani ichimlik suvi taʼminoti, W/3.1 va W/4.1",
+          "text": "“Oʻzkommunxizmat” agentligi; buyurtmachi — “Samarqand suv taʼminoti” MChJ · OPEK fondi, Saudiya taraqqiyot fondi"
         },
-        "electricalEng": {
-          "role": "Elektr muhandisi",
-          "credentials": "Nasos stantsiya tizimlari"
+        "zhiydakapa": {
+          "title": "Jiydakapa suv olish inshooti rekonstruksiyasi",
+          "text": "“Oʻzsuvtaʼminot” AJ · YeTTB · davom etmoqda"
         },
-        "instrumentEng": {
-          "role": "Asbobsozlik muhandisi",
-          "credentials": "SCADA va telemetriya"
+        "yangiyul": {
+          "title": "Yangiyoʻl shahri suv taʼminoti tizimi rekonstruksiyasi",
+          "text": "Iqtisodiyot va moliya vazirligi, oʻrta shaharlar loyihasi · bosh pudratchi"
         },
-        "mechanicalEng": {
-          "role": "Mexanik muhandis",
-          "credentials": "Burg'ulash qurilmalariga xizmat"
-        },
-        "waterSpecialist": {
-          "role": "Suv ta'minoti mutaxassisi",
-          "credentials": "Gidravlik modellash"
-        },
-        "surveyor": {
-          "role": "Geodezist",
-          "credentials": "GPS/GNSS va topografik o'lchov"
+        "namangan2": {
+          "title": "Namangan shahrining shimoliy qismi suv taʼminoti, 2-bosqich",
+          "text": "“Namangan suv taʼminoti” · OPEK fondi · davom etmoqda"
         }
-      }
-    },
-    "certifications": {
-      "label": "Sifat standartlari",
-      "title": "ISO sertifikatlangan. Davlat ro'yxatidan o'tgan.",
-      "iso9001Title": "O'z DSt ISO 9001:2015",
-      "iso9001Desc": "Sifat menejmenti tizimi — Suv ta'minoti muhandislik inshootlarini qurish",
-      "iso14001Title": "O'z DSt ISO 14001:2019",
-      "iso14001Desc": "Ekologik menejment tizimi",
-      "iso45001Title": "O'z DSt ISO 45001:2020",
-      "iso45001Desc": "Mehnat xavfsizligi va salomatligi menejmenti tizimi",
-      "issuer": "Beruvchi",
-      "validUntil": "Amal qilish muddati"
+      },
+      "present": "hozir",
+      "amount": "${amount} mln",
+      "source": "Manba: kompaniya taqdimoti va loyihalar reestri."
     },
     "legal": {
-      "label": "YURIDIK MA'LUMOTLAR",
-      "title": "Kompaniya ro'yxatga olish",
+      "label": "02 · Yuridik maʼlumotlar",
+      "title": "Rekvizitlar va davlat roʻyxati",
       "rows": {
         "fullName": {
-          "label": "To'liq nomi",
-          "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat"
+          "label": "Toʻliq nomi",
+          "value": "“SUV-TARAQQIYOT” masʼuliyati cheklangan jamiyati"
         },
-        "sti": {
+        "shortName": {
+          "label": "Qisqa nomi",
+          "value": "“SUV-TARAQQIYOT” MChJ"
+        },
+        "tin": {
           "label": "STIR",
-          "value": "203 681 239"
+          "value": "203 681 239"
         },
-        "regNumber": {
-          "label": "Ro'yxat raqami",
+        "regNo": {
+          "label": "Roʻyxat raqami",
           "value": "09-000344"
         },
         "regDate": {
-          "label": "Ro'yxat sanasi",
-          "value": "2001 yil 21 avgust"
+          "label": "Roʻyxatdan oʻtgan sana",
+          "value": "21.08.2001"
         },
         "registrar": {
-          "label": "Ro'yxatga oluvchi",
-          "value": "Mirzo Ulug'bek tumani Davlat xizmatlari markazi, Toshkent"
+          "label": "Roʻyxatdan oʻtkazgan organ",
+          "value": "Mirzo Ulugʻbek tumani davlat xizmatlari markazi"
         },
         "address": {
-          "label": "Manzil",
-          "value": "Xuson Shams ko'chasi 18, Mirzo Ulug'bek tumani, Toshkent, O'zbekiston"
+          "label": "Faoliyat yuritadigan manzil",
+          "value": "Toshkent shahri, Mirzo Ulugʻbek tumani, Alisher Navoiy MFY, Xusan Shams koʻchasi, 18-uy"
+        }
+      },
+      "source": "Manba: davlat roʻyxatidan oʻtganlik guvohnomasi."
+    },
+    "capacityLabel": "03 · Ish hajmi",
+    "certificatesLabel": "04 · Sertifikatlar",
+    "letters": {
+      "label": "05 · Tashakkurnomalar",
+      "title": "Davlat organlarining tashakkurnomalari",
+      "items": {
+        "rmm": {
+          "authority": "Respublika mulk markazi",
+          "year": "2021",
+          "text": "Mustaqillikning 30 yilligi munosabati bilan — fuqarolar manfaatlarini himoya qilishdagi faol mehnat uchun."
         },
-        "phone": {
-          "label": "Telefon",
-          "value": "+998 55 055 37 37"
+        "education": {
+          "authority": "Xalq taʼlimi vazirligi",
+          "year": "2018",
+          "text": "Mirzo Ulugʻbek tumanidagi 241-maktabni 2018–2019-oʻquv yiliga tayyorlashga qoʻshgan hissa uchun (G. A. Vahobov nomiga)."
         },
-        "contactManager": {
-          "label": "Aloqa menejeri",
-          "value": "Usmonov Bekzod"
+        "yunusobod": {
+          "authority": "Yunusobod tumani hokimligi",
+          "year": "",
+          "text": "Tuman aholisining turmush darajasi va farovonligini oshirishdagi faol ishtirok uchun."
+        },
+        "police": {
+          "authority": "Yunusobod tumani IIO FMB, 1-sonli IIB",
+          "year": "2021",
+          "text": "Yunusobod tumanining 2021-yildagi ijtimoiy-iqtisodiy rivojlanishiga qoʻshgan hissa uchun."
+        }
+      },
+      "noYear": "sanasiz",
+      "source": "Manba: kompaniya taqdimoti, 2025."
+    },
+    "clientsLabel": "06 · Buyurtmachilar"
+  },
+  "home": {
+    "hero": {
+      "title": "Suv taʼminoti infratuzilmasini quramiz",
+      "lead": "Magistral suv quvurlari, suv olish va taqsimlash inshootlari, suv minoralari — 2001-yildan beri Oʻzbekistonning 12 ta hududida. 20 ta yirik loyiha, umumiy qiymati 55 million AQSH dollaridan ortiq.",
+      "cta": "Loyihani muhokama qilish",
+      "projectsLink": "20 ta loyihani koʻrish",
+      "note": "Soʻrovga 24 soat ichida javob beramiz",
+      "clientsLabel": "Buyurtmachilar",
+      "clients": "Oʻzsuvtaʼminot, Oʻzkommunxizmat, viloyat hokimliklari.",
+      "fundersLabel": "Moliyalashtiruvchilar",
+      "funders": "YeTTB, OPEK fondi, Saudiya taraqqiyot fondi, Jahon banki.",
+      "drawing": {
+        "aria": "Suv taʼminoti tizimi kesimi, oqim yoʻnalishida: chuqurlik nasoslari bilan quduqlar (30–1200 m), xlorlash, toza suv rezervuari, II koʻtarish nasos stansiyasi (300–30 000 m³/kun), magistral suv quvuri (diametri 32–1200 mm, havo chiqargich va boʻshatish bilan), suv minorasi (10–75 m³), taqsimlash tarmogʻi va uylar. Pyezometrik chiziq har bir nasosda koʻtariladi, oqim boʻyicha pasayadi va uylardan yuqorida qoladi.",
+        "wells": "Quduqlar",
+        "wellDepth": "30–1200 m",
+        "staticLevel": "statik sath",
+        "dynamicLevel": "dinamik sath",
+        "submersible": "chuqurlik nasosi",
+        "aquifer": "suvli qatlam",
+        "chlorination": "Xlorlash",
+        "reservoir": "Toza suv rezervuari",
+        "pump": "Nasos stansiyasi",
+        "lift": "II koʻtarish",
+        "flow": "300–30 000 m³/kun",
+        "checkValve": "teskari klapan",
+        "gateValve": "zadvijka",
+        "gauge": "manometr",
+        "main": "Magistral suv quvuri",
+        "mainLength": "yiliga 200 km gacha",
+        "diameter": "Ø 32–1200 mm",
+        "frost": "h ≥ muzlash chuqurligi",
+        "airValve": "havo chiqargich",
+        "washout": "boʻshatish",
+        "tower": "Suv minorasi",
+        "towerVolume": "10–75 m³",
+        "network": "Taqsimlash tarmogʻi",
+        "service": "uyga ulanish",
+        "hgl": "pyezometrik chiziq"
+      }
+    },
+    "capacity": {
+      "label": "01 · Ish hajmi",
+      "title": "Bir yilda 200 km gacha suv quvuri, 50 tagacha suv taqsimlash inshooti va 50 tagacha suv minorasi",
+      "columns": {
+        "pos": "Poz.",
+        "item": "Inshoot",
+        "qty": "Yillik hajm",
+        "par": "Koʻrsatkich"
+      },
+      "rows": [
+        {
+          "item": "Suv quvurlari",
+          "qty": "200 km gacha",
+          "par": "diametri 32–1200 mm"
+        },
+        {
+          "item": "Suv taqsimlash inshootlari",
+          "qty": "50 tagacha",
+          "par": "300–30 000 m³/kun"
+        },
+        {
+          "item": "Suv olish inshootlari",
+          "qty": "—",
+          "par": "hajmi 5 000 m³ dan ortiq bino va inshootlar"
+        },
+        {
+          "item": "Suv minoralari",
+          "qty": "50 tagacha",
+          "par": "10–75 m³"
+        },
+        {
+          "item": "Gidrogeologik quduqlar",
+          "qty": "120 taga yaqin",
+          "par": "chuqurligi 30–1200 m"
+        }
+      ],
+      "source": "Manba: kompaniya taqdimoti, 2025.",
+      "sourceDepth": "Quduq chuqurligi (1200 m gacha): kompaniya maʼlumoti, 2026."
+    },
+    "register": {
+      "label": "02 · Loyihalar reestri",
+      "title": "20 ta loyiha, har biri buyurtmachi va shartnoma qiymati bilan",
+      "columns": {
+        "years": "Yillar",
+        "project": "Loyiha",
+        "region": "Hudud",
+        "client": "Buyurtmachi / moliyalashtiruvchi",
+        "value": "Qiymati",
+        "status": "Holati"
+      },
+      "present": "hozir",
+      "amount": "${amount} mln",
+      "status": {
+        "completed": "Yakunlangan",
+        "ongoing": "Davom etmoqda"
+      },
+      "allLink": "Barcha 20 ta loyiha — yillar, buyurtmachilar va qiymatlar bilan",
+      "count": "{shown} / {total}",
+      "rows": {
+        "uzgazoil": {
+          "title": "Neft burgʻulash qurilmalari uchun 148 ta quduq burgʻulash",
+          "region": "Oʻzbekiston, bir nechta maydon",
+          "client": "UzGazOil / “GISSARNEFTIGAZ” QK"
+        },
+        "koshrabad": {
+          "title": "Qoʻshrabot tumani ichimlik suvi taʼminotini yaxshilash (W/3.1 va W/4.1)",
+          "region": "Samarqand viloyati",
+          "client": "“Oʻzkommunxizmat” agentligi; buyurtmachi — “Samarqand suv taʼminoti” MChJ",
+          "funder": "OPEK fondi, Saudiya taraqqiyot fondi"
+        },
+        "yangiyul": {
+          "title": "Yangiyoʻl shahri suv taʼminoti tizimini rekonstruksiya qilish",
+          "region": "Toshkent viloyati",
+          "client": "Oʻrta shaharlar loyihasini amalga oshirish guruhi, Iqtisodiyot va moliya vazirligi",
+          "funder": "Jahon banki (XTTB)"
+        },
+        "zhiydakapa": {
+          "title": "Jiydakapa suv olish inshootini rekonstruksiya qilish",
+          "region": "Namangan viloyati",
+          "client": "“Oʻzsuvtaʼminot” AJ",
+          "funder": "YeTTB"
+        },
+        "syrdarya": {
+          "title": "Sirdaryo viloyatida suv taʼminoti tizimlarini qurish",
+          "region": "Sirdaryo viloyati",
+          "client": "Yagona buyurtmachi xizmati injiniring kompaniyasi"
+        },
+        "namangan2": {
+          "title": "Namangan shahrining shimoliy qismi suv taʼminoti, 2-bosqich",
+          "region": "Namangan shahri",
+          "client": "“Namangan suv taʼminoti”",
+          "funder": "OPEK fondi"
         }
       }
     },
-    "recognition": {
-      "label": "Tan olish",
-      "title": "Davlat organlari tomonidan tan olingan",
-      "tahakkurnoma": "TASHAKKURNOMA",
-      "suvTaraqqiyot": "\"SUV-TARAQQIYOT\" MChJ",
-      "rmm": {
-        "authority": "RMM (Respublika Mulk Markazi)",
-        "desc": "Fuqarolar manfaatlarini himoya qilganligi uchun, O'zbekiston mustaqilligining 30 yilligi munosabati bilan"
-      },
-      "education": {
-        "authority": "O'zbekiston Ta'lim vazirligi",
-        "desc": "2018–2019 o'quv yiliga maktablarni qurilishga tayyorlashga qo'shgan hissasi uchun, Mirzo Ulug'bek tumani"
-      },
-      "yunusobod": {
-        "authority": "Yunusobod tuman hokimligi",
-        "desc": "Aholining turmush darajasi va farovonligini oshirganligi uchun"
+    "services": {
+      "label": "03 · Xizmatlar",
+      "title": "Suv taʼminoti tizimini boshidan oxirigacha quramiz",
+      "link": "Xizmatlar va ish hajmlari",
+      "items": {
+        "pipes": {
+          "title": "Suv quvurlari qurilishi",
+          "desc": "Magistral va taqsimlash tarmoqlari, 32 dan 1200 mm gacha, polietilen va poʻlat quvurlar. Yiliga 200 km gacha."
+        },
+        "facilities": {
+          "title": "Suv olish va taqsimlash inshootlari",
+          "desc": "Nasos stansiyalari, rezervuarlar va suv taqsimlash inshootlari — kuniga 300 dan 30 000 m³ gacha."
+        },
+        "towers": {
+          "title": "Suv minoralari",
+          "desc": "10 dan 75 m³ gacha, yiliga 50 tagacha."
+        },
+        "civil": {
+          "title": "Umumqurilish va konstruktiv ishlar",
+          "desc": "Beton inshootlar, nasos stansiyalari binolari, yer ishlari, kirish yoʻllari."
+        },
+        "wells": {
+          "title": "Gidrogeologik quduqlar",
+          "desc": "30 dan 1200 metrgacha, yiliga 120 taga yaqin."
+        }
       }
-    }
-  },
-  "projectMap": {
-    "showing": "{total} tadan {count} ta loyiha ko'rsatilmoqda",
-    "totalValue": "Umumiy qiymat",
-    "filterLabel": "Loyiha filtri",
-    "completed": "Tugallangan",
-    "ongoing": "Davom etmoqda",
-    "fundedBy": "Moliyalashtirgan",
-    "viewDetails": "Batafsil",
-    "category": {
-      "all": "Barchasi",
-      "drilling": "Burg'ulash",
-      "infrastructure": "Infratuzilma"
     },
-    "statusFilter": {
-      "all": "Barchasi",
-      "completed": "Tugallangan",
-      "ongoing": "Davom etmoqda"
+    "fleet": {
+      "label": "04 · Texnika",
+      "title": "Oʻz texnikamiz: ekskavatorlar, kranlar, quvur payvandlash apparatlari",
+      "lines": [
+        "Hyundai va JCB ekskavatorlari va yuklagichlari.",
+        "Avtokran Sany STC500 (50 t).",
+        "Turan Makina quvur payvandlash apparatlari (180–800 mm).",
+        "Shacman samosvallari.",
+        "6 rusumdagi 7 ta burgʻulash qurilmasi: URB-3AM (2 ta), URB-2D3, URB-2.5, YDZ1500, UKS-22, BA-15."
+      ],
+      "caption": "Suratlarda — texnika modellari.",
+      "link": "Texnika roʻyxati",
+      "quantity": "{count} dona",
+      "types": {
+        "excavator": "gʻildirakli ekskavator",
+        "backhoe": "ekskavator-yuklagich",
+        "crane": "avtokran",
+        "dump": "samosval",
+        "welder": "quvur payvandlash apparati"
+      }
+    },
+    "clients": {
+      "label": "05 · Buyurtmachilar",
+      "title": "Davlat buyurtmachilari va xalqaro moliya institutlari",
+      "clientsLabel": "Buyurtmachilar",
+      "fundersLabel": "Moliyalashtiruvchilar",
+      "clients": [
+        "“Oʻzsuvtaʼminot” AJ",
+        "“Oʻzkommunxizmat” agentligi",
+        "Sirdaryo viloyati hokimligi",
+        "Namangan viloyati hokimligi",
+        "Samarqand viloyati hokimligi",
+        "Yangiyoʻl shahar hokimligi",
+        "UzGazOil",
+        "UzAuto",
+        "ORIENT Holding"
+      ],
+      "funders": [
+        "Yevropa tiklanish va taraqqiyot banki",
+        "OPEK fondi",
+        "Saudiya taraqqiyot fondi",
+        "Jahon banki",
+        "Osiyo taraqqiyot banki"
+      ]
+    },
+    "certificates": {
+      "label": "06 · Sertifikatlar",
+      "title": "Uchta menejment tizimi sertifikati",
+      "lead": "Oʻz DSt ISO — tegishli ISO standartlariga aynan mos Oʻzbekiston milliy standartlari.",
+      "items": {
+        "iso9001": "Sifat menejmenti",
+        "iso14001": "Ekologik menejment",
+        "iso45001": "Mehnat muhofazasi va xavfsizligi"
+      },
+      "note": "Sertifikatlar AVVISO CERT MChJ tomonidan berilgan.",
+      "std": "Oʻz DSt"
+    },
+    "faqNo": "07",
+    "closing": {
+      "title": "Loyihangiz hujjatlarini yuboring — 24 soat ichida javob beramiz",
+      "button": "Loyihani muhokama qilish"
     }
   }
 }

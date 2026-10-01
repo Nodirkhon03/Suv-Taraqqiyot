@@ -1,46 +1,50 @@
 import type { Metadata } from "next";
-import { locales } from "@/i18n";
-import { SITE_URL } from "@/lib/site";
+import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n";
+import { projects } from "@/lib/projects";
+import { getProjectText } from "@/lib/content/projects-i18n";
+import ListingLd from "./ListingLd";
+import { jsonLd, localeUrl, pageCopy, pageGraph, routeMetadata } from "@/lib/seo";
 
-
-const titles: Record<string, string> = {
-  en: "Project Portfolio | 20 Water Infrastructure Projects | SUV-TARAQQIYOT LLC",
-  ru: "Портфель проектов | 20 объектов водной инфраструктуры | СУВ-ТАРАККИЁТ",
-  uz: "Loyihalar portfeli | 20 suv infratuzilmasi loyihasi | SUV-TARAQQIYOT",
-  tr: "Proje Portföyü | 20 Su Altyapı Projesi | SUV-TARAQQIYOT LLC",
-};
-
-const descriptions: Record<string, string> = {
-  en: "20 completed and ongoing water infrastructure projects in Uzbekistan. Funded by World Bank, EBRD, ADB, OPEC Fund. Total value $55M+. Drilling, pipeline, and distribution systems.",
-  ru: "20 реализованных проектов водоснабжения в Узбекистане. Финансирование: Всемирный банк, ЕБРР, АБР, Фонд ОПЕК. Объём $55M+. Бурение скважин, трубопроводы, водораспределение.",
-  uz: "O'zbekistonda 20 ta suv infratuzilmasi loyihasi. Jahon banki, EBRD, ADB, OPEC Fondi tomonidan moliyalashtirilgan. Umumiy qiymati $55M+. Quduq, quvur va taqsimlash tizimlari.",
-  tr: "Özbekistan'da 20 su altyapı projesi. Dünya Bankası, EBRD, ADB ve OPEC Fonu tarafından finanse edildi. Toplam değer 57 milyon doları aşıyor.",
-};
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  return {
-    title: titles[locale] || titles.en,
-    description: descriptions[locale] || descriptions.en,
-    alternates: {
-      canonical: `${SITE_URL}/${locale}/projects`,
-      languages: Object.fromEntries([
-        ...locales.map((l) => [l, `${SITE_URL}/${l}/projects`]),
-        ["x-default", `${SITE_URL}/en/projects`],
-      ]),
-    },
-    openGraph: {
-      title: titles[locale] || titles.en,
-      description: descriptions[locale] || descriptions.en,
-      url: `${SITE_URL}/${locale}/projects`,
-      type: "website",
-    },
-  };
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return routeMetadata(locale, "/projects");
 }
 
-export default function ProjectsLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function ProjectsLayout({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const copy = pageCopy("projects", locale);
+  const url = localeUrl(locale, "/projects");
+  const graph = pageGraph(locale, "/projects", {
+    type: "CollectionPage",
+    name: copy.title,
+    description: copy.description,
+    homeName: tNav("home"),
+    crumbs: [{ name: tNav("projects"), path: "/projects" }],
+    extra: [
+      {
+        "@type": "ItemList",
+        "@id": `${url}#register`,
+        numberOfItems: projects.length,
+        itemListOrder: "https://schema.org/ItemListUnordered",
+        itemListElement: projects.map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: localeUrl(locale, `/projects/${p.slug}`),
+          name: getProjectText(p.slug, locale as Locale).title,
+        })),
+      },
+    ],
+  });
+  return (
+    <>
+      <ListingLd json={jsonLd(graph)} />
+      {children}
+    </>
+  );
 }

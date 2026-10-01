@@ -1,168 +1,134 @@
-"use client";
-
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import {
-  cardFade,
-  cardHover,
-  stagger,
-  viewportOnce,
-} from "@/lib/animations";
-import DrillingRig from "@/components/illustrations/DrillingRig";
-import PipelineSection from "@/components/illustrations/PipelineSection";
-import WaterTower from "@/components/illustrations/WaterTower";
-import {
-  WellDrillingIcon,
-  PipelineIcon,
-  WaterDistributionIcon,
-  WaterTowerIcon,
-  CivilEngineeringIcon,
-  SitePreparationIcon,
-} from "@/components/icons/ServiceIcons";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n";
+import PageHero from "@/components/pages/PageHero";
+import SectionHead from "@/components/home/SectionHead";
+import ClosingCta from "@/components/home/ClosingCta";
+import ServiceDrawing, { type DrawingText, type ServiceKey } from "@/components/pages/ServiceDrawing";
+import { getProjectText } from "@/lib/content/projects-i18n";
+import { formatMillions, millions, projectBySlug } from "@/lib/format";
 
-const services = [
-  {
-    key: "drilling",
-    stats: ["30–1200m depth", "~120 wells/year", "6 drilling rigs"],
-    Icon: WellDrillingIcon,
-    Illustration: DrillingRig,
-  },
-  {
-    key: "pipelines",
-    stats: ["Up to 200 km/year", "Dia 32–1200mm", "HDPE & steel"],
-    Icon: PipelineIcon,
-    Illustration: PipelineSection,
-  },
-  {
-    key: "distribution",
-    stats: ["300–30,000 m³/day", "Up to 50 units/year"],
-    Icon: WaterDistributionIcon,
-    Illustration: null,
-  },
-  {
-    key: "towers",
-    stats: ["10–75 m³ capacity", "Up to 50 towers/year", "5,000+ m³ intake"],
-    Icon: WaterTowerIcon,
-    Illustration: WaterTower,
-  },
-] as const;
+/** Civil engineering first; drilling is one service of five, listed last (owner, round 2). */
+const SERVICES: { key: ServiceKey; refs: string[] }[] = [
+  { key: "pipes", refs: ["namangan-water-supply-phase2", "yangiyul-water-supply", "damkhodzha-pipeline-reconstruction"] },
+  { key: "facilities", refs: ["zhiydakapa-water-intake-namangan", "koshrabad-water-w41", "vu5-guzar-reconstruction"] },
+  { key: "towers", refs: [] },
+  { key: "civil", refs: ["uzgazoil-wells-drilling"] },
+  { key: "wells", refs: ["uzgazoil-wells-drilling", "bayaut-vertical-drainage-reconstruction", "cng-wells-uztransgaz"] },
+];
 
-const extraCapabilities = [
-  { key: "civil", Icon: CivilEngineeringIcon },
-  { key: "site", Icon: SitePreparationIcon },
-] as const;
+type Cap = { k: string; v: string };
 
-export default function ServicesPage() {
-  const t = useTranslations("servicesOverview");
-  const locale = useLocale();
+export default async function ServicesPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "servicesPage" });
+  const tSite = await getTranslations({ locale, namespace: "site" });
 
   return (
-    <section className="py-16 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.p
-          className="text-xs uppercase tracking-widest text-engineering font-medium"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {t("label")}
-        </motion.p>
-        <motion.h1
-          className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy tracking-tighter"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.08 }}
-        >
-          {t("title")}
-        </motion.h1>
-
-        <motion.div
-          className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8"
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-        >
-          {services.map((s) => (
-            <motion.div
-              key={s.key}
-              className="rounded-2xl border border-gray-100 shadow-sm bg-white p-8 card-accent hover:border-engineering overflow-hidden"
-              variants={cardFade}
-              whileHover={cardHover}
-            >
-              <div className="flex items-start justify-between gap-6">
-                <div className="flex-1 min-w-0">
-                  <s.Icon size={40} color="#0B2B43" />
-                  <h2 className="mt-4 text-xl font-bold text-navy">
-                    {t(`items.${s.key}.title`)}
-                  </h2>
-                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                    {t(`items.${s.key}.desc`)}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {s.stats.map((stat) => (
-                      <span
-                        key={stat}
-                        className="text-xs font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-700"
-                      >
-                        {stat}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {s.Illustration && (
-                  <div className="hidden md:block w-32 shrink-0 opacity-90">
-                    <s.Illustration className="w-full h-auto" />
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Extra capabilities strip */}
-        <motion.div
-          className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4"
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-        >
-          {extraCapabilities.map((c) => (
-            <motion.div
-              key={c.key}
-              variants={cardFade}
-              className="rounded-2xl border border-gray-100 bg-gray-50 p-6 flex items-center gap-4"
-            >
-              <c.Icon size={36} color="#2C86C7" />
-              <div>
-                <p className="font-bold text-navy">
-                  {t(`extra.${c.key}.title`)}
-                </p>
-                <p className="text-sm text-gray-600">
-                  {t(`extra.${c.key}.desc`)}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOnce}
-          transition={{ duration: 0.6 }}
-        >
-          <Link
-            href={`/${locale}/contact`}
-            className="inline-block bg-navy text-white px-8 py-3.5 rounded-xl font-medium hover:bg-engineering transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-engineering focus-visible:ring-offset-2"
-          >
-            {t("ctaButton")}
+    <>
+      <PageHero
+        title={t("hero.title")}
+        lead={t("hero.lead")}
+        aside={
+          <nav className="tblock" aria-label={t("hero.toc")}>
+            <ol className="toc">
+              {SERVICES.map((s, i) => (
+                <li key={s.key}>
+                  <a href={`#${s.key}`}>
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    {t(`items.${s.key}.short`)}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        }
+      >
+        <div className="cta-row">
+          <Link className="btn btn-white" href={`/${locale}/contact`}>
+            {tSite("cta")}
           </Link>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </PageHero>
+
+      {SERVICES.map((s, i) => {
+        const scope = t.raw(`items.${s.key}.scope`) as string[];
+        const cap = t.raw(`items.${s.key}.cap`) as Cap[];
+        const dwg = t.raw(`items.${s.key}.dwg`) as DrawingText;
+        const refs = s.refs.map((slug) => {
+          const p = projectBySlug(slug);
+          return {
+            slug,
+            title: getProjectText(slug, locale as Locale).title,
+            years: p.year.replace("present", t("present")),
+            value: t("amount", { amount: formatMillions(millions(p.amount), locale) }),
+          };
+        });
+        return (
+          <section
+            key={s.key}
+            id={s.key}
+            className={i % 2 ? "sec bg-50" : "sec"}
+            aria-labelledby={`${s.key}-title`}
+          >
+            <div className="wrap">
+              <SectionHead id={`${s.key}-title`} label={t(`items.${s.key}.label`)} title={t(`items.${s.key}.title`)} />
+              <div className="svc-body">
+                <ServiceDrawing name={s.key} text={dwg} />
+                <div>
+                  <p className="svc-desc">{t(`items.${s.key}.desc`)}</p>
+                  <h3 className="svc-sub">{t("scope")}</h3>
+                  <ol className="scope">
+                    {scope.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ol>
+                  {cap.length > 0 && (
+                    <>
+                      <h3 className="svc-sub">{t("capacity")}</h3>
+                      <dl className="tb cap">
+                        {cap.map((c, j) => (
+                          <div key={c.k} className={cap.length % 2 === 1 && j === cap.length - 1 ? "wide" : undefined}>
+                            <dt>{c.k}</dt>
+                            <dd className="val">{c.v}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </>
+                  )}
+                  {refs.length > 0 && (
+                    <>
+                      <h3 className="svc-sub">{t("refs")}</h3>
+                      <ul className="refs">
+                        {refs.map((r) => (
+                          <li key={r.slug}>
+                            <Link href={`/${locale}/projects/${r.slug}`}>
+                              {r.title}
+                              <span>
+                                {r.years} · {r.value}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
+              </div>
+              {i === SERVICES.length - 1 && (
+                <>
+                  <p className="src">{t("source")}</p>
+                  <p className="src" style={{ marginTop: ".25rem" }}>
+                    {t("sourceDepth")}
+                  </p>
+                </>
+              )}
+            </div>
+          </section>
+        );
+      })}
+
+      <ClosingCta locale={locale} />
+    </>
   );
 }

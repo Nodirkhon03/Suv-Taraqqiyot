@@ -1,4 +1,28 @@
 {
+  "site": {
+    "nav": {
+      "company": "Company",
+      "services": "Services",
+      "equipment": "Equipment",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "cta": "Discuss a project",
+    "menu": "Menu",
+    "language": "Language",
+    "homeLabel": "SUV-TARAQQIYOT — home",
+    "mainNav": "Main",
+    "quickNav": "Quick links",
+    "footerNav": "Footer",
+    "skip": "Skip to content",
+    "footer": {
+      "company": "SUV-TARAQQIYOT LLC",
+      "founded": "founded in 2001",
+      "tin": "TIN 203 681 239",
+      "address": "18 Khusan Shams Street, Mirzo Ulugbek District, Tashkent",
+      "copy": "© {year} SUV-TARAQQIYOT LLC"
+    }
+  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -7,454 +31,650 @@
     "projects": "Projects",
     "contact": "Contact"
   },
-  "hero": {
-    "eyebrow": "Water Infrastructure · Hydrogeological Drilling · Civil Engineering",
-    "title": "Engineering Water Infrastructure for Central Asia",
-    "subtitle": "One of Uzbekistan's leaders in hydrogeological well drilling and water supply system construction since 2001",
-    "cta": "View Our Projects",
-    "ctaSecondary": "Our Services",
-    "credibility": "20 projects · $55M+ delivered · Trusted by World Bank & EBRD"
-  },
-  "capacity": {
-    "label": "Our Capacity",
-    "title": "Delivered Every Year",
-    "pipelines": {
-      "value": "200 km",
-      "label": "Water Pipelines",
-      "desc": "Diameter 32–1200 mm"
+  "servicesPage": {
+    "hero": {
+      "title": "From pipeline to well: five services, one contractor",
+      "lead": "Transmission mains, water intake and distribution facilities, water towers, civil works and hydrogeological wells. Annual figures are from the company presentation.",
+      "toc": "Contents"
     },
-    "wells": {
-      "value": "120",
-      "label": "Wells Drilled Per Year",
-      "desc": "Depth 30–1200 m"
-    },
-    "units": {
-      "value": "50",
-      "label": "Water Distribution Units",
-      "desc": "300–30,000 m³/day capacity"
-    },
-    "intake": {
-      "value": "5,000+",
-      "label": "m³ Intake Station Capacity",
-      "desc": "Water intake stations volume"
-    }
-  },
-  "about": {
-    "label": "About Us",
-    "title": "Built on 25 Years of Engineering Excellence",
-    "description": "Founded in 2001 on the basis of NPO Wolfram, SUV-TARAQQIYOT LLC has grown into one of the leading contractors for hydrogeological drilling and water supply infrastructure in the Republic of Uzbekistan. We work with government agencies, international development banks, and industrial clients across Central Asia.",
-    "stats": {
-      "established": "Est. 2001",
-      "establishedLabel": "Year Founded",
-      "projects": "20+",
-      "projectsLabel": "Major Projects",
-      "value": "$55M+",
-      "valueLabel": "Total Project Value"
-    }
-  },
-  "servicesOverview": {
-    "label": "What We Do",
-    "title": "Core Services",
+    "scope": "Scope of work",
+    "capacity": "Annual capacity",
+    "refs": "Projects in the register",
+    "amount": "${amount}M",
+    "present": "present",
+    "source": "Source: company presentation, 2025.",
+    "sourceDepth": "Well depth (up to 1200 m): company data, 2026.",
     "items": {
-      "drilling": {
-        "title": "Hydrogeological Well Drilling",
-        "desc": "Professional drilling of water wells at depths from 30 to 1200 meters. Our team completes approximately 120 wells annually, serving municipal and industrial water demands across the country."
+      "pipes": {
+        "label": "01 · Water pipelines",
+        "short": "Water pipelines",
+        "title": "Transmission and distribution pipelines",
+        "desc": "Transmission and distribution networks in polyethylene and steel pipe: earthworks, laying, welding, testing and commissioning.",
+        "scope": [
+          "Transmission water mains",
+          "Distribution networks and connections in settlements",
+          "Polyethylene and steel pipe, 32–1200 mm diameter",
+          "Polyethylene pipe welding with our own machines",
+          "Reconstruction of existing pipelines"
+        ],
+        "cap": [
+          {
+            "k": "Pipe laying",
+            "v": "up to 200 km a year"
+          },
+          {
+            "k": "Diameter",
+            "v": "32–1200 mm"
+          }
+        ],
+        "dwg": {
+          "a": "Transmission main",
+          "b": "Ø 32–1200 mm",
+          "c": "up to 200 km a year"
+        }
       },
-      "pipelines": {
-        "title": "Water Pipeline Construction",
-        "desc": "Design and installation of water transmission and distribution pipelines up to 200 km per year, with diameters ranging from 32 mm to 1200 mm for systems of any scale."
-      },
-      "distribution": {
-        "title": "Water Distribution Units",
-        "desc": "Construction of water distribution facilities with capacity from 300 to 30,000 cubic meters per day. We build up to 50 units annually to serve growing regional water demands."
+      "facilities": {
+        "label": "02 · Facilities",
+        "short": "Intake and distribution facilities",
+        "title": "Water intake and distribution facilities",
+        "desc": "Construction and reconstruction of water intake station buildings and structures, pumping stations, reservoirs and distribution units.",
+        "scope": [
+          "Water intakes — new construction and reconstruction",
+          "Pumping stations and their buildings",
+          "Reservoirs",
+          "Water distribution units"
+        ],
+        "cap": [
+          {
+            "k": "Water distribution units",
+            "v": "up to 50 a year"
+          },
+          {
+            "k": "Output",
+            "v": "300–30,000 m³/day"
+          },
+          {
+            "k": "Water intake facilities",
+            "v": "over 5,000 m³ in volume"
+          }
+        ],
+        "dwg": {
+          "a": "Intake",
+          "b": "Reservoir · pumps",
+          "c": "300–30,000 m³/day"
+        }
       },
       "towers": {
-        "title": "Water Towers & Intake Stations",
-        "desc": "Engineering and construction of water towers (10–75 m³ capacity, up to 50 per year) and water intake stations with over 5,000 m³ total volume capacity."
-      }
-    },
-    "learnMore": "Learn More →",
-    "extra": {
+        "label": "03 · Water towers",
+        "short": "Water towers",
+        "title": "Water towers",
+        "desc": "Manufacture of water towers and installation on site.",
+        "scope": [
+          "Manufacture of water towers",
+          "Installation on site",
+          "From 10 to 75 m³ in volume"
+        ],
+        "cap": [
+          {
+            "k": "Towers",
+            "v": "up to 50 a year"
+          },
+          {
+            "k": "Volume",
+            "v": "10–75 m³"
+          }
+        ],
+        "dwg": {
+          "a": "Water tower",
+          "b": "10–75 m³",
+          "c": "up to 50 a year"
+        }
+      },
       "civil": {
-        "title": "Civil engineering & structural works",
-        "desc": "Concrete structures, pump houses, intake chambers."
+        "label": "04 · Civil works",
+        "short": "Civil and structural works",
+        "title": "Civil and structural works",
+        "desc": "Concrete structures, buildings, foundations and earthworks for water supply facilities.",
+        "scope": [
+          "Concrete structures",
+          "Pumping station buildings",
+          "Earthworks",
+          "Access roads and work platforms",
+          "Foundations for rigs and equipment"
+        ],
+        "cap": [],
+        "dwg": {
+          "a": "Concrete structure",
+          "b": "Foundation",
+          "c": "Earthworks"
+        }
       },
-      "site": {
-        "title": "Site preparation & earthworks",
-        "desc": "Excavation, access roads, drilling pads."
-      }
-    },
-    "ctaButton": "Discuss Your Project"
-  },
-  "clients": {
-    "label": "Trusted By",
-    "title": "Government Agencies & International Organizations",
-    "domesticLabel": "Domestic Clients",
-    "internationalLabel": "International Funders",
-    "domestic": {
-      "ozsuvtaminot": "O'ZSUVTA'MINOT",
-      "uzauto": "UzAuto",
-      "uzgazoil": "UzGazOil",
-      "security": "State Security Service of Uzbekistan",
-      "sirdaryo": "Sirdaryo Viloyati",
-      "namangan": "Namangan Viloyati",
-      "samarqand": "Samarqand Viloyati",
-      "yangiyul": "Yangiyo'l Hokimligi"
-    },
-    "international": {
-      "worldbank": "World Bank (IBRD/IDA)",
-      "adb": "Asian Development Bank",
-      "ebrd": "European Bank for Reconstruction and Development",
-      "opec": "OPEC Fund",
-      "saudi": "Saudi Fund for Development",
-      "orient": "Orient Group of Companies"
-    }
-  },
-  "certifications": {
-    "label": "Certifications",
-    "iso9001": {
-      "title": "ISO 9001:2015",
-      "desc": "Quality Management"
-    },
-    "iso14001": {
-      "title": "ISO 14001:2019",
-      "desc": "Environmental Management"
-    },
-    "iso45001": {
-      "title": "ISO 45001:2020",
-      "desc": "Health & Safety"
-    },
-    "issuer": "AVVISO CERT LLC"
-  },
-  "featuredProjects": {
-    "label": "Featured Work",
-    "title": "Selected Projects",
-    "completed": "Completed",
-    "ongoing": "Ongoing",
-    "funder": "Funder",
-    "items": {
-      "koshrabad": {
-        "title": "Koshrabad Drinking Water Improvement",
-        "location": "Samarkand Region",
-        "period": "2019–2021",
-        "amount": "$5.54M",
-        "funder": "OPEC Fund + Saudi Fund for Development"
-      },
-      "zhiydakapa": {
-        "title": "Zhiydakapa Water Intake Reconstruction",
-        "location": "Namangan",
-        "period": "2022–present",
-        "amount": "$5.21M",
-        "funder": "European Bank for Reconstruction and Development"
-      },
-      "yangiyul": {
-        "title": "Yangiyul Water Supply System",
-        "location": "Yangiyul City",
-        "period": "2022–2024",
-        "amount": "$5.59M",
-        "funder": "Ministry of Investment and Foreign Trade"
+      "wells": {
+        "label": "05 · Wells",
+        "short": "Hydrogeological wells",
+        "title": "Hydrogeological wells",
+        "desc": "Drilling, reconstruction and repair of wells for drinking, process and reclamation water.",
+        "scope": [
+          "Exploration and production wells",
+          "Reconstruction of vertical drainage wells",
+          "Well repair and restoration",
+          "7 drilling rigs of 6 models: URB-3AM (2 units), URB-2D3, URB-2.5, YDZ1500, UKS-22, BA-15"
+        ],
+        "cap": [
+          {
+            "k": "Wells",
+            "v": "about 120 a year"
+          },
+          {
+            "k": "Depth",
+            "v": "30–1200 m"
+          }
+        ],
+        "dwg": {
+          "a": "Well",
+          "b": "30–1200 m",
+          "c": "Screen"
+        }
       }
     }
-  },
-  "homeMap": {
-    "label": "PROJECT LOCATIONS",
-    "title": "Across Every Region of Uzbekistan",
-    "subtitle": "20 projects delivered across Uzbekistan since 2001.",
-    "openFullMap": "Open Full Interactive Map →",
-    "stats": {
-      "projects": "20 Projects",
-      "regions": "12 Regions",
-      "years": "2001–Present",
-      "value": "$55M+"
-    }
-  },
-  "cta": {
-    "title": "Ready to Discuss Your Project?",
-    "subtitle": "We respond within 24 hours to all inquiries.",
-    "button": "Get in Touch"
-  },
-  "footer": {
-    "tagline": "Water Development & Infrastructure — professional engineering solutions for sustainable water resources.",
-    "quickLinks": "Quick Links",
-    "servicesTitle": "Services",
-    "services": {
-      "drilling": "Groundwater Drilling",
-      "waterSupply": "Water Supply Systems",
-      "irrigation": "Irrigation Networks",
-      "geological": "Geological Surveys",
-      "civilEngineering": "Civil Engineering"
-    },
-    "contactTitle": "Contact",
-    "address": "18 Khusan Shams St., Mirzo-Ulugbek, Tashkent",
-    "rights": "All rights reserved."
   },
   "equipmentPage": {
-    "title": "Construction Equipment & Tools",
-    "subtitle": "Modern machinery enabling 200km of pipelines and 120 wells annually",
-    "stats": {
-      "machinery": "30+",
-      "machineLabel": "Heavy Machinery Units",
-      "depth": "1200m",
-      "depthLabel": "Max Drilling Depth",
-      "diameter": "1200mm",
-      "diameterLabel": "Max Pipeline Diameter",
-      "capacity": "200km",
-      "capacityLabel": "Annual Pipeline Capacity"
+    "hero": {
+      "title": "Our own fleet: from earthworks to well drilling",
+      "lead": "The company’s core fleet, model by model with unit counts: {models} models, {units} units — from excavators and loaders to drilling rigs.",
+      "toc": "Groups"
     },
-    "categories": {
-      "drilling": "Drilling Equipment",
-      "cranes": "Cranes & Lifting",
-      "excavators": "Excavators & Loaders",
-      "tools": "Tools & Specialized Equipment"
+    "caption": "Photos show the equipment models.",
+    "summary": "{models, plural, one {# model} other {# models}} · {units} units",
+    "quantity": "{count, plural, one {# unit} other {# units}}",
+    "qtyLabel": "Quantity",
+    "groups": {
+      "earth": "Excavators, loaders and compaction",
+      "cranes": "Truck cranes and loader crane",
+      "trucks": "Trucks and tractor",
+      "welding": "Pipe welding and inspection",
+      "power": "Concrete, power, compressed air and dewatering",
+      "drilling": "Drilling rigs"
     }
   },
   "projectsPage": {
-    "title": "Our Projects",
-    "subtitle": "20 projects delivering $55M+ in water infrastructure across Uzbekistan since 2001.",
-    "statsProjects": "20 Projects",
-    "statsValue": "$55M+ Total Value",
-    "statsYears": "2001–Present",
-    "filterAll": "All",
-    "filterDrilling": "Drilling",
-    "filterInfrastructure": "Infrastructure",
-    "completed": "Completed",
-    "ongoing": "Ongoing",
-    "fundedBy": "Funded by",
-    "generalContractor": "General Contractor",
-    "subcontractor": "Subcontractor",
-    "international": "International",
-    "mapTitle": "Project Locations",
-    "geographicFootprint": "Our Geographic Footprint",
-    "openFullMap": "Open full interactive map",
-    "viewDetails": "View Details",
-    "mapSubtitle": "Explore all 20 projects on the map. Filter by type or status and click a marker for full details."
+    "hero": {
+      "title": "20 projects — each with client, funder and contract value",
+      "lead": "A register of major projects delivered across Uzbekistan since 2004. Each project page gives the years, role, contract number and scope of work.",
+      "totalLabel": "Combined value",
+      "total": "$55M+",
+      "statusLabel": "Status",
+      "status": "{done} completed · {ongoing} ongoing"
+    },
+    "register": {
+      "label": "01 · Register",
+      "title": "Project register",
+      "filterLabel": "Type",
+      "filters": {
+        "all": "All",
+        "infrastructure": "Water supply facilities",
+        "drilling": "Well drilling"
+      },
+      "columns": {
+        "years": "Years",
+        "project": "Project",
+        "region": "Region",
+        "client": "Client / funder",
+        "value": "Value",
+        "status": "Status"
+      },
+      "present": "present",
+      "amount": "${amount}M",
+      "status": {
+        "completed": "Completed",
+        "ongoing": "Ongoing"
+      },
+      "sumAll": "Total: {count} projects · $55M+",
+      "sumPart": "{count, plural, one {# project} other {# projects}} · {value}"
+    },
+    "map": {
+      "label": "02 · Map",
+      "title": "Projects on the map",
+      "lead": "Each marker is a project from the register. Select a marker for its name, years, value and a link to the project page.",
+      "aria": "Project map",
+      "frame": "Project locations",
+      "completed": "Completed",
+      "ongoing": "Ongoing",
+      "loading": "Loading the map…",
+      "noscript": "The map loads when JavaScript is on. Every project is in the register above.",
+      "open": "Project page",
+      "unpinned": "Projects carried out at several sites, without a stated site or at a confidential location are not shown on the map; they are in the register above."
+    }
   },
   "projectDetailPage": {
-    "backToProjects": "Back to projects",
-    "overview": "Overview",
-    "scope": "Scope of works",
-    "completed": "Completed",
-    "ongoing": "Ongoing",
-    "international": "International",
+    "back": "Project register",
+    "position": "{n} / {total}",
+    "factsTitle": "Project data",
+    "years": "Years",
+    "region": "Region",
     "client": "Client",
     "funder": "Funder",
-    "amount": "Contract value",
-    "amountUzs": "Contract value (UZS)",
-    "period": "Period",
-    "location": "Location",
     "role": "Role",
-    "contractNumber": "Contract No.",
-    "category": "Category",
-    "drilling": "Drilling",
-    "infrastructure": "Infrastructure",
-    "generalContractor": "General Contractor",
-    "subcontractor": "Subcontractor",
-    "gallery": "Project gallery",
-    "galleryEmpty": "Photos from this project will be added soon.",
-    "contactCta": "Discuss a similar project"
+    "contract": "Contract No.",
+    "value": "Contract value",
+    "valueUzs": "Value in UZS",
+    "status": "Status",
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "present": "present",
+    "amount": "${amount}M",
+    "roles": {
+      "general": "General contractor",
+      "sub": "Subcontractor"
+    },
+    "description": "Description",
+    "scope": "Scope of work",
+    "prev": "Previous project",
+    "next": "Next project",
+    "cta": "Discuss a similar project",
+    "closingTitle": "Planning a similar project? Send the documents — we reply within 24 hours"
   },
   "contactPage": {
-    "address": "Tashkent city, Mirzo Ulugbek district, Alisher Navoi MSG, Khusan Shams street, 18 building",
-    "sti": "STI (Tax ID): 203 681 239",
-    "workingHours": "Working Hours",
-    "workingHoursValue": "Mon–Fri: 9:00–18:00",
-    "phoneLabel": "Phone",
-    "phoneValue": "+998 55 055 37 37",
-    "emailLabel": "Email"
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Get in touch with our engineering team.",
-    "name": "Full Name",
-    "email": "Email Address",
-    "phone": "Phone Number",
-    "company": "Company / Organization",
-    "message": "Message",
-    "submit": "Send Message",
-    "success": "Message sent successfully!",
-    "error": "Failed to send message. Please try again."
+    "hero": {
+      "title": "Send an enquiry about your project",
+      "lead": "Describe the site, the scope and the timing — we reply within 24 hours. Documents can be sent by email.",
+      "call": "Call us",
+      "toForm": "Go to the enquiry form",
+      "note": "Monday–Friday, 9:00–18:00"
+    },
+    "form": {
+      "label": "01 · Enquiry",
+      "title": "Enquiry form",
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Organisation",
+      "message": "About the project",
+      "messageHint": "Site, scope of work, timing and source of funding.",
+      "required": "required",
+      "optional": "optional",
+      "submit": "Send the enquiry",
+      "sending": "Sending…",
+      "success": "Enquiry sent. We will reply within 24 hours.",
+      "errorServer": "The enquiry was not sent. Please try again or write to us directly:",
+      "errRequired": "Please fill in this field.",
+      "errEmail": "Enter the full email address, for example: name@organisation.uz",
+      "noscript": "JavaScript is off in your browser: the “Send the enquiry” button will open your email program. Or write to us directly:"
+    },
+    "details": {
+      "label": "02 · Details",
+      "title": "Phone, email and address",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "addressValue": "18 Khusan Shams Street, Alisher Navoi MFY, Mirzo Ulugbek District, Tashkent",
+      "hours": "Office hours",
+      "hoursValue": "Monday–Friday, 9:00–18:00",
+      "tin": "TIN",
+      "google": "Open in Google Maps",
+      "yandex": "Open in Yandex Maps"
+    }
   },
   "seoFaq": {
-    "label": "Frequently Asked Questions",
-    "title": "Water Well Drilling & Water Supply — Common Questions",
+    "label": "Frequently asked questions",
+    "title": "Water well drilling and water supply — common questions",
     "items": {
       "q1": {
         "q": "Do you drill artesian wells in Tashkent and other regions of Uzbekistan?",
-        "a": "Yes. SUV-TARAQQIYOT LLC drills artesian and hydrogeological water wells across every region of Uzbekistan, including Tashkent, Namangan, Samarkand, Kashkadarya, Syrdarya, and the Fergana Valley. Drilling depth ranges from 30 to 1,200 metres, with around 120 wells delivered per year."
+        "a": "Yes. SUV-TARAQQIYOT LLC drills artesian and hydrogeological wells in 12 regions of Uzbekistan, including Tashkent city and region, Namangan, Samarkand, Kashkadarya and Syrdarya. Drilling depth is 30 to 1200 m, about 120 wells a year."
       },
       "q2": {
         "q": "What water pipeline diameters and materials do you install?",
-        "a": "We construct water transmission and distribution pipelines with diameters from 32 mm to 1,200 mm, using polyethylene (HDPE) and steel pipes. Annual installed capacity reaches up to 200 kilometres of pipeline, serving municipal water supply and industrial infrastructure projects."
+        "a": "We build transmission mains and distribution networks from 32 to 1200 mm in diameter in polyethylene (HDPE) and steel pipe — up to 200 km a year for municipal water supply and industrial sites."
       },
       "q3": {
-        "q": "Do you deliver projects financed by the World Bank, EBRD, ADB and OPEC Fund?",
-        "a": "Yes. SUV-TARAQQIYOT has executed water infrastructure projects funded by the World Bank (IBRD/IDA), the European Bank for Reconstruction and Development (EBRD), the Asian Development Bank (ADB), the OPEC Fund for International Development and the Saudi Fund for Development — all delivered under FIDIC contract conditions."
+        "q": "Do you deliver projects financed by the World Bank, the EBRD and the OPEC Fund?",
+        "a": "Yes. Projects in the register: Zhiydakapa water intake (NWP-6) — EBRD; Koshrabad District (W/3.1, W/4.1) — OPEC Fund and Saudi Fund for Development; Namangan City, Phase 2 (NWSP/ICB/W-4-2) — OPEC Fund; Yangiyul water supply (MSC-Y/W/1.2) — World Bank (IBRD Loan 8914-UZ), under FIDIC conditions."
       }
     }
   },
   "aboutPage": {
     "hero": {
-      "title": "Built on Engineering Excellence Since 2001",
-      "subtitle": "From a single drilling operation to one of Uzbekistan's leading water infrastructure contractors — 25 years of uninterrupted delivery."
+      "title": "Building water supply facilities since 2001",
+      "lead": "A contractor founded on the basis of NPO Wolfram: 20 major projects, three management system certificates (O‘z DSt ISO) and four letters of acknowledgment from government bodies.",
+      "foundedLabel": "Founded",
+      "founded": "21 August 2001",
+      "tinLabel": "TIN",
+      "tin": "203 681 239"
     },
-    "story": {
-      "label": "OUR HISTORY",
-      "title": "Founded on Engineering. Grown Through Delivery.",
-      "p1": "SUV-TARAQQIYOT LLC was established on 21 August 2001, built on the foundation of NPO Wolfram — a Soviet-era scientific production organisation with deep roots in geological survey and drilling engineering. From its first year of operation, the company focused on hydrogeological well drilling and water supply construction across Uzbekistan.",
-      "p2": "Over two decades, SUV-TARAQQIYOT has grown into a full-cycle contractor capable of delivering projects from initial survey through to final commissioning. The company annually drills approximately 120 wells to depths of up to 1,200 metres, constructs up to 200 kilometres of water pipelines with diameters from 32 to 1,200mm, and installs up to 50 water distribution units with daily capacities of 300 to 30,000 cubic metres.",
-      "p3": "Today, SUV-TARAQQIYOT holds contracts financed by the World Bank, the European Bank for Reconstruction and Development, the Asian Development Bank, the OPEC Fund for International Development, and the Saudi Fund for Development. The company operates under ISO 9001:2015, ISO 14001:2019, and ISO 45001:2020 certification, issued by AVVISO CERT LLC, Tashkent."
-    },
-    "figures": {
-      "years": {
-        "value": "25",
-        "label": "Years in Operation"
-      },
-      "depth": {
-        "value": "1,200 m",
-        "label": "Max Drilling Depth"
-      },
-      "value": {
-        "value": "$55M+",
-        "label": "Projects Delivered"
-      },
-      "iso": {
-        "value": "3 ISO",
-        "label": "Quality Certifications"
-      }
-    },
-    "team": {
-      "label": "OUR TEAM",
-      "title": "The Team Behind Every Project",
-      "subtitle": "Experienced engineers and project managers with FIDIC, World Bank, and KfW project credentials.",
-      "members": {
-        "projectManager": {
-          "role": "Contractor's Representative / Project Manager",
-          "credentials": "FIDIC Red Book contract experience"
+    "history": {
+      "label": "01 · History",
+      "title": "From NPO Wolfram to 20 major projects",
+      "p1": "SUV-TARAQQIYOT LLC was founded in 2001 on the basis of NPO Wolfram. Every year the company carries out contract work on water supply systems: water pipelines, water intake and distribution facilities, water towers and hydrogeological wells.",
+      "p2": "The register lists 20 major projects since 2004 with a combined value of more than 55 million US dollars. Clients include Uzsuvtaminot JSC, the Uzkommunkhizmat Agency and regional administrations; funders include the EBRD, the OPEC Fund, the Saudi Fund for Development and the World Bank.",
+      "rows": {
+        "founded": {
+          "title": "Founded on the basis of NPO Wolfram",
+          "text": "State registration on 21 August, registration number 09‑000344."
         },
-        "siteManager": {
-          "role": "General Site Manager",
-          "credentials": "20+ years field management"
+        "uzgazoil": {
+          "title": "148 wells for oil drilling rigs",
+          "text": "UzGazOil / GISSARNEFTIGAZ JV · general contractor"
         },
-        "hseManager": {
-          "role": "Health and Safety Manager",
-          "credentials": "ISO 45001 certified"
+        "bayaut": {
+          "title": "Reconstruction of vertical drainage systems, Bayaut district",
+          "text": "Land Reclamation Fund, Ministry of Finance · general contractor"
         },
-        "envManager": {
-          "role": "Environmental Manager",
-          "credentials": "ISO 14001 certified"
+        "syrdarya": {
+          "title": "Water supply systems in Syrdarya region",
+          "text": "Engineering Company, Single Customer Service · general contractor"
         },
-        "civilEng": {
-          "role": "Civil Engineer",
-          "credentials": "Pipeline and structural design"
+        "koshrabad": {
+          "title": "Drinking water supply, Koshrabad district, W/3.1 and W/4.1",
+          "text": "Uzkommunkhizmat Agency; employer: Samarqand Suv Ta’minoti LLC · OPEC Fund, Saudi Fund for Development"
         },
-        "electricalEng": {
-          "role": "Electrical Engineer",
-          "credentials": "Pumping station systems"
+        "zhiydakapa": {
+          "title": "Reconstruction of the Zhiydakapa water intake",
+          "text": "Uzsuvtaminot JSC · EBRD · ongoing"
         },
-        "instrumentEng": {
-          "role": "Instrument Engineer",
-          "credentials": "SCADA and telemetry"
+        "yangiyul": {
+          "title": "Reconstruction of the Yangiyul water supply system",
+          "text": "Ministry of Economy and Finance, Medium-Size Cities project · general contractor"
         },
-        "mechanicalEng": {
-          "role": "Mechanical Engineer",
-          "credentials": "Drilling rig maintenance"
-        },
-        "waterSpecialist": {
-          "role": "Water Supply Specialist",
-          "credentials": "Hydraulic modelling"
-        },
-        "surveyor": {
-          "role": "Surveyor",
-          "credentials": "GPS/GNSS and topographic surveys"
+        "namangan2": {
+          "title": "Water supply to northern Namangan, phase 2",
+          "text": "Namangan Suv Taminoti · OPEC Fund · ongoing"
         }
-      }
-    },
-    "certifications": {
-      "label": "Quality Standards",
-      "title": "ISO Certified. Government Registered.",
-      "iso9001Title": "O'z DSt ISO 9001:2015",
-      "iso9001Desc": "Quality Management System — Construction of water supply engineering facilities",
-      "iso14001Title": "O'z DSt ISO 14001:2019",
-      "iso14001Desc": "Environmental Management System",
-      "iso45001Title": "O'z DSt ISO 45001:2020",
-      "iso45001Desc": "Occupational Health & Safety Management System",
-      "issuer": "Issued by",
-      "validUntil": "Valid until"
+      },
+      "present": "present",
+      "amount": "${amount}M",
+      "source": "Source: company presentation and project register."
     },
     "legal": {
-      "label": "LEGAL INFORMATION",
-      "title": "Company Registration",
+      "label": "02 · Legal details",
+      "title": "Company details and state registration",
       "rows": {
         "fullName": {
-          "label": "Full Name",
-          "value": "\"SUV-TARAQQIYOT\" Mas'uliyati Cheklangan Jamiyat"
+          "label": "Full name",
+          "value": "SUV-TARAQQIYOT Limited Liability Company"
         },
-        "sti": {
-          "label": "STI (Tax ID)",
-          "value": "203 681 239"
+        "shortName": {
+          "label": "Short name",
+          "value": "SUV-TARAQQIYOT LLC"
         },
-        "regNumber": {
-          "label": "Reg. Number",
+        "tin": {
+          "label": "TIN",
+          "value": "203 681 239"
+        },
+        "regNo": {
+          "label": "Registration number",
           "value": "09-000344"
         },
         "regDate": {
-          "label": "Reg. Date",
-          "value": "21 August 2001"
+          "label": "Registered on",
+          "value": "21.08.2001"
         },
         "registrar": {
-          "label": "Registrar",
-          "value": "Mirzo-Ulugbek District State Services Centre, Tashkent"
+          "label": "Registered by",
+          "value": "Mirzo Ulugbek District Public Services Centre"
         },
         "address": {
-          "label": "Address",
-          "value": "18 Khusan Shams Street, Mirzo-Ulugbek district, Tashkent, Uzbekistan"
+          "label": "Business address",
+          "value": "18 Khusan Shams Street, Alisher Navoi MFY, Mirzo Ulugbek District, Tashkent"
+        }
+      },
+      "source": "Source: certificate of state registration."
+    },
+    "capacityLabel": "03 · Annual capacity",
+    "certificatesLabel": "04 · Certificates",
+    "letters": {
+      "label": "05 · Acknowledgments",
+      "title": "Letters of acknowledgment from government bodies",
+      "items": {
+        "rmm": {
+          "authority": "Republican Property Centre",
+          "year": "2021",
+          "text": "On the 30th anniversary of independence — for active work protecting the interests of citizens."
         },
-        "phone": {
-          "label": "Phone",
-          "value": "+998 55 055 37 37"
+        "education": {
+          "authority": "Ministry of Public Education",
+          "year": "2018",
+          "text": "For the contribution to preparing school No. 241 in Mirzo Ulugbek district for the 2018–2019 school year (addressed to G. A. Vakhobov)."
         },
-        "contactManager": {
-          "label": "Contact Manager",
-          "value": "Usmonov Bekzod"
+        "yunusobod": {
+          "authority": "Yunusabad District Administration",
+          "year": "",
+          "text": "For active participation in raising the living standards and welfare of the district’s residents."
+        },
+        "police": {
+          "authority": "Yunusabad District Department of Internal Affairs, Precinct 1",
+          "year": "2021",
+          "text": "For the contribution to the social and economic development of Yunusabad district in 2021."
+        }
+      },
+      "noYear": "undated",
+      "source": "Source: company presentation, 2025."
+    },
+    "clientsLabel": "06 · Clients"
+  },
+  "home": {
+    "hero": {
+      "title": "We build water supply infrastructure",
+      "lead": "Transmission mains, water intake and distribution facilities, water towers — in 12 regions of Uzbekistan since 2001. 20 major projects with a combined value of more than 55 million US dollars.",
+      "cta": "Discuss a project",
+      "projectsLink": "See all 20 projects",
+      "note": "We reply to enquiries within 24 hours",
+      "clientsLabel": "Clients",
+      "clients": "Uzsuvtaminot, Uzkommunkhizmat, regional administrations.",
+      "fundersLabel": "Funders",
+      "funders": "EBRD, OPEC Fund, Saudi Fund for Development, World Bank.",
+      "drawing": {
+        "aria": "Section of a water supply scheme in flow order: wells with submersible pumps (30–1200 m), chlorination, clean-water reservoir, second-lift pumping station (300–30,000 m³/day), transmission main (diameter 32–1200 mm, with air valve and washout), water tower (10–75 m³), distribution network and houses. The hydraulic grade line rises at each pump, falls along the flow and stays above the houses.",
+        "wells": "Wells",
+        "wellDepth": "30–1200 m",
+        "staticLevel": "static level",
+        "dynamicLevel": "dynamic level",
+        "submersible": "submersible pump",
+        "aquifer": "aquifer",
+        "chlorination": "Chlorination",
+        "reservoir": "Clean-water reservoir",
+        "pump": "Pumping station",
+        "lift": "second lift",
+        "flow": "300–30,000 m³/day",
+        "checkValve": "check valve",
+        "gateValve": "gate valve",
+        "gauge": "pressure gauge",
+        "main": "Transmission main",
+        "mainLength": "up to 200 km a year",
+        "diameter": "Ø 32–1200 mm",
+        "frost": "h ≥ frost depth",
+        "airValve": "air valve",
+        "washout": "washout",
+        "tower": "Water tower",
+        "towerVolume": "10–75 m³",
+        "network": "Distribution network",
+        "service": "service connection",
+        "hgl": "hydraulic grade line"
+      }
+    },
+    "capacity": {
+      "label": "01 · Annual capacity",
+      "title": "Up to 200 km of water pipeline, 50 distribution units and 50 water towers a year",
+      "columns": {
+        "pos": "Item",
+        "item": "Structure",
+        "qty": "Annual volume",
+        "par": "Parameter"
+      },
+      "rows": [
+        {
+          "item": "Water pipelines",
+          "qty": "up to 200 km",
+          "par": "diameter 32–1200 mm"
+        },
+        {
+          "item": "Water distribution units",
+          "qty": "up to 50",
+          "par": "300–30,000 m³/day"
+        },
+        {
+          "item": "Water intake facilities",
+          "qty": "—",
+          "par": "buildings and structures of more than 5,000 m³"
+        },
+        {
+          "item": "Water towers",
+          "qty": "up to 50",
+          "par": "10–75 m³"
+        },
+        {
+          "item": "Hydrogeological wells",
+          "qty": "about 120",
+          "par": "depth 30–1200 m"
+        }
+      ],
+      "source": "Source: company presentation, 2025.",
+      "sourceDepth": "Well depth (up to 1200 m): company data, 2026."
+    },
+    "register": {
+      "label": "02 · Project register",
+      "title": "20 projects, each with its client and contract value",
+      "columns": {
+        "years": "Years",
+        "project": "Project",
+        "region": "Region",
+        "client": "Client / funder",
+        "value": "Value",
+        "status": "Status"
+      },
+      "present": "present",
+      "amount": "${amount}M",
+      "status": {
+        "completed": "Completed",
+        "ongoing": "Ongoing"
+      },
+      "allLink": "All 20 projects — years, clients and values",
+      "count": "{shown} / {total}",
+      "rows": {
+        "uzgazoil": {
+          "title": "Drilling 148 wells for oil drilling rigs",
+          "region": "Uzbekistan, multiple sites",
+          "client": "UzGazOil / GISSARNEFTIGAZ JV"
+        },
+        "koshrabad": {
+          "title": "Improvement of drinking water supply, Koshrabad District (W/3.1 and W/4.1)",
+          "region": "Samarkand Region",
+          "client": "Uzkommunkhizmat Agency; employer: Samarqand Suv Ta’minoti LLC",
+          "funder": "OPEC Fund, Saudi Fund for Development"
+        },
+        "yangiyul": {
+          "title": "Reconstruction of the Yangiyul city water supply system",
+          "region": "Tashkent Region",
+          "client": "Medium-Size Cities PIU, Ministry of Economy and Finance",
+          "funder": "World Bank (IBRD)"
+        },
+        "zhiydakapa": {
+          "title": "Reconstruction of the Zhiydakapa water intake",
+          "region": "Namangan Region",
+          "client": "Uzsuvtaminot JSC",
+          "funder": "EBRD"
+        },
+        "syrdarya": {
+          "title": "Construction of water supply systems in Syrdarya Region",
+          "region": "Syrdarya Region",
+          "client": "Engineering Company, Single Customer Service"
+        },
+        "namangan2": {
+          "title": "Water supply to northern Namangan, phase 2",
+          "region": "Namangan City",
+          "client": "Namangan Suv Taminoti",
+          "funder": "OPEC Fund"
         }
       }
     },
-    "recognition": {
-      "label": "Recognition",
-      "title": "Acknowledged by Government Agencies",
-      "tahakkurnoma": "TASHAKKURNOMA",
-      "suvTaraqqiyot": "\"SUV-TARAQQIYOT\" MChJ",
-      "rmm": {
-        "authority": "RMM (Respublika Mulk Markazi)",
-        "desc": "For protecting citizens' interests, on the occasion of Uzbekistan's 30th independence anniversary"
-      },
-      "education": {
-        "authority": "Ministry of Education of Uzbekistan",
-        "desc": "For contribution to school construction preparation for 2018–2019 academic year, Mirzo Ulugbek district"
-      },
-      "yunusobod": {
-        "authority": "Yunusobod District Administration",
-        "desc": "For improving living standards and welfare of residents"
+    "services": {
+      "label": "03 · Services",
+      "title": "We build a water supply system from start to finish",
+      "link": "Services and work volumes",
+      "items": {
+        "pipes": {
+          "title": "Water pipeline construction",
+          "desc": "Transmission and distribution networks from 32 to 1200 mm, polyethylene and steel pipe. Up to 200 km a year."
+        },
+        "facilities": {
+          "title": "Water intake and distribution facilities",
+          "desc": "Pumping stations, reservoirs and water distribution units of 300 to 30,000 m³ a day."
+        },
+        "towers": {
+          "title": "Water towers",
+          "desc": "From 10 to 75 m³, up to 50 a year."
+        },
+        "civil": {
+          "title": "Civil and structural works",
+          "desc": "Concrete structures, pumping station buildings, earthworks, access roads."
+        },
+        "wells": {
+          "title": "Hydrogeological wells",
+          "desc": "From 30 to 1200 metres deep, about 120 a year."
+        }
       }
-    }
-  },
-  "projectMap": {
-    "showing": "Showing {count} of {total} projects",
-    "totalValue": "Total value",
-    "filterLabel": "Project Filter",
-    "completed": "Completed",
-    "ongoing": "Ongoing",
-    "fundedBy": "Funded by",
-    "viewDetails": "View details",
-    "category": {
-      "all": "All",
-      "drilling": "Drilling",
-      "infrastructure": "Infrastructure"
     },
-    "statusFilter": {
-      "all": "All",
-      "completed": "Completed",
-      "ongoing": "Ongoing"
+    "fleet": {
+      "label": "04 · Equipment",
+      "title": "Our own fleet: excavators, cranes, pipe welding machines",
+      "lines": [
+        "Hyundai and JCB excavators and loaders.",
+        "Sany STC500 truck crane (50 t).",
+        "Turan Makina pipe welding machines (180–800 mm).",
+        "Shacman dump trucks.",
+        "7 drilling rigs of 6 models: URB-3AM (2 units), URB-2D3, URB-2.5, YDZ1500, UKS-22, BA-15."
+      ],
+      "caption": "Photos show the equipment models.",
+      "link": "Equipment list",
+      "quantity": "{count} units",
+      "types": {
+        "excavator": "wheeled excavator",
+        "backhoe": "backhoe loader",
+        "crane": "truck crane",
+        "dump": "dump truck",
+        "welder": "pipe welding machine"
+      }
+    },
+    "clients": {
+      "label": "05 · Clients",
+      "title": "Government clients and international financial institutions",
+      "clientsLabel": "Clients",
+      "fundersLabel": "Funders",
+      "clients": [
+        "Uzsuvtaminot JSC",
+        "Uzkommunkhizmat Agency",
+        "Syrdarya Regional Administration",
+        "Namangan Regional Administration",
+        "Samarkand Regional Administration",
+        "Yangiyul City Administration",
+        "UzGazOil",
+        "UzAuto",
+        "ORIENT Holding"
+      ],
+      "funders": [
+        "European Bank for Reconstruction and Development",
+        "OPEC Fund",
+        "Saudi Fund for Development",
+        "World Bank",
+        "Asian Development Bank"
+      ]
+    },
+    "certificates": {
+      "label": "06 · Certificates",
+      "title": "Three management system certificates",
+      "lead": "O‘z DSt ISO are national standards of Uzbekistan identical to the corresponding ISO standards.",
+      "items": {
+        "iso9001": "Quality management",
+        "iso14001": "Environmental management",
+        "iso45001": "Occupational health and safety"
+      },
+      "note": "Certificates issued by AVVISO CERT LLC.",
+      "std": "O‘z DSt"
+    },
+    "faqNo": "07",
+    "closing": {
+      "title": "Send us your project documents — we reply within 24 hours",
+      "button": "Discuss a project"
     }
   }
 }

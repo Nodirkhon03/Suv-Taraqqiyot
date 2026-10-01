@@ -1,54 +1,35 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { locales } from "@/i18n";
 import { projects } from "@/lib/projects";
-import { SITE_URL as baseUrl } from "@/lib/site";
+import { CONTENT_UPDATED, ROUTES, languageAlternates, localeUrl } from "@/lib/seo";
 
-const locales = ["en", "ru", "uz", "tr"] as const;
-
-const pages: { path: string; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number }[] = [
-  { path: "", changeFrequency: "weekly", priority: 1.0 },
-  { path: "/services", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/equipment", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
-];
-
-function buildAlternates(path: string) {
-  const languages: Record<string, string> = Object.fromEntries(
-    locales.map((l) => [l, `${baseUrl}/${l}${path}`])
-  );
-  languages["x-default"] = `${baseUrl}/en${path}`;
-  return { languages };
-}
+/*
+ * Every locale × every route, plus the 20 project pages × 4 locales. Each entry lists all four
+ * translations and x-default (/en). lastModified is a fixed content date (lib/seo.ts), not the
+ * request time, so the file does not claim a change on every crawl. No URL here redirects.
+ */
+const PRIORITY: Record<string, number> = {
+  "": 1,
+  "/services": 0.9,
+  "/projects": 0.9,
+  "/about": 0.8,
+  "/equipment": 0.7,
+  "/contact": 0.7,
+};
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const entries: MetadataRoute.Sitemap = [];
+  const lastModified = new Date(`${CONTENT_UPDATED}T00:00:00Z`);
+  const entry = (path: string, priority: number) =>
+    locales.map((locale) => ({
+      url: localeUrl(locale, path),
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority,
+      alternates: { languages: languageAlternates(path) },
+    }));
 
-  for (const { path, changeFrequency, priority } of pages) {
-    for (const locale of locales) {
-      entries.push({
-        url: `${baseUrl}/${locale}${path}`,
-        lastModified: now,
-        changeFrequency,
-        priority,
-        alternates: buildAlternates(path),
-      });
-    }
-  }
-
-  for (const project of projects) {
-    const path = `/projects/${project.slug}`;
-    for (const locale of locales) {
-      entries.push({
-        url: `${baseUrl}/${locale}${path}`,
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.6,
-        alternates: buildAlternates(path),
-      });
-    }
-  }
-
-  return entries;
+  return [
+    ...ROUTES.flatMap((path) => entry(path, PRIORITY[path])),
+    ...projects.flatMap((p) => entry(`/projects/${p.slug}`, 0.6)),
+  ];
 }

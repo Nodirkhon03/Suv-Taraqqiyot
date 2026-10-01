@@ -1,46 +1,58 @@
 import type { Metadata } from "next";
-import { locales } from "@/i18n";
-import { SITE_URL } from "@/lib/site";
+import { getTranslations } from "next-intl/server";
+import { ORG_ID, inLanguage, jsonLd, localeUrl, pageCopy, pageGraph, routeMetadata } from "@/lib/seo";
+import type { Locale } from "@/i18n";
 
+/* Same order as the page: civil engineering first, wells last. */
+const SERVICE_KEYS = ["pipes", "facilities", "towers", "civil", "wells"] as const;
 
-const titles: Record<string, string> = {
-  en: "Drilling & Water Infrastructure Services | SUV-TARAQQIYOT LLC, Uzbekistan",
-  ru: "Услуги бурения и водной инфраструктуры | СУВ-ТАРАККИЁТ ООО, Узбекистан",
-  uz: "Burg'ulash va suv infratuzilmasi xizmatlari | SUV-TARAQQIYOT MChJ, O'zbekiston",
-  tr: "Sondaj ve Su Altyapı Hizmetleri | SUV-TARAQQIYOT LLC, Özbekistan",
-};
-
-const descriptions: Record<string, string> = {
-  en: "Hydrogeological well drilling to 1200m depth. Water pipelines 32-1200mm diameter. Water distribution 300-30,000 m³/day. Civil engineering and site preparation across Uzbekistan.",
-  ru: "Бурение гидрогеологических скважин до 1200м. Водопроводы диаметром 32-1200мм. Водораспределение 300-30 000 м³/сут. Гражданское строительство по всему Узбекистану.",
-  uz: "1200 m chuqurlikkacha gidrogeologik quduq burg'ulash. 32-1200 mm diametrli suv quvurlari. Kuniga 300-30 000 m³ suv taqsimlash. Muhandislik qurilishi.",
-  tr: "1200 m derinliğe kadar hidrojeolojik kuyu sondajı. 32-1200 mm çaplı su boru hatları. Günlük 300-30.000 m³ su dağıtımı. İnşaat mühendisliği.",
-};
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  return {
-    title: titles[locale] || titles.en,
-    description: descriptions[locale] || descriptions.en,
-    alternates: {
-      canonical: `${SITE_URL}/${locale}/services`,
-      languages: Object.fromEntries([
-        ...locales.map((l) => [l, `${SITE_URL}/${l}/services`]),
-        ["x-default", `${SITE_URL}/en/services`],
-      ]),
-    },
-    openGraph: {
-      title: titles[locale] || titles.en,
-      description: descriptions[locale] || descriptions.en,
-      url: `${SITE_URL}/${locale}/services`,
-      type: "website",
-    },
-  };
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return routeMetadata(locale, "/services");
 }
 
-export default function ServicesLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function ServicesLayout({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const t = await getTranslations({ locale, namespace: "servicesPage" });
+  const copy = pageCopy("services", locale);
+  const url = localeUrl(locale, "/services");
+
+  const services = SERVICE_KEYS.map((key) => ({
+    "@type": "Service",
+    "@id": `${url}#${key}`,
+    url: `${url}#${key}`,
+    name: t(`items.${key}.title`),
+    serviceType: t(`items.${key}.short`),
+    description: t(`items.${key}.desc`),
+    provider: { "@id": ORG_ID },
+    areaServed: { "@type": "Country", name: "Uzbekistan" },
+    inLanguage: inLanguage[locale as Locale],
+  }));
+
+  const graph = pageGraph(locale, "/services", {
+    name: copy.title,
+    description: copy.description,
+    homeName: tNav("home"),
+    crumbs: [{ name: tNav("services"), path: "/services" }],
+    extra: [
+      {
+        "@type": "ItemList",
+        "@id": `${url}#services`,
+        name: t("hero.title"),
+        numberOfItems: services.length,
+        itemListElement: services.map((s, i) => ({ "@type": "ListItem", position: i + 1, item: s })),
+      },
+    ],
+  });
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(graph) }} />
+      {children}
+    </>
+  );
 }

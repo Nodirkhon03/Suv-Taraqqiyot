@@ -1,95 +1,33 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { locales, type Locale } from "@/i18n";
-import Navigation from "@/components/Navigation";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition";
 import "../globals.css";
 import { SITE_URL } from "@/lib/site";
+import { jsonLd, routeMetadata, siteGraph } from "@/lib/seo";
 
 
-const inter = Inter({
-  subsets: ["latin", "latin-ext", "cyrillic"],
-  variable: "--font-inter",
+/* Plex covers uz Latin, ru Cyrillic and tr. ʻ ʼ come from the "Okina" subset in globals.css.
+   `subsets` decides what is PRELOADED; every subset stays available through unicode-range.
+   Preloading all 3 subsets made 9 font requests compete with the HTML on mobile; now 3 latin
+   files are preloaded (Sans variable + Mono 400/500, both used above the fold — not preloading
+   Mono caused CLS 0.15 on /projects). Cyrillic and latin-ext load on first use. */
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-sans",
+  display: "swap",
 });
 
-const ogLocales: Record<string, string> = {
-  en: "en_US",
-  ru: "ru_RU",
-  uz: "uz_UZ",
-  tr: "tr_TR",
-};
-
-const pageTitles: Record<string, string> = {
-  en: "SUV-TARAQQIYOT LLC | Water Well Drilling & Infrastructure Construction, Uzbekistan",
-  ru: "СУВ-ТАРАККИЁТ ООО | Бурение скважин и строительство водоснабжения, Узбекистан",
-  uz: "SUV-TARAQQIYOT MChJ | Quduq burg'ulash va suv ta'minoti qurilishi, O'zbekiston",
-  tr: "SUV-TARAQQIYOT LLC | Su Kuyusu Sondajı ve Altyapı İnşaatı, Özbekistan",
-};
-
-const pageDescriptions: Record<string, string> = {
-  en: "Leading contractor for artesian well drilling (up to 1200m), water pipeline construction (200km/year), and water supply systems in Uzbekistan since 2001. World Bank & EBRD certified projects.",
-  ru: "Ведущий подрядчик по бурению гидрогеологических и артезианских скважин (до 1200м), строительству водопровода (200 км/год) и систем водоснабжения в Узбекистане с 2001 года. Проекты Всемирного банка и ЕБРР.",
-  uz: "O'zbekistonda artezian quduq burg'ulash (1200 m gacha), suv quvurlari qurilishi (yiliga 200 km) va suv ta'minoti tizimlarini yaratishda yetakchi pudratchi. 2001 yildan beri Jahon banki va EBRD loyihalari.",
-  tr: "Özbekistan'da 2001'den bu yana artezyen kuyu sondajı (1200m'ye kadar), su boru hattı inşaatı ve su dağıtım sistemleri alanında lider müteahhit. Dünya Bankası ve EBRD projeleri.",
-};
-
-const keywordsByLocale: Record<string, string[]> = {
-  en: [
-    "water well drilling Uzbekistan",
-    "artesian well drilling Tashkent",
-    "hydrogeological drilling contractor",
-    "water supply construction Uzbekistan",
-    "water pipeline construction Central Asia",
-    "civil engineering contractor Uzbekistan",
-    "water infrastructure Uzbekistan",
-    "borehole drilling company Uzbekistan",
-    "water tower construction",
-    "EBRD contractor Uzbekistan",
-    "World Bank contractor Uzbekistan",
-  ],
-  ru: [
-    "бурение скважин Узбекистан",
-    "гидрогеологическое бурение Ташкент",
-    "артезианская скважина Узбекистан",
-    "строительство водопровода Узбекистан",
-    "водоснабжение строительство",
-    "буровые работы Узбекистан",
-    "водораспределительная система",
-    "скважина на воду Ташкент",
-    "подрядчик водоснабжение Узбекистан",
-    "водонапорная башня строительство",
-  ],
-  uz: [
-    "quduq burg'ulash Toshkent",
-    "suv ta'minoti qurilishi O'zbekiston",
-    "artezian quduq O'zbekiston",
-    "gidrogeologik burg'ulash",
-    "suv quvuri qurilishi",
-    "suv infratuzilmasi O'zbekiston",
-    "suv minorasi qurilishi",
-  ],
-  tr: [
-    "su kuyusu sondajı Özbekistan",
-    "artezyen kuyu Taşkent",
-    "hidrojeolojik sondaj",
-    "su temini inşaatı",
-    "su boru hattı Özbekistan",
-  ],
-};
-
-function buildLanguages(path: string) {
-  return {
-    en: `${SITE_URL}/en${path}`,
-    ru: `${SITE_URL}/ru${path}`,
-    uz: `${SITE_URL}/uz${path}`,
-    tr: `${SITE_URL}/tr${path}`,
-    "x-default": `${SITE_URL}/en${path}`,
-  };
-}
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+  display: "swap",
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -100,43 +38,18 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const title = pageTitles[locale] || pageTitles.en;
-  const description = pageDescriptions[locale] || pageDescriptions.en;
-  const keywords = keywordsByLocale[locale] || keywordsByLocale.en;
-
   return {
     metadataBase: new URL(SITE_URL),
-    title,
-    description,
-    keywords,
-    applicationName: "SUV-TARAQQIYOT LLC",
-    authors: [{ name: "SUV-TARAQQIYOT LLC" }],
+    ...routeMetadata(locale, ""),
+    applicationName: "SUV-TARAQQIYOT",
+    authors: [{ name: "SUV-TARAQQIYOT LLC", url: SITE_URL }],
     creator: "SUV-TARAQQIYOT LLC",
     publisher: "SUV-TARAQQIYOT LLC",
+    formatDetection: { telephone: false, email: false, address: false },
     icons: {
       icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
       shortcut: "/favicon.svg",
       apple: "/images/logo-light.png",
-    },
-    openGraph: {
-      title,
-      description,
-      url: `${SITE_URL}/${locale}`,
-      locale: ogLocales[locale] || "en_US",
-      alternateLocale: locales
-        .filter((l) => l !== locale)
-        .map((l) => ogLocales[l]),
-      type: "website",
-      siteName: "SUV-TARAQQIYOT LLC",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-    alternates: {
-      canonical: `${SITE_URL}/${locale}`,
-      languages: buildLanguages(""),
     },
     robots: {
       index: true,
@@ -158,6 +71,12 @@ export async function generateMetadata({
   };
 }
 
+export const viewport: Viewport = {
+  themeColor: "#0B2B43",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default async function LocaleLayout({
   children,
   params: { locale },
@@ -168,128 +87,27 @@ export default async function LocaleLayout({
   if (!locales.includes(locale as Locale)) notFound();
   setRequestLocale(locale);
 
-  const messages = await getMessages();
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "SUV-TARAQQIYOT LLC",
-    alternateName: [
-      "Suv-Taraqqiyot MChJ",
-      "СУВ-ТАРАККИЁТ ООО",
-    ],
-    url: SITE_URL,
-    logo: `${SITE_URL}/images/logo-main.png`,
-    foundingDate: "2001-08-21",
-    description:
-      pageDescriptions[locale] || pageDescriptions.en,
-    telephone: "+998550553737",
-    email: "info@suv-taraqqiyot.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "18 Khusan Shams Street",
-      addressLocality: "Tashkent",
-      addressRegion: "Mirzo-Ulugbek District",
-      addressCountry: "UZ",
-    },
-    areaServed: {
-      "@type": "Country",
-      name: "Uzbekistan",
-    },
-    knowsAbout: [
-      "Hydrogeological well drilling",
-      "Artesian well drilling",
-      "Water supply construction",
-      "Water pipeline installation",
-      "Water distribution systems",
-      "Бурение артезианских скважин",
-      "Строительство водоснабжения",
-      "Гидрогеологическое бурение",
-      "Quduq burg'ulash",
-      "Suv ta'minoti qurilishi",
-      "Artezian quduq",
-    ],
-    hasCredential: [
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "ISO 9001:2015 Quality Management",
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "ISO 14001:2019 Environmental Management",
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "ISO 45001:2020 Health & Safety",
-      },
-    ],
-    sameAs: ["https://watec-insaat.com"],
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "SUV-TARAQQIYOT LLC",
-    image: `${SITE_URL}/images/logo-main.png`,
-    url: SITE_URL,
-    telephone: "+998550553737",
-    email: "info@suv-taraqqiyot.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "18 Khusan Shams Street",
-      addressLocality: "Tashkent",
-      addressRegion: "Mirzo-Ulugbek District",
-      addressCountry: "UZ",
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    areaServed: { "@type": "Country", name: "Uzbekistan" },
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    url: SITE_URL,
-    name: "SUV-TARAQQIYOT LLC",
-    inLanguage: ["en", "ru", "uz", "tr"],
-    publisher: { "@id": `${SITE_URL}/#business` },
-  };
+  const tSite = await getTranslations({ locale, namespace: "site" });
 
   return (
-    <html lang={locale} className={inter.variable}>
+    <html lang={locale} className={`${plexSans.variable} ${plexMono.variable}`}>
       <head>
+        {/* 1 KB: ʻ ʼ glyphs used in every Uzbek heading; preloaded so the swap cannot shift text. */}
+        <link rel="preload" href="/fonts/okina-sourceserif4.woff2" as="font" type="font/woff2" crossOrigin="" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(siteGraph(locale)) }}
         />
       </head>
-      <body className="font-inter bg-white text-gray-900 antialiased">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none"
-        >
-          Skip to content
+      <body>
+        <a href="#main-content" className="skip">
+          {tSite("skip")}
         </a>
-        <NextIntlClientProvider messages={messages}>
-          <Navigation locale={locale} />
-          <main id="main-content" className="min-h-screen">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
-        </NextIntlClientProvider>
+        {/* No site-wide NextIntlClientProvider: every component is server-rendered except the contact
+            form, which gets its own provider with only its namespace (app/[locale]/contact/page.tsx). */}
+        <Header locale={locale} />
+        <main id="main-content">{children}</main>
+        <Footer locale={locale} />
       </body>
     </html>
   );

@@ -11,7 +11,11 @@ export interface Project {
   role: "General Contractor" | "Subcontractor";
   status: "completed" | "ongoing";
   category: "drilling" | "infrastructure";
-  coordinates: [number, number];
+  /**
+   * Map pin [lat, lng]. Only for projects with one stated site. Omitted where the ledger gives
+   * "Uzbekistan", "multiple sites", "interregional" or a confidential location: no invented pins.
+   */
+  coordinates?: [number, number];
   description?: string;
   scope?: string[];
   images?: string[];
@@ -32,7 +36,6 @@ export const projects: Project[] = [
     role: "General Contractor",
     status: "completed",
     category: "drilling",
-    coordinates: [40.7, 65.5],
     description:
       "Drilling of 148 exploration and production wells for the technical needs of oil drilling rigs and construction of water supply systems at the facilities. Scope included construction of temporary access roads, drilling pads, rotational camps, and foundations for drilling rigs and auxiliary equipment.",
     scope: [
@@ -89,7 +92,6 @@ export const projects: Project[] = [
     role: "General Contractor",
     status: "completed",
     category: "infrastructure",
-    coordinates: [41.3, 64.2],
     description:
       "Design and construction of drinking water supply systems for 10 military units under the Command of the Security Service of the Republic of Uzbekistan. Delivered turn-key across multiple locations.",
     scope: [
@@ -165,7 +167,6 @@ export const projects: Project[] = [
     role: "Subcontractor",
     status: "completed",
     category: "infrastructure",
-    coordinates: [40.5, 65.8],
     description:
       "Reconstruction of the Damkhodzha interregional water pipeline delivered as subcontractor to Agency UZKOMMUNHIZMAT. Scope covered damaged section replacement and hydraulic recommissioning.",
     scope: [
@@ -183,7 +184,6 @@ export const projects: Project[] = [
     role: "Subcontractor",
     status: "completed",
     category: "drilling",
-    coordinates: [41.2, 64.9],
     description:
       "Drilling of production water wells at CNG filling stations operated by Uztransgaz across Uzbekistan. Delivered as subcontractor on accelerated schedule.",
     scope: [
@@ -201,7 +201,6 @@ export const projects: Project[] = [
     role: "General Contractor",
     status: "completed",
     category: "infrastructure",
-    coordinates: [41.29, 69.27],
     description:
       "Construction of water supply systems and drilling of production wells for ORIENT Holding industrial facilities. Delivered turn-key as general contractor covering design, drilling, piping, and commissioning.",
     scope: [
@@ -220,7 +219,6 @@ export const projects: Project[] = [
     role: "Subcontractor",
     status: "completed",
     category: "drilling",
-    coordinates: [41.3, 64.0],
     description:
       "Drilling of wells supporting urban landscaping programmes under the Housing and Communal Services Department. Delivered as subcontractor across multiple municipal sites.",
     scope: [
@@ -231,9 +229,9 @@ export const projects: Project[] = [
   {
     slug: "koshrabad-water-w31",
     title: "Improvement of Drinking Water Supply — Koshrabad District (W/3.1)",
-    year: "2019–2021",
+    year: "2019–2022",
     location: "Koshrabad District, Samarkand Region",
-    client: "Agency UZKOMMUNHIZMAT",
+    client: "Agency UZKOMMUNHIZMAT (employer: Samarqand Suv Ta'minoti LLC)",
     funder:
       "OPEC Fund for International Development + Saudi Fund for Development",
     amount: "$2.36M",
@@ -253,9 +251,9 @@ export const projects: Project[] = [
   {
     slug: "koshrabad-water-w41",
     title: "Improvement of Drinking Water Supply — Koshrabad District (W/4.1)",
-    year: "2019–2021",
+    year: "2019–2022",
     location: "Koshrabad District, Samarkand Region",
-    client: "Agency UZKOMMUNHIZMAT",
+    client: "Agency UZKOMMUNHIZMAT (employer: Samarqand Suv Ta'minoti LLC)",
     funder:
       "OPEC Fund for International Development + Saudi Fund for Development",
     amount: "$3.18M",
@@ -384,7 +382,8 @@ export const projects: Project[] = [
     year: "2022–2024",
     location: "Yangiyul City",
     client:
-      "Integrated Development PIU \u2014 Medium-Size Cities, Ministry of Investment and Foreign Trade",
+      "Medium-Size Cities Integrated Urban Development PIU, Ministry of Economy and Finance",
+    funder: "World Bank (IBRD)",
     amount: "$5.59M",
     amountUzs: "60 836 956 408 UZS",
     contractNumber: "MSC-Y/W/1.2",
@@ -393,7 +392,7 @@ export const projects: Project[] = [
     category: "infrastructure",
     coordinates: [41.11, 69.04],
     description:
-      "Reconstruction of the water supply system in Yangiyul city under contract MSC-Y/W/1.2. Delivered as general contractor for the Medium-Size Cities Integrated Urban Development Project Implementation Unit of the Ministry of Investment and Foreign Trade.",
+      "Reconstruction of the water supply system in Yangiyul city under contract MSC-Y/W/1.2. Delivered as general contractor for the Medium-Size Cities Integrated Urban Development Project Implementation Unit of the Ministry of Economy and Finance.",
     scope: [
       "City-wide distribution network reconstruction",
       "Pump stations and storage",

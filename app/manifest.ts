@@ -1,18 +1,20 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "SUV-TARAQQIYOT LLC",
+    name: "SUV-TARAQQIYOT",
     short_name: "SUV-TARAQQIYOT",
     description:
-      "Hydrogeological well drilling and water supply construction in Uzbekistan since 2001.",
+      "Water supply infrastructure contractor in Uzbekistan since 2001: pipelines, intake and distribution stations, water towers, civil works and wells.",
     start_url: "/uz",
+    scope: "/",
+    lang: "uz",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#0B2B43",
     icons: [
       { src: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
-      { src: "/images/logo-light.png", sizes: "512x512", type: "image/png" },
+      { src: "/images/logo-light.png", sizes: "420x350", type: "image/png" },
     ],
   };
 }
