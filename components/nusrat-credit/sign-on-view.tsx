@@ -7,7 +7,7 @@
  */
 import { useEffect, useRef } from "react";
 
-const MOMENT_MS = 4400; // the strike, the signature and the new star, then back to rest
+const MOMENT_MS = 4700; // the birth, the signature and the new star, then back to rest
 
 export function SignOnView() {
   const ref = useRef<HTMLSpanElement>(null);

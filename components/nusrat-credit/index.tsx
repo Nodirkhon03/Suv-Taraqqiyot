@@ -4,16 +4,15 @@
  * Canonical source: ~/Developer/brain/nusrat-tech/credit/nusrat-credit/
  * Copied into each project by credit/sync.sh <name>. Edit there, then re-sync; never edit a copy.
  *
- * Built only from the brand's own marks: the handwritten nusrat.tech traced from the
- * approved poster (wordmark.ts) and the four-around-one rosette (the site's HouseMark).
- * The label is English on every locale (founder, 2026-10-01).
+ * Built only from the brand's own marks: the star (Proxima Centauri in ultraviolet, the nusrat.tech
+ * logo since 2026-10-02; star.ts) and the handwritten nusrat.tech traced from the approved poster
+ * (wordmark.ts). The label is English on every locale (founder, 2026-10-01).
  *
  * Alive on its own: a few faint stars twinkle behind it and a falling star crosses every few
  * seconds, as the nusrat.tech sky does. The moment (on first full view on any device, and on every
- * hover or keyboard focus): a falling star strikes the rosette and explodes (flash, shockwave, eight
- * sparks thrown along the rosette's eight points); the rosette flinches, spins a quarter and redraws
- * itself out of the blast, its garnet heart flaring; the wordmark is rewritten in pen order with the
- * crossbar last; and at the end the full stop of nusrat.tech becomes a new star, flares and fades.
+ * hover or keyboard focus) is a star being born (founder, 2026-10-02): a ring of dust turns and
+ * collapses, a protostar glows, the star ignites with four diffraction spikes; the wordmark is
+ * then written in pen order, and its full stop becomes a new star, flares and fades.
  *
  * Everything moves in CSS. The only script is SignOnView (a few lines, an IntersectionObserver)
  * that starts the moment on arrival. The credit is complete with JavaScript off, and under
@@ -22,6 +21,7 @@
 import type { CSSProperties } from "react";
 import s from "./credit.module.css";
 import { SignOnView } from "./sign-on-view";
+import { STAR_SRC } from "./star";
 import { WORDMARK_DOT, WORDMARK_OUTLINE, WORDMARK_STROKES } from "./wordmark";
 
 /** nusrat.tech is published in ru, en and uz; everything else lands on English. */
@@ -33,8 +33,8 @@ const BOX = { x: 8, y: 2, width: 608, height: 152 } as const;
 const PEN_WIDTH = 11; // matches the hero: covers the thickest stroke
 const PEN_SPEED = 2100; // viewBox units per second: the poster's hand, twice as quick
 const PEN_LIFT = 0.05;
-const IMPACT = 0.42; // seconds: the falling star reaches the rosette
-const PEN_START = IMPACT + 0.2; // the pen starts as the blast clears
+const BIRTH = 0.72; // seconds: the star ignites (= --nt-birth in the CSS)
+const PEN_START = BIRTH + 0.18; // the pen starts as the star settles
 
 const SIGNATURE = (() => {
   let clock = PEN_START;
@@ -52,19 +52,15 @@ const SIGNATURE = (() => {
   return { strokes, dotAt, end: clock };
 })();
 
-/* The rosette, as the HouseMark draws it (r = 27, G = 0.25, S = 0.667, cell radius 0.15). */
-const ARM = "M-6.75 -18.01L0 -27L6.75 -18.01";
-const LATTICE = "M-6.75 -18.01V18.01M6.75 -18.01V18.01M-18.01 -6.75H18.01M-18.01 6.75H18.01";
-const CELLS = [
-  "M6.75 -18.01L13.96 -18.01A4.05 4.05 0 0 1 18.01 -13.96L18.01 -6.75",
-  "M6.75 18.01L13.96 18.01A4.05 4.05 0 0 0 18.01 13.96L18.01 6.75",
-  "M-6.75 18.01L-13.96 18.01A4.05 4.05 0 0 1 -18.01 13.96L-18.01 6.75",
-  "M-6.75 -18.01L-13.96 -18.01A4.05 4.05 0 0 0 -18.01 -13.96L-18.01 -6.75",
-];
-const HEART = "M0 -4.6L4.6 0L0 4.6L-4.6 0Z";
-const TURNS = [0, 90, 180, 270] as const;
-/** The lens sparkle of the constellation's stars: four points, concave sides. */
-const SPARK = "M0 -3.4Q0 0 3.4 0Q0 0 0 3.4Q0 0 -3.4 0Q0 0 0 -3.4Z";
+/*
+ * The dust the star is born from, in the mark's units (36 px = 62 units): fourteen grains on a slightly
+ * eccentric ring outside the star, spaced by the golden angle so the ring never looks drawn.
+ */
+const DUST = Array.from({ length: 14 }, (_, i) => {
+  const a = i * 2.39996;
+  const r = 24 + ((i * 7) % 6);
+  return { cx: +(Math.cos(a) * r).toFixed(2), cy: +(Math.sin(a) * r * 0.84).toFixed(2), r: +(0.9 + ((i * 3) % 4) * 0.3).toFixed(2) };
+});
 
 /*
  * The sky behind the signature, in px from the sky's top-left (it overhangs the link by
@@ -88,20 +84,6 @@ const AMBIENT: Fall[] = [
   { x: -30, y: -6, run: 250, len: 72, dur: 7.3, at: 1.6 },
   { x: 90, y: -16, run: 220, len: 56, dur: 10.1, at: 4.9 },
 ];
-/**
- * The blast, in the rosette's own units (36 px = 62 units). Eight sparks fly out along the
- * rosette's eight points: the four axis ones (its star tips) are four-point sparkles and fly
- * further, the four diagonal ones are embers.
- */
-const DEBRIS = [0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => ({
-  angle,
-  tip: i % 2 === 0,
-  reach: i % 2 === 0 ? 50 : 34,
-  dur: i % 2 === 0 ? 0.85 : 0.65,
-}));
-/** Where the falling star enters, in rosette units: up and to the left, on the ambient stars' bearing family. */
-const COMET_FROM = { x: -120, y: -90 } as const;
-const COMET_ANGLE = (Math.atan2(-COMET_FROM.y, -COMET_FROM.x) * 180) / Math.PI;
 /** The finale: the full stop of nusrat.tech becomes a star, in wordmark units (30 px = 152 units). */
 const NOVA = "M0 -30Q0 0 30 0Q0 0 0 30Q0 0 -30 0Q0 0 0 -30Z";
 /** Faint fixed stars, in % of the sky, with their own slow twinkle. */
@@ -121,9 +103,9 @@ export type NusratCreditProps = {
   locale: string;
   /** Short project slug: the utm_source on the link, and the id of the wordmark's mask. */
   site: string;
-  /** The ground it sits on. Dark grounds get the brass rosette, ivory stars and a champagne signature. */
+  /** The ground it sits on. Dark grounds get ivory dust and spikes and a champagne signature. */
   tone?: "dark" | "light";
-  /** Optional CSS colour for the rosette and the hover ink, e.g. the host's own jewel tone. */
+  /** Optional CSS colour for the hover ink, e.g. the host's own jewel tone. */
   accent?: string;
   className?: string;
 };
@@ -152,66 +134,27 @@ export function NusratCredit({ locale, site, tone = "dark", accent, className = 
           ))}
         </span>
 
-        <span className={s.markWrap}>
-        <svg className={s.mark} viewBox="-31 -31 62 62" fill="none" aria-hidden="true">
-          <g stroke="currentColor" strokeLinejoin="round" strokeLinecap="round">
-            <path d={LATTICE} pathLength={1} strokeWidth="1.5" className={s.strand} style={at(IMPACT + 0.04)} />
-            {TURNS.map((turn, i) => (
-              <path
-                key={turn}
-                d={ARM}
-                transform={`rotate(${turn})`}
-                pathLength={1}
-                strokeWidth="2.3"
-                className={s.strand}
-                style={at(IMPACT + 0.1 + i * 0.06)}
-              />
+        <span className={s.markWrap} aria-hidden="true">
+          <svg className={s.dust} viewBox="-31 -31 62 62">
+            {DUST.map((g, i) => (
+              <circle key={i} cx={g.cx} cy={g.cy} r={g.r} />
             ))}
-            {CELLS.map((d, i) => (
-              <path key={d} d={d} pathLength={1} strokeWidth="2.3" className={s.strand} style={at(IMPACT + 0.22 + i * 0.06)} />
-            ))}
-          </g>
-          {TURNS.map((turn, i) => (
-            <g key={turn} transform={`rotate(${turn}) translate(0 -27)`}>
-              <path d={SPARK} className={s.spark} style={at(IMPACT + 0.55 + i * 0.05)} />
-            </g>
-          ))}
-          <path d={HEART} className={s.heart} strokeWidth="1.2" strokeLinejoin="round" style={at(IMPACT)} />
-        </svg>
-
-        <svg className={s.burst} viewBox="-31 -31 62 62" fill="none" aria-hidden="true">
+          </svg>
+          <span className={s.proto} />
+          {/* eslint-disable-next-line @next/next/no-img-element -- a 4 KB inline still, no optimiser needed */}
+          <img className={s.starImg} src={STAR_SRC} alt="" width={36} height={36} decoding="async" />
+          <span className={s.spikes} />
+        </span>
+        {/* the glow the new star in the wordmark's full stop is drawn with */}
+        <svg className={s.defs} width="0" height="0" aria-hidden="true">
           <defs>
-            <linearGradient id={`${ids}-tail`} gradientUnits="userSpaceOnUse" x1="-78" y1="0" x2="0" y2="0">
-              <stop offset="0" style={{ stopColor: "var(--nt-glow)", stopOpacity: 0 }} />
-              <stop offset="1" style={{ stopColor: "var(--nt-hot)", stopOpacity: 1 }} />
-            </linearGradient>
             <radialGradient id={`${ids}-flash`}>
               <stop offset="0" style={{ stopColor: "var(--nt-hot)", stopOpacity: 1 }} />
               <stop offset="0.35" style={{ stopColor: "var(--nt-glow)", stopOpacity: 0.85 }} />
               <stop offset="1" style={{ stopColor: "var(--nt-glow)", stopOpacity: 0 }} />
             </radialGradient>
           </defs>
-          <g className={s.comet} style={{ "--cx": `${COMET_FROM.x}px`, "--cy": `${COMET_FROM.y}px` } as CSSProperties}>
-            <g transform={`rotate(${COMET_ANGLE.toFixed(2)})`}>
-              <path d="M-78 0H0" stroke={`url(#${ids}-tail)`} strokeWidth="2.6" strokeLinecap="round" />
-              <circle r="9" fill={`url(#${ids}-flash)`} opacity="0.8" />
-              <circle r="2.6" className={s.hot} />
-            </g>
-          </g>
-          <circle r="24" fill={`url(#${ids}-flash)`} className={s.flash} />
-          <circle r="20" className={s.ring} strokeWidth="2" />
-          {DEBRIS.map(({ angle, tip, reach, dur }) => (
-            <g key={angle} transform={`rotate(${angle})`}>
-              <g
-                className={s.debris}
-                style={{ "--d": `${-reach}px`, "--dur": `${dur}s` } as CSSProperties}
-              >
-                {tip ? <path d={SPARK} transform="scale(1.8)" className={s.hot} /> : <circle r="2.2" className={s.hot} />}
-              </g>
-            </g>
-          ))}
         </svg>
-        </span>
 
         <span className={s.text}>
           <span className={s.label}>Powered by</span>

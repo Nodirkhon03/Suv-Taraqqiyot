@@ -1,26 +1,27 @@
 /*
  * «Powered by Nusrat.Tech». Canonical source: brain/nusrat-tech/credit/nusrat-credit/.
  * Every selector is doubled up under .root so a host's `footer a { … }` rules cannot reach in.
- * The moment plays on three triggers: [data-play] (first arrival, set by SignOnView),
- * :focus-visible, and :hover on real pointers.
+ * The moment, a star being born, plays on three triggers: [data-play] (first arrival, set by
+ * SignOnView), :focus-visible, and :hover on real pointers.
  */
 
 .root {
   --nt-gold: #d5a051; /* oklch(74% 0.115 75), the brand's antique gold */
-  --nt-garnet: #bd423a; /* oklch(55% 0.16 27) */
   --nt-star: #f6ead2;
   --nt-champagne: #f6d8ae; /* oklch(89.7% 0.064 76), the poster's own lettering */
   --nt-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --nt-impact: 0.42s; /* = IMPACT in index.tsx: the falling star reaches the rosette */
+  --nt-birth: 0.72s; /* = BIRTH in index.tsx: the star ignites */
   display: inline-flex;
   vertical-align: middle;
   line-height: 1;
 }
 
 .dark {
-  --nt-mark: var(--nt-accent, var(--nt-gold));
-  --nt-ink-hover: var(--nt-champagne);
+  --nt-ink-hover: var(--nt-accent, var(--nt-champagne));
   --nt-spark: var(--nt-star);
+  --nt-dust: rgb(246 216 174 / 0.9);
+  --nt-spike: 255 244 222;
+  --nt-halo: rgb(213 160 81 / 0.45);
   --nt-meteor: rgb(246 234 210 / 0.9);
   --nt-meteor-head: #fffaf0;
   --nt-meteor-glow: rgb(246 216 174 / 0.85);
@@ -30,11 +31,13 @@
   --nt-glow: #f6d8ae;
 }
 
-/* On light grounds brass never carries anything: the rosette takes the ink or the host's jewel tone. */
+/* On light grounds brass never carries text: only the star's own light (dust, spikes, glow) is gold. */
 .light {
-  --nt-mark: var(--nt-accent, currentColor);
   --nt-ink-hover: var(--nt-accent, currentColor);
   --nt-spark: var(--nt-gold);
+  --nt-dust: rgb(201 143 60 / 0.85);
+  --nt-spike: 201 143 60;
+  --nt-halo: rgb(213 160 81 / 0.3);
   --nt-meteor: rgb(213 160 81 / 0.85);
   --nt-meteor-head: #c98f3c;
   --nt-meteor-glow: rgb(213 160 81 / 0.55);
@@ -75,7 +78,7 @@
   transform: translateY(1px);
 }
 
-/* ---------- the rosette, and the blast layer over it ---------- */
+/* ---------- the star, and the dust it is born from ---------- */
 
 .root .markWrap {
   position: relative;
@@ -85,12 +88,76 @@
   height: 36px;
 }
 
-.root .burst {
+.root .defs {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  width: 0;
+  height: 0;
+}
+
+.root .starImg {
+  position: absolute;
+  inset: 2px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  max-width: none;
+  margin: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--nt-halo);
+  transition: transform 900ms var(--nt-ease);
+}
+
+/* four diffraction spikes, outside the disc only (the night sky's brightest stars wear them too) */
+.root .spikes {
+  position: absolute;
+  inset: -14px;
+  opacity: 0.55;
+  pointer-events: none;
+  transition:
+    transform 600ms var(--nt-ease),
+    opacity 600ms var(--nt-ease);
+  -webkit-mask-image: radial-gradient(circle, transparent 0 30%, #000 34%);
+  mask-image: radial-gradient(circle, transparent 0 30%, #000 34%);
+}
+
+.root .spikes::before,
+.root .spikes::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.root .spikes::before {
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(var(--nt-spike)) 50%, transparent);
+}
+
+.root .spikes::after {
+  width: 1px;
   height: 100%;
+  background: linear-gradient(180deg, transparent, rgb(var(--nt-spike)) 50%, transparent);
+}
+
+.root .dust {
+  position: absolute;
+  inset: -12px;
+  width: 60px;
+  height: 60px;
   overflow: visible;
+  fill: var(--nt-dust);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.root .proto {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--nt-hot) 0, var(--nt-glow) 30%, transparent 68%);
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -98,53 +165,15 @@
   fill: var(--nt-hot);
 }
 
-.root .comet,
-.root .flash,
-.root .ring,
-.root .debris,
 .root .nova {
   opacity: 0;
-}
-
-.root .flash,
-.root .ring,
-.root .debris,
-.root .nova {
   transform-box: fill-box;
   transform-origin: center;
-}
-
-.root .ring {
-  stroke: var(--nt-glow);
 }
 
 .root .flare {
   stroke: var(--nt-hot);
   opacity: 0.8;
-}
-
-.root .mark {
-  display: block;
-  flex: none;
-  width: 36px;
-  height: 36px;
-  overflow: visible;
-  color: var(--nt-mark);
-  transition: filter 400ms var(--nt-ease);
-}
-
-.root .heart {
-  fill: var(--nt-garnet);
-  stroke: var(--nt-mark);
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.root .spark {
-  fill: var(--nt-spark);
-  opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
 }
 
 /* ---------- the signature ---------- */
@@ -241,45 +270,23 @@
 }
 
 /* ---------- the moment: first arrival, keyboard focus, or hover on a real pointer ---------- */
-/* `forwards`, not `both`, where the first keyframe must not show early: the rosette's strands and
-   heart stay drawn until the blast and then redraw out of it; the flash, shockwave and sparks stay
-   unseen (opacity 0 at rest) until the impact. */
-.root[data-play] .comet,
-.root .credit:focus-visible .comet {
-  animation: nt-comet var(--nt-impact) cubic-bezier(0.55, 0, 0.9, 0.45) both;
+/* `both` holds each first keyframe through its delay: the dust is there before it turns, the star is
+   dark until it ignites, and every last keyframe equals the resting state. */
+.root[data-play] .dust,
+.root .credit:focus-visible .dust {
+  animation: nt-collapse 900ms cubic-bezier(0.55, 0, 0.75, 0.4) both;
 }
-.root[data-play] .flash,
-.root .credit:focus-visible .flash {
-  animation: nt-flash 520ms var(--nt-ease) var(--nt-impact) forwards;
+.root[data-play] .proto,
+.root .credit:focus-visible .proto {
+  animation: nt-proto 900ms var(--nt-ease) calc(var(--nt-birth) - 0.28s) both;
 }
-.root[data-play] .ring,
-.root .credit:focus-visible .ring {
-  animation: nt-ring 760ms var(--nt-ease) var(--nt-impact) forwards;
+.root[data-play] .starImg,
+.root .credit:focus-visible .starImg {
+  animation: nt-born 760ms cubic-bezier(0.2, 0.9, 0.25, 1.15) var(--nt-birth) both;
 }
-.root[data-play] .debris,
-.root .credit:focus-visible .debris {
-  animation: nt-debris var(--dur) cubic-bezier(0.2, 0.7, 0.3, 1) var(--nt-impact) forwards;
-}
-.root[data-play] .markWrap,
-.root .credit:focus-visible .markWrap {
-  animation: nt-punch 560ms var(--nt-ease) var(--nt-impact) both;
-}
-.root[data-play] .mark,
-.root .credit:focus-visible .mark {
-  animation: nt-turn 1000ms var(--nt-ease) var(--nt-impact) both;
-}
-.root[data-play] .strand,
-.root .credit:focus-visible .strand {
-  stroke-dasharray: 1 2;
-  animation: nt-draw 600ms var(--nt-ease) var(--at) forwards;
-}
-.root[data-play] .heart,
-.root .credit:focus-visible .heart {
-  animation: nt-ignite 700ms var(--nt-ease) var(--at) forwards;
-}
-.root[data-play] .spark,
-.root .credit:focus-visible .spark {
-  animation: nt-spark 900ms var(--nt-ease) var(--at) both;
+.root[data-play] .spikes,
+.root .credit:focus-visible .spikes {
+  animation: nt-flare 1100ms var(--nt-ease) calc(var(--nt-birth) + 0.08s) both;
 }
 .root[data-play] .pen,
 .root .credit:focus-visible .pen {
@@ -304,39 +311,19 @@
 .root .credit:focus-visible .wordmark {
   color: var(--nt-ink-hover);
 }
-.dark[data-play] .mark,
-.dark .credit:focus-visible .mark {
-  filter: drop-shadow(0 0 6px rgb(213 160 81 / 0.45));
-}
 
 @media (hover: hover) {
-  .root .credit:hover .comet {
-    animation: nt-comet var(--nt-impact) cubic-bezier(0.55, 0, 0.9, 0.45) both;
+  .root .credit:hover .dust {
+    animation: nt-collapse 900ms cubic-bezier(0.55, 0, 0.75, 0.4) both;
   }
-  .root .credit:hover .flash {
-    animation: nt-flash 520ms var(--nt-ease) var(--nt-impact) forwards;
+  .root .credit:hover .proto {
+    animation: nt-proto 900ms var(--nt-ease) calc(var(--nt-birth) - 0.28s) both;
   }
-  .root .credit:hover .ring {
-    animation: nt-ring 760ms var(--nt-ease) var(--nt-impact) forwards;
+  .root .credit:hover .starImg {
+    animation: nt-born 760ms cubic-bezier(0.2, 0.9, 0.25, 1.15) var(--nt-birth) both;
   }
-  .root .credit:hover .debris {
-    animation: nt-debris var(--dur) cubic-bezier(0.2, 0.7, 0.3, 1) var(--nt-impact) forwards;
-  }
-  .root .credit:hover .markWrap {
-    animation: nt-punch 560ms var(--nt-ease) var(--nt-impact) both;
-  }
-  .root .credit:hover .mark {
-    animation: nt-turn 1000ms var(--nt-ease) var(--nt-impact) both;
-  }
-  .root .credit:hover .strand {
-    stroke-dasharray: 1 2;
-    animation: nt-draw 600ms var(--nt-ease) var(--at) forwards;
-  }
-  .root .credit:hover .heart {
-    animation: nt-ignite 700ms var(--nt-ease) var(--at) forwards;
-  }
-  .root .credit:hover .spark {
-    animation: nt-spark 900ms var(--nt-ease) var(--at) both;
+  .root .credit:hover .spikes {
+    animation: nt-flare 1100ms var(--nt-ease) calc(var(--nt-birth) + 0.08s) both;
   }
   .root .credit:hover .pen {
     stroke-dasharray: 1 2;
@@ -356,8 +343,72 @@
   .root .credit:hover .wordmark {
     color: var(--nt-ink-hover);
   }
-  .dark .credit:hover .mark {
-    filter: drop-shadow(0 0 6px rgb(213 160 81 / 0.45));
+  .root .credit:hover .spikes {
+    opacity: 0.9;
+  }
+}
+
+/* a ring of dust turns and falls in on itself */
+@keyframes nt-collapse {
+  0% {
+    opacity: 0.9;
+    transform: rotate(0deg) scale(1);
+  }
+  70% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(150deg) scale(0.1);
+  }
+}
+
+/* the protostar: a hot point swells, outshines everything, and gives way to the star */
+@keyframes nt-proto {
+  0% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes nt-born {
+  0% {
+    opacity: 0;
+    transform: scale(0.12);
+    filter: brightness(2.6);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes nt-flare {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.7);
+  }
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
   }
 }
 
@@ -367,46 +418,6 @@
   }
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-/* a quarter turn of a four-fold figure: it lands exactly where it started */
-@keyframes nt-turn {
-  from {
-    transform: rotate(-90deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes nt-ignite {
-  0% {
-    opacity: 0.3;
-    transform: scale(0.3);
-  }
-  55% {
-    opacity: 1;
-    transform: scale(1.45);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes nt-spark {
-  0% {
-    opacity: 0;
-    transform: scale(0.2);
-  }
-  45% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-  100% {
-    opacity: 0.95;
-    transform: scale(1);
   }
 }
 
@@ -429,83 +440,6 @@
   }
   to {
     opacity: var(--nt-twinkle-hi);
-  }
-}
-
-/* the star that strikes: accelerates in from the upper left, gone at the moment of impact */
-@keyframes nt-comet {
-  0% {
-    opacity: 0;
-    transform: translate(var(--cx), var(--cy));
-  }
-  15% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes nt-flash {
-  0% {
-    opacity: 1;
-    transform: scale(0.15);
-  }
-  30% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.7);
-  }
-}
-
-@keyframes nt-ring {
-  0% {
-    opacity: 0.95;
-    transform: scale(0.15);
-    stroke-width: 2.6;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(2.3);
-    stroke-width: 0.3;
-  }
-}
-
-/* each spark is drawn on its own axis, so "up" is outward */
-@keyframes nt-debris {
-  0% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1.3);
-  }
-  55% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(0, var(--d)) scale(0.35);
-  }
-}
-
-/* the hit: the rosette flinches, then springs back */
-@keyframes nt-punch {
-  0% {
-    transform: scale(1);
-  }
-  16% {
-    transform: scale(0.76);
-  }
-  52% {
-    transform: scale(1.14);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -566,18 +500,20 @@
     transition: none !important;
   }
   .root .star,
-  .root .burst {
+  .root .dust,
+  .root .proto {
     display: none;
   }
 }
 
 @media (forced-colors: active) {
-  .root .mark,
   .root .wordmark {
     color: LinkText;
   }
   .root .sky,
-  .root .burst {
+  .root .dust,
+  .root .proto,
+  .root .spikes {
     display: none;
   }
 }
